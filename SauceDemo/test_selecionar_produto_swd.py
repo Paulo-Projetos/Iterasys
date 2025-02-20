@@ -23,4 +23,13 @@ class Teste_Produtos():
         self.driver.get(self.url)                   # abre o navegador
         self.driver.find_element(By.ID, "user-name").send_keys("standard_user")     # escreve no campo user name
         self.driver.find_element(By.NAME, "password").send_keys("secret_sauce")     # escreve senha
+        self.driver.find_element(By.CSS_SELECTOR, "input.submit-button.btn_action").click()   #utilisando CSS para faser o click de login
+        
+        # transição de página:
+        #assert self.driver.find_element(By.CSS_SELECTOR, "input.vertical-align: inherit;").text == "Produto" # usar assert para avaliação de texto (Produtos)
+        assert self.driver.find_element(By.CSS_SELECTOR, ".title").text == "Products"   # Substitui o camondo 29
+        assert self.driver.find_element(By.ID, "item_4_title_link").text == "Sauce Labs Backpack" # confirma se é a mochila
+        #assert self.driver.find_element(By.CSS_SELECTOR, "vertical-align: inherit;").text == "$ 29,99"  # confirma preço mochila    # confirma valor 29,99
+        assert self.driver.find_element(By.CSS_SELECTOR, ".inventory_item:nth-child(1) .inventory_item_price").text == "$29.99" #substitui o comando 32
+        
         
