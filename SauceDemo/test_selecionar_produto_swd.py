@@ -26,10 +26,17 @@ class Teste_Produtos():
         self.driver.find_element(By.CSS_SELECTOR, "input.submit-button.btn_action").click()   #utilisando CSS para faser o click de login
         
         # transição de página:
-        #assert self.driver.find_element(By.CSS_SELECTOR, "input.vertical-align: inherit;").text == "Produto" # usar assert para avaliação de texto (Produtos)
-        assert self.driver.find_element(By.CSS_SELECTOR, ".title").text == "Products"   # Substitui o camondo 29
-        assert self.driver.find_element(By.ID, "item_4_title_link").text == "Sauce Labs Backpack" # confirma se é a mochila
-        #assert self.driver.find_element(By.CSS_SELECTOR, "vertical-align: inherit;").text == "$ 29,99"  # confirma preço mochila    # confirma valor 29,99
-        assert self.driver.find_element(By.CSS_SELECTOR, ".inventory_item:nth-child(1) .inventory_item_price").text == "$29.99" #substitui o comando 32
+        assert self.driver.find_element(By.CSS_SELECTOR, ".title").text == "Products"   # assert para avaliação de texto (Produtos)
+        assert self.driver.find_element(By.CSS_SELECTOR, ".inventory_item_name").text == "Sauce Labs Backpack"  # Confirma se é a mochila
+        assert self.driver.find_element(By.CSS_SELECTOR, ".inventory_item_price").text == "$29.99"  #Confirma o preço da mochila $ 29,99
+        self.driver.find_element(By.ID, "add-to-cart-sauce-labs-backpack").click()  # Inclui mochila no carrinho
+        assert self.driver.find_element(By.CSS_SELECTOR, ".shopping_cart_badge").text == "1"    # Valida quantidade e produto no carrinho
+        self.driver.find_element(By.CSS_SELECTOR, ".shopping_cart_link").click()    # acessa o carrinho
+        assert self.driver.find_element(By.CSS_SELECTOR, ".title").text == "Your Cart"  # Confirma titulo Carrinho
+        assert self.driver.find_element(By.CSS_SELECTOR, ".cart_quantity").text == "1"  # Confirma quantidade carrinho
+        assert self.driver.find_element(By.CSS_SELECTOR, ".inventory_item_price").text == "$29.99" # confirma o preço de $ 29,99
+        self.driver.find_element(By.NAME, "remove-sauce-labs-backpack").click() # remove item do carrinho
+        self.driver.find_element(By.ID, "react-burger-menu-btn").click()    # Acesso o logout
+        self.driver.find_element(By.ID, "logout_sidebar_link").click()  # Confirma o logout (sair)
         
         
