@@ -2,6 +2,7 @@
 from behave import given, when, then
 from selenium import webdriver
 from selenium.webdriver.common.by import By
+import time
 
 
 @given(u'que acesso o site Sauce Demo')
@@ -21,8 +22,9 @@ def step_impl(context, usuario, senha):
 
 @then(u'sou direcionado para a pagina Home')
 def step_impl(context):
-    assert context.driver.find_element(By.ID, "contents_wrapper").text == "Products"
-    time.sleep(10)
+    time.sleep(5)
+    assert context.driver.find_element(By.CSS_SELECTOR, ".title").text == "Products"
+    time.sleep(5)
     
     # teardown = encerramento
     context.driver.quit()
