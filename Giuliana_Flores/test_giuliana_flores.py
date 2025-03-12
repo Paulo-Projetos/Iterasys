@@ -55,11 +55,18 @@ class Teste_Giuliana_Flores():
         self.driver.find_element(By.CSS_SELECTOR, ".itemAddress").click()   # Confirma indereço
         self.driver.find_element(By.CSS_SELECTOR, ".apply-button").click()  # Aplica - confirma informações
         self.driver.find_element(By.CSS_SELECTOR, ".carousel-brands").click() # Buque de Girassois
-        self.driver.find_element(By.CSS_SELECTOR, ".image-content").click() # Buque Luxo de 6 Girassois
-        self.driver.find_element(By.CSS_SELECTOR, ".title-item").click()
-        assert self.driver.find_element(By.ID, "ContentSite_lblProductDsName").text == "Buquê Luxo Com 6 Girassóis" # Confirm produto
-        assert self.driver.find_element(By.ID, "ContentSite_txtZip").text == "23057-049"    # Confirma o CEP
-        assert self.driver.find_element(By.ID, "ContentSite_txtQtdBy").text == "1"  # Confirma quantidade para compra
-        self.driver.find_element(By.ID, "ContentSite_lbtBuy").click()
-        
+        self.driver.find_element(By.NAME, "ctl00$txtDsKeyWord").send_keys("Buquê Luxo com 6 Girassóis")  # Seleciona buque pelo nome
+        self.driver.find_element(By.ID, "btnSearch").click()    # Clica na lupa de procura
+        self.driver.find_element(By.XPATH, "//h2[text()='Buquê Luxo com 6 Girassóis']").click() # Clica no produto escolhido - Comando indicado pelo ChatGpt
+        assert self.driver.find_element(By.ID, "ContentSite_lblProductDsName").text == "BUQUÊ LUXO COM 6 GIRASSÓIS" # Confirma produto
+        self.driver.find_element(By.ID, "ContentSite_txtZip").send_keys("23057-049")    # Preenche o CEP
+        time.sleep(2)
+        assert self.driver.find_element(By.ID, "ContentSite_txtQtdBy").get_attribute("value") == "1"    # Confirma quantidade para compra - Comando indicado pelo ChatGpt.
+        self.driver.find_element(By.ID, "ContentSite_lbtBuy").click()   #   Adiciona ao carrinho
+        time.sleep(2)
+        self.driver.find_element(By.ID, "btConfirmShippingData").click()    # Confirma data e horario de entrega
+        time.sleep(2)
+        assert self.driver.find_element(By.CSS_SELECTOR, "h1.titulo-dept.title-defaut-interna").text == "MEU CARRINHO" # Confirma localização
+        assert self.driver.find_element(By.CSS_SELECTOR, ".prodBasket_nome").text == "Buquê Luxo com 6 Girassóis"   # Confirma produto no carrinho
+        self.driver.find_element(By.ID, "ContentSite_Basketcontrol1_rptBasket_imbFinalize_0").click()   # confirma compra
         
