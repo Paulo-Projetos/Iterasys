@@ -29,4 +29,13 @@ def step_impl(context):
     # teardown = encerramento
     context.driver.quit()
     
+    # Validar a mensagem de erro de login
+@then(u'exibe a mensagem de erro no login')
+def step_impl(context):
+    assert context.driver.find_element(By.CSS_SELECTOR, "h3").text == "Epic sadface: Username and password do not match any user in this service"
+    
+    #teardown = encerramento
+    context.driver.quit()
+    
+    
     
