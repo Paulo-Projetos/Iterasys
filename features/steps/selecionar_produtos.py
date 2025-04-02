@@ -50,6 +50,28 @@ def step_impl(context, usuario, senha):
         context.driver.find_element(By.ID, "password").send_keys(senha)     # Preenche senha
         # se a senha estiver em branco, não há ação de preenchimento
     context.driver.find_element(By.ID, "login-button").click()          # Clica em login
+    
+    
+# Bloco scenario adicionar e remover produto do carrinho
+@when(u'sou direcionado para a pagina Home')
+def step_impl(context):
+    context.driver.find_element(By.CSS_SELECTOR, ".title").text == "Products"
+@when(u'adiciono o produto Sauce Labs Backpack ao carrinho')
+def step_impl(context):
+    context.driver.find_element(By.ID, "add-to-cart-sauce-labs-backpack").click()
+@when(u'eu clico no ícone do carrinho')
+def step_impl(context):
+    context.driver.find_element(By.CSS_SELECTOR, ".shopping_cart_link").click()
+@when(u'eu confirmo o produto Sauce Labs Backpack, a quantidade 1 e o preço $ 29.99')
+def step_impl(context):
+    context.driver.find_element(By.CSS_SELECTOR, ".inventory_item_name").text == "Sauce Labs Backpack"
+    context.driver.find_element(By.CSS_SELECTOR, ".cart_quantity").text == "1"
+    context.driver.find_element(By.CSS_SELECTOR, ".inventory_item_price").text == "$ 29.99"
+@when(u'eu clico em remover o produto do carrinho')
+def step_impl(context):
+    context.driver.find_element(By.ID, "remove-sauce-labs-backpack").click()   
+
+
 
 @then(u'sou direcionado para a pagina Home')
 def step_impl(context):
@@ -64,7 +86,13 @@ def step_impl(context):
 @then(u'exibe a mensagem de erro no login')
 def step_impl(context):
     assert context.driver.find_element(By.CSS_SELECTOR, "h3").text == "Epic sadface: Username and password do not match any user in this service"
-    
+
+# Encerra bloco do scenario adicionar e remover produto do carrinho
+@then(u'efetuo o logout')
+def step_impl(context):
+    context.driver.find_element(By.ID, "react-burger-menu-btn").click()
+    context.driver.find_element(By.ID, "logout_sidebar_link").click()
+
     #teardown = encerramento
     context.driver.quit()
     

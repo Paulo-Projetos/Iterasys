@@ -20,7 +20,7 @@ Feature: selecionar Produto
         | 01 | standard_user    | laranja       | Epic sadface: Username and password do not match any user in this service |
         | 02 | standard_user    |               | Epic sadface: Password is required                                        |
         | 03 |                  | secret_sauce  | Epic sadface: Username is required                                        |
-        | 04 | juca             | secret_sauc   | Epic sadface: Username and password do not match any user in this service |
+        | 04 | juca             | secret_sauce  | Epic sadface: Username and password do not match any user in this service |
         | 05 | juca             | laranja       | Epic sadface: Username and password do not match any user in this service |
         | 06 | juca             |               | Epic sadface: Password is required                                        |
         | 07 |                  |               | Epic sadface: Username is required                                        |
@@ -37,14 +37,21 @@ Feature: selecionar Produto
         | 01 | standard_user    | laranja       | Epic sadface: Username and password do not match any user in this service |
         | 02 | standard_user    |  <branco>     | Epic sadface: Password is required                                        |
         | 03 |   <branco>       | secret_sauce  | Epic sadface: Username is required                                        |
-        | 04 | juca             | secret_sauc   | Epic sadface: Username and password do not match any user in this service |
+        | 04 | juca             | secret_sauce  | Epic sadface: Username and password do not match any user in this service |
         | 05 | juca             | laranja       | Epic sadface: Username and password do not match any user in this service |
         | 06 | juca             | <branco>      | Epic sadface: Password is required                                        |
         | 07 |   <branco>       | <branco>      | Epic sadface: Username is required                                        |
         | 08 |   <branco>       | laranja       | Epic sadface: Username is required                                        |
 
 
-
-
+    Scenario: Adicionar e remover um produto do carrinho
+        Given que acesso o site Sauce Demo
+        When preencho os campos de login com usuario standard_user e senha secret_sauce
+        And sou direcionado para a pagina Home
+        And adiciono o produto Sauce Labs Backpack ao carrinho
+        And eu clico no ícone do carrinho
+        And eu confirmo o produto Sauce Labs Backpack, a quantidade 1 e o preço $ 29.99
+        And eu clico em remover o produto do carrinho
+        Then efetuo o logout
 
 
