@@ -3,6 +3,7 @@
 import pytest
 # Funções que serão testadas
 from calculadora.calculadora import somar_dois_numeros, subtrair_dois_numeros, multiplicar_dois_numeros, dividir_dois_numeros
+from utils.utils import ler_csv         # Função de leitura de arquivos csv
 
 # 2- Testes
 def test_somar_dois_numeros():
@@ -37,4 +38,33 @@ def test_dividir_dois_numeros():
     resultado_esperado = 3
     resultado_obtido = dividir_dois_numeros(num1, num2)
     assert resultado_esperado == resultado_obtido
+    
+def test_dividir_por_zero():
+    num1 = 9
+    num2 = 0
+    resultado_esperado = 'Não é possivel dividir por zero'
+    resultado_obtido = dividir_dois_numeros(num1, num2)
+    assert resultado_esperado == resultado_obtido
+    
+# Tests utilizando massa de teste = Data Driven Test (DDT)
+    # Dados em uma lista
+    # Dados em um arquivo - Formatos: CSV (texto separado por virgulas), Json, XML, Dat
+@pytest.mark.parametrize('num1, num2, resultado_esperado',  # Comando para leitura de dadaos de uma lista
+                         [                                   # array / matriz
+                             (5, 7, 12),                     # tupla / registro
+                             (0, 8, 8),
+                             (10, -15, -5),
+                             (6, 0.75, 6.75)
+                         ]
+                        )
+def test_somar_dois_numeros_lista(num1, num2, resultado_esperado):
+    resultado_obtido = somar_dois_numeros(num1, num2)
+    assert resultado_esperado == resultado_obtido
+
+@pytest.mark.parametrize('num1, num2, resultado_esperado',
+                        ler_csv('./Calculadora140/fixtures/massa_somar.csv')      # Botão direito no arquivo massa/Copy Eelative Path
+                        )
+def test_somar_dois_numeros_csv(num1, num2, resultado_esperado):
+    resultado_obtido = somar_dois_numeros(float(num1), float(num2))
+    assert float(resultado_esperado) == resultado_obtido
     

@@ -12,6 +12,6 @@ def dividir_dois_numeros(num1, num2):
     try:
         return num1 / num2
     except(ZeroDivisionError):      # Condições para informar que a divisão não pode ser feita por zero.
-        return 'Erro: Não é possivel dividir por zero'
+        return 'Não é possivel dividir por zero'
     
 
