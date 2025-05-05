@@ -57,12 +57,12 @@ def test_dividir_por_zero():
                              (6, 0.75, 6.75)
                          ]
                         )
-def test_somar_dois_numeros_lista(num1, num2, resultado_esperado):
+def test_somar_dois_numeros_lista(num1, num2, resultado_esperado):  # Utilizando a massa de testes acima
     resultado_obtido = somar_dois_numeros(num1, num2)
     assert resultado_esperado == resultado_obtido
 
-@pytest.mark.parametrize('num1, num2, resultado_esperado',
-                        ler_csv('./Calculadora140/fixtures/massa_somar.csv')      # Botão direito no arquivo massa/Copy Eelative Path
+@pytest.mark.parametrize('num1, num2, resultado_esperado',      # Utilizando a massa de testes no arquivo fixtures
+                        ler_csv('./Calculadora140/fixtures/massa_somar.csv')      # Botão direito no arquivo massa / Copy Relative Path
                         )
 def test_somar_dois_numeros_csv(num1, num2, resultado_esperado):
     resultado_obtido = somar_dois_numeros(float(num1), float(num2))
