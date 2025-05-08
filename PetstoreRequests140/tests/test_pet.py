@@ -35,7 +35,7 @@ def test_post_pet():                                # nome usado no ptstore swag
     assert response_body['category']['name'] == pet_category_name
     assert response_body['tags'][0]['name'] == pet_tag_name
 
-# Scipt para o item GET/pet
+# Scipt para o Metodo GET/pet
 def test_get_pet():                                 # nome usado no ptstore swagger
 # Configura: Será utilizados os dados de atributos definidos acima (Ex.: ID)
 # Dados de Entrada e Saida / Resultado esperado estão na seção de atributos antes das funções
@@ -77,6 +77,7 @@ def test_put_pet():
     assert response_body['tags'][0]['name'] == pet_tag_name
     assert response_body['status'] == 'sold'
     
+# Script para item DELETE/pet
 def test_delete_pet():                                          # Apos deletado a mensagem de retor é: code, type, message
     
     response = requests.delete(
