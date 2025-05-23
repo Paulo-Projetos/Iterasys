@@ -16,18 +16,18 @@ url = 'https://petstore.swagger.io/v2/pet'      # Endereço copiado do POST/pet 
 headers = {'Content-Type': 'application/json'}  # Cabeçalho copiado do POST/pet (Responses), apos executar uma simulação em branco do cadatro de um novo animal.
 
 # 2.2- Funções / Metodo
-def test_post_pet():                                # nome usado no ptstore swagger
-    pet = open('./fixtures/json/pet1.json')         # Abre o arquivo json
+def test_post_pet():                                # Função realiza o teste automatizado junto ao ptstore swagger
+    pet = open('./fixtures/json/pet1.json')         # Abre o arquivo json no script
     data = json.loads(pet.read())                   # lê e carrega os dados do arquivo pet1.json na variavel data
 # Executa
-    response = requests.post(               # Executa o metodo post com as informações a seguir
+    response = requests.post(               # Envia na requisição POST, os dados para cadastramento do pet na API
         url = url,                          # Endereço post/pet no petstore swagger
         headers = headers,                  # Cabeçalho / informações extras da mensagem
         data = json.dumps(data),            # Descarrega os dados da variavel data (mensagem)
         timeout = 5                         # Tempo limite da transmissão, em segundos
     )
 # Valida
-    response_body = response.json()        # Cria uma variavel e carrega a resposta (eco) em formado json
+    response_body = response.json()        # Compara a resposta de retorno da variavel (body) do Swagger, com os atributos já definidos
     
     assert response.status_code == 200      # Resposta padrão de que a mensagem de eco ocorreu dentro dos padroes
     assert response_body['id'] == pet_id
@@ -35,7 +35,7 @@ def test_post_pet():                                # nome usado no ptstore swag
     assert response_body['category']['name'] == pet_category_name
     assert response_body['tags'][0]['name'] == pet_tag_name
 
-# Scipt para o Metodo GET/pet
+# Scipt para o Metodo GET/pet/petID - Pesquisa animal pelo ID
 def test_get_pet():                                 # nome usado no ptstore swagger
 # Configura: Será utilizados os dados de atributos definidos acima (Ex.: ID)
 # Dados de Entrada e Saida / Resultado esperado estão na seção de atributos antes das funções
@@ -77,7 +77,7 @@ def test_put_pet():
     assert response_body['tags'][0]['name'] == pet_tag_name
     assert response_body['status'] == 'sold'
     
-# Script para item DELETE/pet
+# Script para item DELETE/pet/petID
 def test_delete_pet():                                          # Apos deletado a mensagem de retor é: code, type, message
     
     response = requests.delete(

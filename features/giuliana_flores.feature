@@ -30,7 +30,7 @@ Feature: Giuliana Flores Scripts
         And eu clico em continuar
         And eu clico em presentes
         And eu prencho cep 13050-031, clico em endereço e clico em Aplicar
-        And eu preencho campo de procura com Bolos e clico na lupa
+        And eu preencho campo de procura com Bolo e clico na lupa
         And clico no item Bolo Parabens a Você
         And clico em Adicionar ao Carrinho
         Then clico em ok para previsão de entrega

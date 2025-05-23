@@ -37,6 +37,6 @@ class Teste_Produtos():
         assert self.driver.find_element(By.CSS_SELECTOR, ".inventory_item_price").text == "$29.99" # confirma o preço de $ 29,99
         self.driver.find_element(By.NAME, "remove-sauce-labs-backpack").click() # remove item do carrinho
         self.driver.find_element(By.ID, "react-burger-menu-btn").click()    # Acesso o logout
-        self.driver.find_element(By.ID, "logout_sidebar_link").click()  # Confirma o logout (sair)
+        #self.driver.find_element(By.ID, "logout_sidebar_link").click()  # Confirma o logout (sair)
         
         

@@ -84,9 +84,9 @@ def step_impl(context, cep):
     context.driver.find_element(By.ID, "inputSearchAddress").send_keys(cep)
     context.driver.find_element(By.CSS_SELECTOR, ".divAdresses").click()
     context.driver.find_element(By.CSS_SELECTOR, ".apply-button").click()
-@when(u'eu preencho campo de procura com Bolos e clico na lupa')
+@when(u'eu preencho campo de procura com Bolo e clico na lupa')
 def step_impl(context):
-    context.driver.find_element(By.ID, "txtDsKeyWord").send_keys("Bolos")
+    context.driver.find_element(By.ID, "txtDsKeyWord").send_keys("Bolo")
     context.driver.find_element(By.ID, "btnSearch").click()
 @when(u'clico no item Bolo Parabens a Você')
 def step_impl(context):

@@ -1,0 +1,724 @@
+{
+  "id": "9380a2ac-0366-4935-bd8a-55a11fce8d4a",
+  "version": "2.0",
+  "name": "Cacau Show",
+  "url": "https://www.cacaushow.com.br",
+  "tests": [{
+    "id": "6d7f2740-7203-481e-aedc-534ef527a366",
+    "name": "Cria Cadastro Isaac ",
+    "commands": [{
+      "id": "63d3a66f-e69d-420a-8c49-55c386af2c57",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "3f6db2d0-2b14-40a4-95ea-16987429cef5",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1366x720",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "b3c70e30-59af-4012-ae12-5a8e6d732761",
+      "comment": "",
+      "command": "click",
+      "target": "css=.user-message",
+      "targets": [
+        ["css=.user-message", "css:finder"],
+        ["xpath=//div[3]/div/div/a/span", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "0c78782e-2366-4cce-9e2c-337c212cfd66",
+      "comment": "",
+      "command": "click",
+      "target": "id=login-form-email",
+      "targets": [
+        ["id=login-form-email", "id"],
+        ["name=loginEmail", "name"],
+        ["css=#login-form-email", "css:finder"],
+        ["xpath=//input[@id='login-form-email']", "xpath:attributes"],
+        ["xpath=//div[@id='login']/form/div[2]/div/div/input", "xpath:idRelative"],
+        ["xpath=//div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "9e662f2a-30b9-48a7-8f44-64fea99c3388",
+      "comment": "",
+      "command": "type",
+      "target": "id=login-form-email",
+      "targets": [
+        ["id=login-form-email", "id"],
+        ["name=loginEmail", "name"],
+        ["css=#login-form-email", "css:finder"],
+        ["xpath=//input[@id='login-form-email']", "xpath:attributes"],
+        ["xpath=//div[@id='login']/form/div[2]/div/div/input", "xpath:idRelative"],
+        ["xpath=//div/input", "xpath:position"]
+      ],
+      "value": "isaacsamuelsilva@msds.com.br"
+    }, {
+      "id": "c9d3d8b2-8b5b-41f4-9121-67852c717a7c",
+      "comment": "",
+      "command": "click",
+      "target": "id=login-btn-toggle",
+      "targets": [
+        ["id=login-btn-toggle", "id"],
+        ["css=#login-btn-toggle", "css:finder"],
+        ["xpath=//button[@id='login-btn-toggle']", "xpath:attributes"],
+        ["xpath=//div[@id='login']/form/button", "xpath:idRelative"],
+        ["xpath=//body/div/div/div/div/div/div/form/button", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "fc7e0ad7-9474-4e24-9bd6-e7b6e580333f",
+      "comment": "",
+      "command": "click",
+      "target": "id=registration-form-fname",
+      "targets": [
+        ["id=registration-form-fname", "id"],
+        ["name=dwfrm_profile_customer_firstname", "name"],
+        ["css=#registration-form-fname", "css:finder"],
+        ["xpath=//input[@id='registration-form-fname']", "xpath:attributes"],
+        ["xpath=//div[@id='maincontent']/div/div/div/div[2]/form/div[2]/input", "xpath:idRelative"],
+        ["xpath=//form/div[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "aad518df-b097-454a-a3e2-8cfc145c1779",
+      "comment": "",
+      "command": "type",
+      "target": "id=registration-form-fname",
+      "targets": [
+        ["id=registration-form-fname", "id"],
+        ["name=dwfrm_profile_customer_firstname", "name"],
+        ["css=#registration-form-fname", "css:finder"],
+        ["xpath=//input[@id='registration-form-fname']", "xpath:attributes"],
+        ["xpath=//div[@id='maincontent']/div/div/div/div[2]/form/div[2]/input", "xpath:idRelative"],
+        ["xpath=//form/div[2]/input", "xpath:position"]
+      ],
+      "value": "Isaac Samuel"
+    }, {
+      "id": "f2459987-371d-4307-a14a-7e7ddad3b411",
+      "comment": "",
+      "command": "click",
+      "target": "id=registration-form-lname",
+      "targets": [
+        ["id=registration-form-lname", "id"],
+        ["name=dwfrm_profile_customer_lastname", "name"],
+        ["css=#registration-form-lname", "css:finder"],
+        ["xpath=//input[@id='registration-form-lname']", "xpath:attributes"],
+        ["xpath=//div[@id='maincontent']/div/div/div/div[2]/form/div[3]/input", "xpath:idRelative"],
+        ["xpath=//div[3]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "c344f9b7-d875-45e8-9194-75aab2540297",
+      "comment": "",
+      "command": "type",
+      "target": "id=registration-form-lname",
+      "targets": [
+        ["id=registration-form-lname", "id"],
+        ["name=dwfrm_profile_customer_lastname", "name"],
+        ["css=#registration-form-lname", "css:finder"],
+        ["xpath=//input[@id='registration-form-lname']", "xpath:attributes"],
+        ["xpath=//div[@id='maincontent']/div/div/div/div[2]/form/div[3]/input", "xpath:idRelative"],
+        ["xpath=//div[3]/input", "xpath:position"]
+      ],
+      "value": "Silva"
+    }, {
+      "id": "5238d3dd-4620-4e5f-a335-9a823c2c9821",
+      "comment": "",
+      "command": "click",
+      "target": "id=registration-form-bdate",
+      "targets": [
+        ["id=registration-form-bdate", "id"],
+        ["name=dwfrm_profile_customer_birthdate", "name"],
+        ["css=#registration-form-bdate", "css:finder"],
+        ["xpath=//input[@id='registration-form-bdate']", "xpath:attributes"],
+        ["xpath=//div[@id='maincontent']/div/div/div/div[2]/form/div[6]/input", "xpath:idRelative"],
+        ["xpath=//div[6]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "9942da80-46d9-46e7-b87a-bee6bdfadf00",
+      "comment": "",
+      "command": "type",
+      "target": "id=registration-form-bdate",
+      "targets": [
+        ["id=registration-form-bdate", "id"],
+        ["name=dwfrm_profile_customer_birthdate", "name"],
+        ["css=#registration-form-bdate", "css:finder"],
+        ["xpath=//input[@id='registration-form-bdate']", "xpath:attributes"],
+        ["xpath=//div[@id='maincontent']/div/div/div/div[2]/form/div[6]/input", "xpath:idRelative"],
+        ["xpath=//div[6]/input", "xpath:position"]
+      ],
+      "value": "07/04/1991"
+    }, {
+      "id": "c3545e6d-44bb-430b-b22d-6f0817dfb161",
+      "comment": "",
+      "command": "click",
+      "target": "id=registration-form-gender",
+      "targets": [
+        ["id=registration-form-gender", "id"],
+        ["name=dwfrm_profile_customer_gender", "name"],
+        ["css=#registration-form-gender", "css:finder"],
+        ["xpath=//select[@id='registration-form-gender']", "xpath:attributes"],
+        ["xpath=//div[@id='maincontent']/div/div/div/div[2]/form/div[7]/select", "xpath:idRelative"],
+        ["xpath=//select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "ca36b64f-0e72-4fc5-9fc4-86afcbdf319b",
+      "comment": "",
+      "command": "select",
+      "target": "id=registration-form-gender",
+      "targets": [],
+      "value": "label=Masculino"
+    }, {
+      "id": "19d882b7-82e9-4e63-8647-fb769d07b640",
+      "comment": "",
+      "command": "click",
+      "target": "id=male",
+      "targets": [
+        ["id=male", "id"],
+        ["css=#male", "css:finder"],
+        ["xpath=//option[@id='male']", "xpath:attributes"],
+        ["xpath=//select[@id='registration-form-gender']/option[2]", "xpath:idRelative"],
+        ["xpath=//option[2]", "xpath:position"],
+        ["xpath=//option[contains(.,'Masculino')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "22e0bd03-eff7-49cc-8523-9b8e1417306d",
+      "comment": "",
+      "command": "click",
+      "target": "id=registration-form-cpf",
+      "targets": [
+        ["id=registration-form-cpf", "id"],
+        ["name=dwfrm_profile_customer_cpf", "name"],
+        ["css=#registration-form-cpf", "css:finder"],
+        ["xpath=//input[@id='registration-form-cpf']", "xpath:attributes"],
+        ["xpath=//div[@id='maincontent']/div/div/div/div[2]/form/div[8]/input", "xpath:idRelative"],
+        ["xpath=//div[8]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "1275664b-ce07-4a12-adea-83980ce55ffc",
+      "comment": "",
+      "command": "type",
+      "target": "id=registration-form-cpf",
+      "targets": [
+        ["id=registration-form-cpf", "id"],
+        ["name=dwfrm_profile_customer_cpf", "name"],
+        ["css=#registration-form-cpf", "css:finder"],
+        ["xpath=//input[@id='registration-form-cpf']", "xpath:attributes"],
+        ["xpath=//div[@id='maincontent']/div/div/div/div[2]/form/div[8]/input", "xpath:idRelative"],
+        ["xpath=//div[8]/input", "xpath:position"]
+      ],
+      "value": "696.812.519-62"
+    }, {
+      "id": "25326ec1-cbd1-4629-8ed9-6cfbbec13fd5",
+      "comment": "",
+      "command": "click",
+      "target": "id=registration-form-phone",
+      "targets": [
+        ["id=registration-form-phone", "id"],
+        ["name=dwfrm_profile_customer_phone", "name"],
+        ["css=#registration-form-phone", "css:finder"],
+        ["xpath=//input[@id='registration-form-phone']", "xpath:attributes"],
+        ["xpath=//div[@id='maincontent']/div/div/div/div[2]/form/div[9]/input", "xpath:idRelative"],
+        ["xpath=//div[9]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "ce075d55-c546-4aea-beef-126f3f27349b",
+      "comment": "",
+      "command": "type",
+      "target": "id=registration-form-phone",
+      "targets": [
+        ["id=registration-form-phone", "id"],
+        ["name=dwfrm_profile_customer_phone", "name"],
+        ["css=#registration-form-phone", "css:finder"],
+        ["xpath=//input[@id='registration-form-phone']", "xpath:attributes"],
+        ["xpath=//div[@id='maincontent']/div/div/div/div[2]/form/div[9]/input", "xpath:idRelative"],
+        ["xpath=//div[9]/input", "xpath:position"]
+      ],
+      "value": "+554425684552"
+    }, {
+      "id": "c1d69269-d935-44de-8347-f2eb0a31dcd4",
+      "comment": "",
+      "command": "click",
+      "target": "id=registration-form-email-confirm",
+      "targets": [
+        ["id=registration-form-email-confirm", "id"],
+        ["name=dwfrm_profile_customer_emailconfirm", "name"],
+        ["css=#registration-form-email-confirm", "css:finder"],
+        ["xpath=//input[@id='registration-form-email-confirm']", "xpath:attributes"],
+        ["xpath=//div[@id='maincontent']/div/div/div/div[2]/form/div[11]/input", "xpath:idRelative"],
+        ["xpath=//div[11]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "acfcf835-7ebe-47ce-a6b8-2ce21bfa0e46",
+      "comment": "",
+      "command": "type",
+      "target": "id=registration-form-email-confirm",
+      "targets": [
+        ["id=registration-form-email-confirm", "id"],
+        ["name=dwfrm_profile_customer_emailconfirm", "name"],
+        ["css=#registration-form-email-confirm", "css:finder"],
+        ["xpath=//input[@id='registration-form-email-confirm']", "xpath:attributes"],
+        ["xpath=//div[@id='maincontent']/div/div/div/div[2]/form/div[11]/input", "xpath:idRelative"],
+        ["xpath=//div[11]/input", "xpath:position"]
+      ],
+      "value": "isaacsamuelsilva@msds.com.br"
+    }, {
+      "id": "d9e830bd-8d48-4ea2-b5c5-174a62ac4511",
+      "comment": "",
+      "command": "click",
+      "target": "id=registration-form-password",
+      "targets": [
+        ["id=registration-form-password", "id"],
+        ["name=dwfrm_profile_login_password", "name"],
+        ["css=#registration-form-password", "css:finder"],
+        ["xpath=//input[@id='registration-form-password']", "xpath:attributes"],
+        ["xpath=//div[@id='maincontent']/div/div/div/div[2]/form/div[12]/input", "xpath:idRelative"],
+        ["xpath=//div[12]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "bc118bea-fd9d-439c-8b38-4ad0b2efc7e7",
+      "comment": "",
+      "command": "type",
+      "target": "id=registration-form-password",
+      "targets": [
+        ["id=registration-form-password", "id"],
+        ["name=dwfrm_profile_login_password", "name"],
+        ["css=#registration-form-password", "css:finder"],
+        ["xpath=//input[@id='registration-form-password']", "xpath:attributes"],
+        ["xpath=//div[@id='maincontent']/div/div/div/div[2]/form/div[12]/input", "xpath:idRelative"],
+        ["xpath=//div[12]/input", "xpath:position"]
+      ],
+      "value": "JqgPjqCpSQ"
+    }, {
+      "id": "80f035c4-45e7-49cd-b642-b3b656694e17",
+      "comment": "",
+      "command": "click",
+      "target": "id=registration-form-password-confirm",
+      "targets": [
+        ["id=registration-form-password-confirm", "id"],
+        ["name=dwfrm_profile_login_passwordconfirm", "name"],
+        ["css=#registration-form-password-confirm", "css:finder"],
+        ["xpath=//input[@id='registration-form-password-confirm']", "xpath:attributes"],
+        ["xpath=//div[@id='maincontent']/div/div/div/div[2]/form/div[13]/input", "xpath:idRelative"],
+        ["xpath=//div[13]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "5d1047fc-09e4-4f17-ae63-cb5085986144",
+      "comment": "",
+      "command": "type",
+      "target": "id=registration-form-password-confirm",
+      "targets": [
+        ["id=registration-form-password-confirm", "id"],
+        ["name=dwfrm_profile_login_passwordconfirm", "name"],
+        ["css=#registration-form-password-confirm", "css:finder"],
+        ["xpath=//input[@id='registration-form-password-confirm']", "xpath:attributes"],
+        ["xpath=//div[@id='maincontent']/div/div/div/div[2]/form/div[13]/input", "xpath:idRelative"],
+        ["xpath=//div[13]/input", "xpath:position"]
+      ],
+      "value": "JqgPjqCpSQ"
+    }, {
+      "id": "e088357e-1d81-407c-8f56-464239dde428",
+      "comment": "",
+      "command": "click",
+      "target": "css=.custom-control-label",
+      "targets": [
+        ["css=.custom-control-label", "css:finder"],
+        ["xpath=//div[@id='maincontent']/div/div/div/div[2]/form/div[14]/label", "xpath:idRelative"],
+        ["xpath=//div[14]/label", "xpath:position"],
+        ["xpath=//label[contains(.,'Li e aceito os Termos e Condições, as Políticas de Privacidade e o Regulamento do Programa de Fidelidade Cacau Lovers.')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "c951354b-7875-4cb3-a323-9d6b0711180e",
+    "name": "Compra Produto",
+    "commands": [{
+      "id": "19b642cf-4ffd-4936-b740-e9ed721bd619",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "2b6ebd12-9fbf-4711-8b91-2cf4edeb004a",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1366x720",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "f0ae415a-03fa-457b-aa2e-3ff4de36c636",
+      "comment": "",
+      "command": "mouseOver",
+      "target": "id=cat_005",
+      "targets": [
+        ["id=cat_005", "id"],
+        ["linkText=Moda", "linkText"],
+        ["css=.nav-item > #cat_005", "css:finder"],
+        ["xpath=//a[@id='cat_005']", "xpath:attributes"],
+        ["xpath=//div[@id='sg-navbar-collapse']/nav/div/ul/li[4]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/categoria/moda')]", "xpath:href"],
+        ["xpath=//nav/div/ul/li[4]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Moda')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "f4415809-8614-4caf-ad9c-32c3395082c2",
+      "comment": "",
+      "command": "mouseOver",
+      "target": "id=cat_003",
+      "targets": [
+        ["id=cat_003", "id"],
+        ["linkText=Cestas e Presentes", "linkText"],
+        ["css=.nav-item > #cat_003", "css:finder"],
+        ["xpath=//a[@id='cat_003']", "xpath:attributes"],
+        ["xpath=//div[@id='sg-navbar-collapse']/nav/div/ul/li[3]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/categoria/cestas-e-presentes')]", "xpath:href"],
+        ["xpath=//nav/div/ul/li[3]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Cestas e Presentes')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "1cc4c8e6-f195-4192-8a2e-11355641fe2b",
+      "comment": "",
+      "command": "mouseOut",
+      "target": "id=cat_003",
+      "targets": [
+        ["id=cat_003", "id"],
+        ["linkText=Cestas e Presentes", "linkText"],
+        ["css=.nav-item > #cat_003", "css:finder"],
+        ["xpath=//a[@id='cat_003']", "xpath:attributes"],
+        ["xpath=//div[@id='sg-navbar-collapse']/nav/div/ul/li[3]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/categoria/cestas-e-presentes')]", "xpath:href"],
+        ["xpath=//nav/div/ul/li[3]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Cestas e Presentes')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "fbda6f80-84fd-4903-a3aa-e4910e22be59",
+      "comment": "",
+      "command": "click",
+      "target": "name=q",
+      "targets": [
+        ["name=q", "name"],
+        ["css=.search-field", "css:finder"],
+        ["xpath=//input[@name='q']", "xpath:attributes"],
+        ["xpath=//form/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "69331d1d-59f8-48da-b48c-27099561e521",
+      "comment": "",
+      "command": "click",
+      "target": "css=li:nth-child(1) > a > .tag-popular > span",
+      "targets": [
+        ["css=li:nth-child(1) > a > .tag-popular > span", "css:finder"],
+        ["xpath=//ul[@id='search-results']/li/ul/li/a/div/span", "xpath:idRelative"],
+        ["xpath=//div/span", "xpath:position"],
+        ["xpath=//span[contains(.,'ovo de páscoa')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "79460d1f-333f-47b7-a8bf-f48783a05eac",
+      "comment": "",
+      "command": "mouseOver",
+      "target": "id=cat_003",
+      "targets": [
+        ["id=cat_003", "id"],
+        ["linkText=Cestas e Presentes", "linkText"],
+        ["css=.nav-item > #cat_003", "css:finder"],
+        ["xpath=//a[@id='cat_003']", "xpath:attributes"],
+        ["xpath=//div[@id='sg-navbar-collapse']/nav/div/ul/li[3]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/categoria/cestas-e-presentes')]", "xpath:href"],
+        ["xpath=//nav/div/ul/li[3]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Cestas e Presentes')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "186fea46-ecee-4ab9-9acf-9b67c868044f",
+      "comment": "",
+      "command": "mouseOut",
+      "target": "id=cat_003",
+      "targets": [
+        ["id=cat_003", "id"],
+        ["linkText=Cestas e Presentes", "linkText"],
+        ["css=.nav-item > #cat_003", "css:finder"],
+        ["xpath=//a[@id='cat_003']", "xpath:attributes"],
+        ["xpath=//div[@id='sg-navbar-collapse']/nav/div/ul/li[3]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/categoria/cestas-e-presentes')]", "xpath:href"],
+        ["xpath=//nav/div/ul/li[3]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Cestas e Presentes')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "30690c07-4b32-48b1-89f7-5d9ed0c0b15f",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Caixa de Bombons Mini Show laCreme ao Leite 108g",
+      "targets": [
+        ["linkText=Caixa de Bombons Mini Show laCreme ao Leite 108g", "linkText"],
+        ["css=.product-grid--item:nth-child(6) .link", "css:finder"],
+        ["xpath=//a[contains(text(),'Caixa de Bombons Mini Show laCreme ao Leite 108g')]", "xpath:link"],
+        ["xpath=(//a[@onclick='pushSelectItem({\"event\":\"select_item\",\"ecommerce\":{\"items\":[{\"item_id\":\"1002628\",\"item_name\":\"Caixa de Bombons Mini Show laCreme ao Leite 108g\",\"item_variant\":\"standard\",\"price\":39.99,\"item_category\":\"Cestas e Presentes\",\"item_category1\":\"Presentes\"}]}})'])[2]", "xpath:attributes"],
+        ["xpath=//div[@id='product-search-results']/div[2]/div[2]/div[2]/div[6]/div/div/div/div[2]/div[2]/a", "xpath:idRelative"],
+        ["xpath=(//a[contains(@href, '/produto/caixa-de-bombons-mini-show-lacreme-ao-leite-108g-1002628.html')])[2]", "xpath:href"],
+        ["xpath=//div[6]/div/div/div/div[2]/div[2]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Caixa de Bombons Mini Show laCreme ao Leite 108g')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "84ad4fdd-7e40-4aa4-94dc-b3e0195e3943",
+      "comment": "",
+      "command": "click",
+      "target": "css=.text-add-to-cart",
+      "targets": [
+        ["css=.text-add-to-cart", "css:finder"],
+        ["xpath=//div[@id='maincontent']/div/div/div/div[2]/div[2]/div[6]/div[2]/div/div/button/span", "xpath:idRelative"],
+        ["xpath=//div[6]/div[2]/div/div/button/span", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "fd262c99-2d59-4c1f-9347-4fd7dc4477a5",
+      "comment": "",
+      "command": "mouseOver",
+      "target": "css=.text-add-to-cart",
+      "targets": [
+        ["css=.text-add-to-cart", "css:finder"],
+        ["xpath=//div[@id='maincontent']/div/div/div/div[2]/div[2]/div[6]/div[2]/div/div/button/span", "xpath:idRelative"],
+        ["xpath=//div[6]/div[2]/div/div/button/span", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "ac7ae270-824b-4f48-86e0-44738a75595d",
+      "comment": "",
+      "command": "mouseOut",
+      "target": "css=.text-add-to-cart",
+      "targets": [
+        ["css=.text-add-to-cart", "css:finder"],
+        ["xpath=//div[@id='maincontent']/div/div/div/div[2]/div[2]/div[6]/div[2]/div/div/button/span", "xpath:idRelative"],
+        ["xpath=//div[6]/div[2]/div/div/button/span", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "415696cf-af82-470d-a446-d18ece566d2d",
+      "comment": "",
+      "command": "click",
+      "target": "css=.it__minicart .minicart-icon",
+      "targets": [
+        ["css=.it__minicart .minicart-icon", "css:finder"],
+        ["xpath=//div[2]/div/div/a/i", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "cc071772-d9aa-4507-aae6-b0bc28a05461",
+      "comment": "",
+      "command": "click",
+      "target": "css=.clear-cart-btn",
+      "targets": [
+        ["css=.clear-cart-btn", "css:finder"],
+        ["xpath=//div[@id='maincontent']/div/div[2]/div[4]/div/button", "xpath:idRelative"],
+        ["xpath=//div[4]/div/button", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "31e689db-4ab3-4d75-8ede-dee6bcad8676",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=SIM",
+      "targets": [
+        ["linkText=SIM", "linkText"],
+        ["css=.clear-cart-confirm", "css:finder"],
+        ["xpath=//a[contains(text(),'SIM')]", "xpath:link"],
+        ["xpath=//div[@id='clearCartModal']/div/div/div[3]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, 'javascript:void(0);')]", "xpath:href"],
+        ["xpath=//div[3]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'SIM')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "8e38c9ac-770a-4414-be63-48a3312f6584",
+      "comment": "",
+      "command": "runScript",
+      "target": "window.scrollTo(0,328)",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "ca01dd1c-00d5-4158-a552-8cc5248244fc",
+    "name": "Moda Cacau Show",
+    "commands": [{
+      "id": "99293f40-7af3-4037-8849-8d9ef08822fe",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "919f8548-3acc-463c-8f41-5322244fdd8b",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1366x720",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "11aac1eb-98b8-4ed6-9f0d-c2318b842576",
+      "comment": "",
+      "command": "mouseOver",
+      "target": "css=#cat_005 > span",
+      "targets": [
+        ["css=#cat_005 > span", "css:finder"],
+        ["xpath=//a[@id='cat_005']/span", "xpath:idRelative"],
+        ["xpath=//nav/div/ul/li[4]/a/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Moda')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "efc9198e-0c3d-4395-ba29-285c204a1fc4",
+      "comment": "",
+      "command": "click",
+      "target": "css=#cat_005 > span",
+      "targets": [
+        ["css=#cat_005 > span", "css:finder"],
+        ["xpath=//a[@id='cat_005']/span", "xpath:idRelative"],
+        ["xpath=//nav/div/ul/li[4]/a/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Moda')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "d3f10629-f6f8-4cac-af33-564a558977fe",
+      "comment": "",
+      "command": "runScript",
+      "target": "window.scrollTo(0,463)",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "4a7b84cb-86d3-465f-bf0e-42743af57ac7",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Tênis Pampili Chocomonstros Tween Vermelho",
+      "targets": [
+        ["linkText=Tênis Pampili Chocomonstros Tween Vermelho", "linkText"],
+        ["css=.product-grid--item:nth-child(2) .link", "css:finder"],
+        ["xpath=//a[contains(text(),'Tênis Pampili Chocomonstros Tween Vermelho')]", "xpath:link"],
+        ["xpath=(//a[@onclick='pushSelectItem({\"event\":\"select_item\",\"ecommerce\":{\"items\":[{\"item_id\":\"2005297\",\"item_name\":\"Tênis Pampili Chocomonstros Tween Vermelho\",\"item_variant\":\"variant\",\"price\":269.9,\"item_category\":\"Moda\",\"item_category1\":\"Tênis\"}]}})'])[2]", "xpath:attributes"],
+        ["xpath=//div[@id='product-search-results']/div[2]/div[2]/div[4]/div[2]/div/div/div/div[2]/div[2]/a", "xpath:idRelative"],
+        ["xpath=(//a[contains(@href, '/produto/t%C3%AAnis-pampili-chocomonstros-tween-vermelho-2005297.html')])[2]", "xpath:href"],
+        ["xpath=//div[2]/div/div/div/div[2]/div[2]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Tênis Pampili Chocomonstros Tween Vermelho')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "892683b5-db8c-4dd5-a197-cbbcea16af22",
+      "comment": "",
+      "command": "mouseOver",
+      "target": "css=.text-add-to-cart",
+      "targets": [
+        ["css=.text-add-to-cart", "css:finder"],
+        ["xpath=//div[@id='maincontent']/div/div/div/div[2]/div[2]/div[7]/div[2]/div/div/button/span", "xpath:idRelative"],
+        ["xpath=//div[7]/div[2]/div/div/button/span", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "61dba225-8b97-406f-99aa-eaf8f201cbd0",
+      "comment": "",
+      "command": "click",
+      "target": "css=.text-add-to-cart",
+      "targets": [
+        ["css=.text-add-to-cart", "css:finder"],
+        ["xpath=//div[@id='maincontent']/div/div/div/div[2]/div[2]/div[7]/div[2]/div/div/button/span", "xpath:idRelative"],
+        ["xpath=//div[7]/div[2]/div/div/button/span", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "13656e68-10a8-4c7c-a7e2-fd8ff2d07983",
+      "comment": "",
+      "command": "mouseOut",
+      "target": "css=.text-add-to-cart",
+      "targets": [
+        ["css=.text-add-to-cart", "css:finder"],
+        ["xpath=//div[@id='maincontent']/div/div/div/div[2]/div[2]/div[7]/div[2]/div/div/button/span", "xpath:idRelative"],
+        ["xpath=//div[7]/div[2]/div/div/button/span", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "4f5d0cca-6e81-4c23-8363-857d77dd003f",
+      "comment": "",
+      "command": "click",
+      "target": "css=.it__minicart .minicart-quantity",
+      "targets": [
+        ["css=.it__minicart .minicart-quantity", "css:finder"],
+        ["xpath=//div[2]/div/div/a/span", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "13eb3183-724e-42a3-a9b9-60c220ede5ec",
+      "comment": "",
+      "command": "mouseOver",
+      "target": "css=.btn-menu-text:nth-child(1)",
+      "targets": [
+        ["css=.btn-menu-text:nth-child(1)", "css:finder"],
+        ["xpath=//div[@id='sg-navbar-collapse']/nav/div/ul/li[5]/div/a/span", "xpath:idRelative"],
+        ["xpath=//li[5]/div/a/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Dia dos Namorados')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "ae9cd57b-1092-482f-8c02-9f3a48d39448",
+      "comment": "",
+      "command": "runScript",
+      "target": "window.scrollTo(0,6)",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "e3d2bac1-e9ec-44c9-b67a-9b392d8f372c",
+      "comment": "",
+      "command": "click",
+      "target": "css=.clear-cart-btn",
+      "targets": [
+        ["css=.clear-cart-btn", "css:finder"],
+        ["xpath=//div[@id='maincontent']/div/div[2]/div[4]/div/button", "xpath:idRelative"],
+        ["xpath=//div[4]/div/button", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "cca5f498-474d-4f8d-a65b-a226d60b4376",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=SIM",
+      "targets": [
+        ["linkText=SIM", "linkText"],
+        ["css=.clear-cart-confirm", "css:finder"],
+        ["xpath=//a[contains(text(),'SIM')]", "xpath:link"],
+        ["xpath=//div[@id='clearCartModal']/div/div/div[3]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, 'javascript:void(0);')]", "xpath:href"],
+        ["xpath=//div[3]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'SIM')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "4bc58ea4-9559-4d76-957e-03977eaa8a27",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["6d7f2740-7203-481e-aedc-534ef527a366"]
+  }],
+  "urls": ["https://www.cacaushow.com.br/"],
+  "plugins": []
+}
