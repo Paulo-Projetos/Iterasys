@@ -1,87 +1,62 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.2.2 (Python 3.13.1 on win32)" generated="2025-05-28T10:17:11.060859" rpa="false" schemaversion="5">
+<robot generator="Robot 7.2.2 (Python 3.13.1 on win32)" generated="2025-05-28T16:58:10.576151" rpa="false" schemaversion="5">
 <suite id="s1" name="Test Pet" source="c:\Iterasys\PetstoreRobot140\__tests__\test_pet.robot">
-<test id="s1-t1" name="Post pet" line="16">
-<kw name="Create Dictionary" owner="BuiltIn">
-<msg time="2025-05-28T10:17:11.547326" level="INFO">${body} = {'id': '184409098', 'category': {'id': '1', 'name': 'cachorro'}, 'name': 'Snoopy', 'photoUrls': [], 'tags': [{'id': '1', 'name': 'vacinado'}], 'status': 'available'}</msg>
-<var>${body}</var>
-<arg>id=${id}</arg>
-<arg>category=${category}</arg>
-<arg>name=${name}</arg>
-<arg>photoUrls=${photoUrls}</arg>
-<arg>tags=${tags}</arg>
-<arg>status=${status}</arg>
-<doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<status status="PASS" start="2025-05-28T10:17:11.546639" elapsed="0.003892"/>
-</kw>
-<kw name="POST" owner="RequestsLibrary">
-<msg time="2025-05-28T10:17:12.208462" level="INFO">POST Request : url=https://petstore.swagger.io/v2/pet 
- path_url=/v2/pet 
- headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '165', 'Content-Type': 'application/json'} 
- body=b'{"id": "184409098", "category": {"id": "1", "name": "cachorro"}, "name": "Snoopy", "photoUrls": [], "tags": [{"id": "1", "name": "vacinado"}], "status": "available"}' 
+<test id="s1-t1" name="Delete pet" line="58">
+<kw name="DELETE" owner="RequestsLibrary">
+<msg time="2025-05-28T16:58:11.920076" level="INFO">DELETE Request : url=https://petstore.swagger.io/v2/pet/184409098 
+ path_url=/v2/pet/184409098 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '0'} 
+ body=None 
  </msg>
-<msg time="2025-05-28T10:17:12.208782" level="INFO">POST Response : url=https://petstore.swagger.io/v2/pet 
+<msg time="2025-05-28T16:58:11.924755" level="INFO">DELETE Response : url=https://petstore.swagger.io/v2/pet/184409098 
  status=200, reason=OK 
- headers={'Date': 'Wed, 28 May 2025 13:17:13 GMT', 'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Methods': 'GET, POST, DELETE, PUT', 'Access-Control-Allow-Headers': 'Content-Type, api_key, Authorization', 'Server': 'Jetty(9.2.9.v20150224)'} 
- body={"id":184409098,"category":{"id":1,"name":"cachorro"},"name":"Snoopy","photoUrls":[],"tags":[{"id":1,"name":"vacinado"}],"status":"available"} 
+ headers={'Date': 'Wed, 28 May 2025 19:58:13 GMT', 'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Methods': 'GET, POST, DELETE, PUT', 'Access-Control-Allow-Headers': 'Content-Type, api_key, Authorization', 'Server': 'Jetty(9.2.9.v20150224)'} 
+ body={"code":200,"type":"unknown","message":"184409098"} 
  </msg>
-<msg time="2025-05-28T10:17:12.209033" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<msg time="2025-05-28T16:58:11.925841" level="INFO">${response} = &lt;Response [200]&gt;</msg>
 <var>${response}</var>
-<arg>url=${url}</arg>
-<arg>json=${body}</arg>
-<doc>Sends a POST request.</doc>
-<status status="PASS" start="2025-05-28T10:17:11.552069" elapsed="0.657081"/>
+<arg>${{$url + '/' + $id}}</arg>
+<doc>Sends a DELETE request.</doc>
+<status status="PASS" start="2025-05-28T16:58:11.247340" elapsed="0.679011"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2025-05-28T10:17:12.217784" level="INFO">${response_body} = {'id': 184409098, 'category': {'id': 1, 'name': 'cachorro'}, 'name': 'Snoopy', 'photoUrls': [], 'tags': [{'id': 1, 'name': 'vacinado'}], 'status': 'available'}</msg>
+<msg time="2025-05-28T16:58:11.933922" level="INFO">${response_body} = {'code': 200, 'type': 'unknown', 'message': '184409098'}</msg>
 <var>${response_body}</var>
 <arg>${response.json()}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2025-05-28T10:17:12.216503" elapsed="0.001576"/>
+<status status="PASS" start="2025-05-28T16:58:11.931826" elapsed="0.002527"/>
 </kw>
 <kw name="Log To Console" owner="BuiltIn">
 <arg>${response_body}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-05-28T10:17:12.221543" elapsed="0.001934"/>
+<status status="PASS" start="2025-05-28T16:58:11.942496" elapsed="0.005211"/>
 </kw>
 <kw name="Status Should Be" owner="RequestsLibrary">
 <arg>200</arg>
 <doc>Fails if response status code is different than the expected.</doc>
-<status status="PASS" start="2025-05-28T10:17:12.225203" elapsed="0.000472"/>
+<status status="PASS" start="2025-05-28T16:58:11.949952" elapsed="0.000589"/>
 </kw>
 <kw name="Should Be Equal" owner="BuiltIn">
-<arg>${response_body}[id]</arg>
-<arg>${{int($id)}}</arg>
+<arg>${response_body}[code]</arg>
+<arg>${{int(200)}}</arg>
 <doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" start="2025-05-28T10:17:12.228642" elapsed="0.001326"/>
+<status status="PASS" start="2025-05-28T16:58:11.951105" elapsed="0.002172"/>
 </kw>
 <kw name="Should Be Equal" owner="BuiltIn">
-<arg>${response_body}[name]</arg>
-<arg>${name}</arg>
+<arg>${response_body}[type]</arg>
+<arg>unknown</arg>
 <doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" start="2025-05-28T10:17:12.231842" elapsed="0.001077"/>
+<status status="PASS" start="2025-05-28T16:58:11.956555" elapsed="0.000521"/>
 </kw>
 <kw name="Should Be Equal" owner="BuiltIn">
-<arg>${response_body}[tags][0][id]</arg>
-<arg>${{int(${tag}[id])}}</arg>
+<arg>${response_body}[message]</arg>
+<arg>${id}</arg>
 <doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" start="2025-05-28T10:17:12.237474" elapsed="0.001195"/>
+<status status="PASS" start="2025-05-28T16:58:11.965922" elapsed="0.000696"/>
 </kw>
-<kw name="Should Be Equal" owner="BuiltIn">
-<arg>${response_body}[tags][0][name]</arg>
-<arg>${tag}[name]</arg>
-<doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" start="2025-05-28T10:17:12.239757" elapsed="0.000597"/>
-</kw>
-<kw name="Should Be Equal" owner="BuiltIn">
-<arg>${response_body}[status]</arg>
-<arg>${status}</arg>
-<doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" start="2025-05-28T10:17:12.249496" elapsed="0.000576"/>
-</kw>
-<status status="PASS" start="2025-05-28T10:17:11.544978" elapsed="0.706681"/>
+<status status="PASS" start="2025-05-28T16:58:11.245091" elapsed="0.731480"/>
 </test>
-<status status="PASS" start="2025-05-28T10:17:11.064769" elapsed="1.191088"/>
+<status status="PASS" start="2025-05-28T16:58:10.583284" elapsed="1.400292"/>
 </suite>
 <statistics>
 <total>
