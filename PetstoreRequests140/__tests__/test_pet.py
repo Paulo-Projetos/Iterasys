@@ -1,7 +1,9 @@
 # 1- Bibliotecas - Framework
 import json
 import pytest
-import requests
+import requests                      # framework de testes API
+
+from utils.utils import ler_csv      # import da funcionalidade do arquivo utils no (CSV)
 
 # 2- Classe (opicional no Python, em muitos casos)
 
@@ -90,6 +92,51 @@ def test_delete_pet():                                          # Apos deletado 
     assert response_body['code'] == 200
     assert response_body['type'] == 'unknown'
     assert response_body['message'] == str(pet_id)     
+    
+# Efetuando teste dinamico utilizando um arquivo CSV.
+@pytest.mark.parametrize('pet_id,category_id,category_name,pet_name,tags,status',
+                        ler_csv('./fixtures/csv/pets.csv'))
+def test_post_pet_dinamico(pet_id,category_id,category_name,pet_name,tags,status):
+    
+    # Configura
+    pet = {}                                    # cria uma lista vazia chamada pet
+    pet['id'] = int(pet_id)
+    pet['category'] = {}                        # item mãe
+    pet['category']['id'] = int(category_id)    # primeiro filho
+    pet['category']['name'] = category_name     # segundo filho
+    pet['name'] = pet_name
+    pet['photoUrls'] = []
+    pet['photoUrls'].append('')                 # lê como campo vazio
+    pet['tags'] = []
+    
+    tags = tags.split(';')                      # usado para ler dados conjuntos desse item separados por (;) conformr no arquivo CSV
+    for tag in tags:                            # repeti a leitura de dados dentro de uma lista
+        tag = tag.split('-')
+        tag_formatada = {}
+        tag_formatada['id'] = int(tag[0])
+        tag_formatada['name'] = tag[1]
+        pet['tags'].append(tag_formatada)       # local onde é armazenado os dados, cada vez que é executado um item da lista
+    
+    pet['status'] = status
+    
+    pet = json.dumps(obj=pet, indent=4)         #  carrega e adequa a estrutura de linhas e colunas do arquivo json      
+    print('\n' + pet)                           # visualiza como ficou a estrutura json criado dinamicamente
+    
+    #Executa
+    response = requests.post(
+        url = url,
+        headers = headers,
+        data = pet,
+        timeout = 5
+    )
+    
+    # Compara
+    response_body = response.json()
+    
+    assert response.status_code == 200
+    assert response_body['id'] == int(pet_id)
+    assert response_body['name']  == pet_name
+    assert response_body['status']  == status
     
     
     
