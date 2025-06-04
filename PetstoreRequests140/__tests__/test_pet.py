@@ -29,7 +29,7 @@ def test_post_pet():                                # Função realiza o teste a
         timeout = 5                         # Tempo limite da transmissão, em segundos
     )
 # Valida
-    response_body = response.json()        # Compara a resposta de retorno da variavel (body) do Swagger, com os atributos já definidos
+    response_body = response.json()        # Resposta de retorno da variavel (body) do Swagger, com os atributos de retorno em formado json.
     
     assert response.status_code == 200      # Resposta padrão de que a mensagem de eco ocorreu dentro dos padroes
     assert response_body['id'] == pet_id
@@ -101,13 +101,13 @@ def test_post_pet_dinamico(pet_id,category_id,category_name,pet_name,tags,status
     # Configura
     pet = {}                                    # cria uma lista vazia chamada pet
     pet['id'] = int(pet_id)
-    pet['category'] = {}                        # item mãe
+    pet['category'] = {}                        # item mãe - lista principal contendo IDs e Names
     pet['category']['id'] = int(category_id)    # primeiro filho
     pet['category']['name'] = category_name     # segundo filho
     pet['name'] = pet_name
-    pet['photoUrls'] = []
+    pet['photoUrls'] = []                       # Lista contendo a possibilidades de varios fotos
     pet['photoUrls'].append('')                 # lê como campo vazio
-    pet['tags'] = []
+    pet['tags'] = []                            # Lista contendo a possibilidades de varios tags
     
     tags = tags.split(';')                      # usado para ler dados conjuntos desse item separados por (;) conformr no arquivo CSV
     for tag in tags:                            # repeti a leitura de dados dentro de uma lista
