@@ -7,20 +7,37 @@
 
 *** Settings ***
 Library    RequestsLibrary
-Resource    ../../resources/common.resource
+Resource    ../../resources/common.resource  # Endereço de onde esta armazenado o arquivo common.resource a ser utilizado na execução do teste.
 Variables    ../../resources/variables.py
-Suite Setup    Create Token    ${url}
+Suite Setup    Create Token    ${url}        # Define o que deve ser executado (função: Create Token) antes de todos os testes da suite começarem.
 
 *** Test Cases ***
-Create Booking
-    ${headers}    Create Dictionary    content_type=${content_type}
+Create Booking            # Função Criar Reserva, utilizando o Tokem que foi gerado anteriormente.
+    ${headers}    Create Dictionary    Content-Type=${content_type}    # Dicionário que define cabeçalho a ser chamado na requisição.
     ${body}    Evaluate    json.loads(open('./RobotBooker140/fixtures/json/booking1.json').read())
 
-    ${response}    POST    url=${url}/Booking    json=${body}    headers=${headers}
+    ${response}    POST    url=${url}/booking    json=${body}    headers=${headers}
     
-    ${response_body}    Set Variable    ${response.json()}
+    ${response_body}    Set Variable    ${response.json()}        # Variavel extrai e armazena resposta no formato Json.
     Log To Console    ${response_body}
 
     Status Should Be    200
-    Should Be Equal    ${response_body}[booking][firstname]    Pool
+    Should Be Equal    ${response_body}[booking][firstname]    ${firstname}        # Estrutura (pai, filho,..) definida do body de resposta do site na função Create Booking.
     Should Be Equal    ${response_body}[booking][bookingdates][checkin]    2024-04-27
+
+Get Booking            # Consulta da reserva
+    Get Booking Id    ${url}    ${firstname}    ${lastname}                # Os registros já existem no common.resource e variables.py
+    
+    ${response}    GET    url=${url}/booking/${booking_id}        # Consulta e armazena registro da reserva especifica na variavel response.
+
+    ${response_body}    Set Variable    ${response.json()}        # Extrai os dados da variavel response em Json e armazena na variavel response_body.
+    Log To Console    ${response_body}
+
+    Should Be Equal    ${response_body}[firstname]                ${firstname}
+    Should Be Equal    ${response_body}[lastname]                ${lastname}
+    Should Be Equal    ${response_body}[totalprice]              ${totalprice}
+    Should Be Equal    ${response_body}[depositpaid]             ${depositpaid}
+    Should Be Equal    ${response_body}[bookingdates][checkin]    ${bookingdates}[checkin]
+    Should Be Equal    ${response_body}[bookingdates][checkout]    ${bookingdates}[checkout]
+    Should Be Equal    ${response_body}[additionalneeds]           ${additionalneeds}
+
