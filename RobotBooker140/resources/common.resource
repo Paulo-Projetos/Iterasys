@@ -14,7 +14,7 @@ Create Token                # Esse titulo poderia estar em portugues (Criar Toke
     Set Suite Variable    ${Token}                           # Torna a variavel Token visivel a todas as suítes de testes, permitindo ser usuado nos testes enquando o teste estiver sendo executado.
     Log To Console    ${Token}                               # Escreve o token no console.
 
-Get Booking Id                                                # Serve para extrair o ID existe, a partir do nome e sobrenome da reserva, a serem utilizados na execução do teste.
+Get Booking Id                                                # Serve para extrair o ID existente, a partir do nome e sobrenome da reserva, a serem utilizados na execução do teste.
     [Arguments]    ${url}    ${firstname}    ${lastname}      # Poderia incluir também ${checkin} e ${checkout} para melhorar o filtro de busca.
     
     ${response}    GET    url=${url}/booking?firstname=${firstname}&lastname=${lastname}    # Efetua uma requisição GET para a API /booking, com os filtros por nome e sobrenome.
@@ -26,4 +26,3 @@ Get Booking Id                                                # Serve para extra
 
     ${booking_id}    Set Variable    ${response_body}[0][bookingid]    # Extrai o primeiro bookingid da lista de resultados e armazena na variavel booking_id.
     Set Suite Variable    ${booking_id}                                # Torna o booking_id acessivel em toda a suíte de testes.
-
