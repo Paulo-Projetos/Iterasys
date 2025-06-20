@@ -22,13 +22,13 @@ Create Booking            # Função Criar Reserva, utilizando o Tokem que foi g
     Log To Console    ${response_body}
 
     Status Should Be    200
-    Should Be Equal    ${response_body}[booking][firstname]    ${firstname}        # Estrutura (pai, filho,..) definida do body de resposta do site na função Create Booking.
-    Should Be Equal    ${response_body}[booking][lastname]                ${lastname}
-    Should Be Equal    ${response_body}[booking][totalprice]              ${totalprice}
-    Should Be Equal    ${response_body}[booking][depositpaid]             ${depositpaid}
-    Should Be Equal    ${response_body}[booking][bookingdates][checkin]    ${bookingdates}[checkin]
-    Should Be Equal    ${response_body}[booking][bookingdates][checkout]    ${bookingdates}[checkout]
-    Should Be Equal    ${response_body}[booking][additionalneeds]           ${additionalneeds}
+    Should Be Equal    ${response_body}[booking][firstname]                   ${firstname}        # Estrutura (pai, filho,..) definida do body de resposta do site na função Create Booking.
+    Should Be Equal    ${response_body}[booking][lastname]                    ${lastname}
+    Should Be Equal    ${response_body}[booking][totalprice]                  ${totalprice}
+    Should Be Equal    ${response_body}[booking][depositpaid]                 ${depositpaid}
+    Should Be Equal    ${response_body}[booking][bookingdates][checkin]       ${bookingdates}[checkin]
+    Should Be Equal    ${response_body}[booking][bookingdates][checkout]      ${bookingdates}[checkout]
+    Should Be Equal    ${response_body}[booking][additionalneeds]             ${additionalneeds}
 
 Get Booking            # Consulta da reserva através de um ID
     Get Booking Id    ${url}    ${firstname}    ${lastname}       # Os registros já existem no common.resource e variables.py
@@ -39,13 +39,13 @@ Get Booking            # Consulta da reserva através de um ID
     Log To Console    ${response_body}
 
     Status Should Be    200
-    Should Be Equal    ${response_body}[firstname]                ${firstname}
-    Should Be Equal    ${response_body}[lastname]                ${lastname}
-    Should Be Equal    ${response_body}[totalprice]              ${totalprice}
-    Should Be Equal    ${response_body}[depositpaid]             ${depositpaid}
-    Should Be Equal    ${response_body}[bookingdates][checkin]    ${bookingdates}[checkin]
-    Should Be Equal    ${response_body}[bookingdates][checkout]    ${bookingdates}[checkout]
-    Should Be Equal    ${response_body}[additionalneeds]           ${additionalneeds}
+    Should Be Equal    ${response_body}[firstname]                   ${firstname}
+    Should Be Equal    ${response_body}[lastname]                    ${lastname}
+    Should Be Equal    ${response_body}[totalprice]                  ${totalprice}
+    Should Be Equal    ${response_body}[depositpaid]                 ${depositpaid}
+    Should Be Equal    ${response_body}[bookingdates][checkin]       ${bookingdates}[checkin]
+    Should Be Equal    ${response_body}[bookingdates][checkout]      ${bookingdates}[checkout]
+    Should Be Equal    ${response_body}[additionalneeds]             ${additionalneeds}
 
 Update Booking                        # Função (PUT) utilizado para alteração de dados nos registros
     Get Booking Id    ${url}    ${firstname}    ${lastname}
