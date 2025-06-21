@@ -47,9 +47,9 @@ Get Booking            # Consulta da reserva através de um ID
     Should Be Equal    ${response_body}[bookingdates][checkout]      ${bookingdates}[checkout]
     Should Be Equal    ${response_body}[additionalneeds]             ${additionalneeds}
 
-Update Booking                        # Função (PUT) utilizado para alteração de dados nos registros
-    Get Booking Id    ${url}    ${firstname}    ${lastname}
-    ${headers}    Create Dictionary    Concontent-Type=${content_type}    Cookie=token=${Token}    # Necessário o comando Cookie para fazer executar o token antes do PUT.
+Update Booking                        # Função (PUT) utilizado para alteraçãoatualização de dados em uma reserva. Fluxo: Executar o Token e fazer pesquisa do registro com ID (Bookingid), para então executar o PUT.
+    Get Booking Id    ${url}    ${firstname}    ${lastname}    # Executa um GET para localizar o registro e extrai 0 ID de localização.
+    ${headers}    Create Dictionary    Content-Type=${content_type}    Cookie=token=${Token}    # Necessário o comando Cookie para fazer executar o token antes do PUT.
 
     ${body}    Create Dictionary    firstname=${firstname}    lastname=${lastname}    totalprice=90    depositpaid=True    bookingdates=${bookingdates}    additionalneeds=${additionalneeds}
 
