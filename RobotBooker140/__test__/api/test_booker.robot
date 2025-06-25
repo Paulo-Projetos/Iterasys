@@ -9,7 +9,7 @@
 Library    RequestsLibrary
 Resource    ../../resources/common.resource  # Endereço de onde esta armazenado o arquivo common.resource a ser utilizado na execução do teste.
 Variables    ../../resources/variables.py
-Suite Setup    Create Token    ${url}        # Define o que deve ser executado (função: Create Token) antes de todos os testes da suite começarem.
+Suite Setup    Create Token    ${url}        # Define comando a ser executado automaticamente antes de cada caso de teste.
 
 *** Test Cases ***
 Create Booking            # Função Criar Reserva, utilizando o Tokem que foi gerado anteriormente.
@@ -47,7 +47,7 @@ Get Booking            # Consulta da reserva através de um ID
     Should Be Equal    ${response_body}[bookingdates][checkout]      ${bookingdates}[checkout]
     Should Be Equal    ${response_body}[additionalneeds]             ${additionalneeds}
 
-Update Booking                        # Função (PUT) utilizado para alteraçãoatualização de dados em uma reserva. Fluxo: Executar o Token e fazer pesquisa do registro com ID (Bookingid), para então executar o PUT.
+Update Booking                        # Função (PUT) utilizado para alteração e atualização de dados em uma reserva. Fluxo: Executar o Token e fazer pesquisa do registro com ID (Bookingid), para então executar o PUT.
     Get Booking Id    ${url}    ${firstname}    ${lastname}    # Executa um GET para localizar o registro e extrai 0 ID de localização.
     ${headers}    Create Dictionary    Content-Type=${content_type}    Cookie=token=${Token}    # Necessário o comando Cookie para fazer executar o token antes do PUT.
 
@@ -66,4 +66,32 @@ Update Booking                        # Função (PUT) utilizado para alteraçã
     Should Be Equal    ${response_body}[bookingdates][checkin]       ${bookingdates}[checkin]
     Should Be Equal    ${response_body}[bookingdates][checkout]      ${bookingdates}[checkout]
     Should Be Equal    ${response_body}[additionalneeds]             ${additionalneeds}
+
+Partial Update Booking                    #Função (PATCH) utilizado para alteração ou atualização de um ou mais itens predefinidos em uma reserva.
+    Get Booking Id    ${url}    ${firstname}    ${lastname}
+    ${headers}    Create Dictionary    Cookie=token=${Token}    Content-Type=${content_type}
+
+    ${body}    Create Dictionary    additionalneeds=Dinner        # Substituição do café da manha pelo jantar.
+
+    ${response}    PATCH    url=${url}/booking/${booking_id}    headers=${headers}    json=${body}
+
+    ${response_body}    Set Variable    ${response.json()}
+    Log To Console    ${response_body}
+
+    Status Should Be    200
+    Should Be Equal    ${response_body}[firstname]                   ${firstname}
+    Should Be Equal    ${response_body}[lastname]                    ${lastname}
+    Should Be Equal    ${response_body}[totalprice]                  ${{int(90)}}               # Adimitimos que essa mudança anterior sera mantida para esse exemplo
+    Should Be Equal    ${response_body}[depositpaid]                 ${{bool(True)}}            # Adimitimos que essa mudança anterior sera mantida para esse exemplo
+    Should Be Equal    ${response_body}[bookingdates][checkin]       ${bookingdates}[checkin]
+    Should Be Equal    ${response_body}[bookingdates][checkout]      ${bookingdates}[checkout]
+    Should Be Equal    ${response_body}[additionalneeds]             Dinner                     # Nova atualização pontual.   
+
+Delete Booking
+    Get Booking Id    ${url}    ${firstname}    ${lastname}
+    ${headers}    Create Dictionary    Cookie=token=${Token}    Content-Type=${content_type} 
+
+    ${response}    DELETE    url=${url}/booking/${booking_id}    headers=${headers}
+
+    Status Should Be    201                                            # Pare esse caso, na documentação esta definido o código 201 para confirmar a exclusão do registro.
 
