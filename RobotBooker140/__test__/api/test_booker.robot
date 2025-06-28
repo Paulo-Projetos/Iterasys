@@ -12,7 +12,7 @@ Variables    ../../resources/variables.py
 Suite Setup    Create Token    ${url}        # Define comando a ser executado automaticamente antes de cada caso de teste.
 
 *** Test Cases ***
-Create Booking            # Função Criar Reserva, utilizando o Tokem que foi gerado anteriormente.
+Create Booking            # Função para criar uma Reserva através de uma massa de dados dinamica, de um arquivo Json.
     ${headers}    Create Dictionary    Content-Type=${content_type}    # Dicionário que define cabeçalho a ser chamado na requisição.
     ${body}    Evaluate    json.loads(open('./RobotBooker140/fixtures/json/booking1.json').read())
 
@@ -49,9 +49,9 @@ Get Booking            # Consulta da reserva através de um ID
 
 Update Booking                        # Função (PUT) utilizado para alteração e atualização de dados em uma reserva. Fluxo: Executar o Token e fazer pesquisa do registro com ID (Bookingid), para então executar o PUT.
     Get Booking Id    ${url}    ${firstname}    ${lastname}    # Executa um GET para localizar o registro e extrai 0 ID de localização.
-    ${headers}    Create Dictionary    Content-Type=${content_type}    Cookie=token=${Token}    # Necessário o comando Cookie para fazer executar o token antes do PUT.
+    ${headers}    Create Dictionary    Content-Type=${content_type}    Cookie=token=${Token}    # Conforme descrito na documentação e por segurança, é necessário o comando Cookie para fazer executar o token antes do PUT.
 
-    ${body}    Create Dictionary    firstname=${firstname}    lastname=${lastname}    totalprice=90    depositpaid=True    bookingdates=${bookingdates}    additionalneeds=${additionalneeds}
+    ${body}    Create Dictionary    firstname=${firstname}    lastname=${lastname}    totalprice=90    depositpaid=True    bookingdates=${bookingdates}    additionalneeds=${additionalneeds}    # Introdução de damos manual.
 
     ${response}    PUT    url=${url}/booking/${booking_id}    json=${body}    headers=${headers}
 

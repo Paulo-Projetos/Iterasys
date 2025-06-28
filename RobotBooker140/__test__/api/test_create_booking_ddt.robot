@@ -1,7 +1,7 @@
 *** Settings ***                    # Trabalhando o script com massa de testes (DataDriver)
 Library    RequestsLibrary
-Library    DataDriver    ../../fixtures/csv/bookings.csv    dialect=excel
-Library    OperatingSystem
+Library    DataDriver    ../../fixtures/csv/bookings.csv    dialect=excel        # Biblioteca exclusiva para leitura de arquivos CSV (Excel).
+Library    OperatingSystem                    # Foi criado automaticamente pelo sistema.
 Resource    ../../resources/common.resource
 Variables    ../../resources/variables.py
 Test Setup    Create Token    ${url}            # Define comando a ser executado automaticamente antes de cada caso de teste.
@@ -11,7 +11,7 @@ Test Template    Create Booking DDT             # Define que os testes desse arq
 TC001    ${firstname}    ${lastname}    ${totalprice}    ${depositpaid}    ${checkin}    ${checkout}    ${additionalneeds}    # Teste Case 01 (TC01)
 
 *** Keywords ***
-Create Booking DDT
+Create Booking DDT                # Criação de reserva a partir de uma massa de dados (data-Drive), de um arquivo CSV (Excel).
     [Arguments]    ${firstname}    ${lastname}    ${totalprice}    ${depositpaid}    ${checkin}    ${checkout}    ${additionalneeds}
     ${headers}    Create Dictionary    Content-Type=${content_type}
     ${totalprice}    Convert To Integer    ${totalprice}            # Converte para inteiro unidades a serem utilizadas no teste.
