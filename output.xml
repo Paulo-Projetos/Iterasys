@@ -1,147 +1,71 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.2.2 (Python 3.13.1 on win32)" generated="2025-06-28T12:11:19.512646" rpa="false" schemaversion="5">
-<suite id="s1" name="Test Booker" source="c:\Iterasys\RobotBooker140\__test__\api\test_booker.robot">
-<kw name="Create Token" owner="common" type="SETUP">
-<kw name="Create Dictionary" owner="BuiltIn">
-<msg time="2025-06-28T12:11:20.010516" level="INFO">${body} = {'username': 'admin', 'password': 'password123'}</msg>
-<var>${body}</var>
-<arg>username=admin</arg>
-<arg>password=password123</arg>
-<doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<status status="PASS" start="2025-06-28T12:11:20.010112" elapsed="0.003652"/>
+<robot generator="Robot 7.2.2 (Python 3.13.1 on win32)" generated="2025-07-05T11:02:40.779088" rpa="false" schemaversion="5">
+<suite id="s1" name="Selecionar Produto" source="c:\Iterasys\RobotSauceDemo140\tests\web\selecionar_produto.robot">
+<test id="s1-t1" name="Selecionar Sauce Labs Backpack Login com Enter" line="27">
+<kw name="Dado que acesso o site SauceDemo">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-07-05T11:02:41.493851" level="INFO">Opening browser 'Chrome' to base url 'https://www.saucedemo.com/'.</msg>
+<arg>url=${ur}</arg>
+<arg>browser=${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-07-05T11:02:41.493082" elapsed="4.108333"/>
 </kw>
-<kw name="POST" owner="RequestsLibrary">
-<msg time="2025-06-28T12:11:20.624702" level="INFO">POST Request : url=https://restful-booker.herokuapp.com/auth 
- path_url=/auth 
- headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '48', 'Content-Type': 'application/json'} 
- body=b'{"username": "admin", "password": "password123"}' 
- </msg>
-<msg time="2025-06-28T12:11:20.625714" level="INFO">POST Response : url=https://restful-booker.herokuapp.com/auth 
- status=200, reason=OK 
- headers={'Content-Length': '27', 'Content-Type': 'application/json; charset=utf-8', 'Date': 'Sat, 28 Jun 2025 15:11:42 GMT', 'Etag': 'W/"1b-Qa/CNIYZRoJ8u3JBjqUlui0FBGA"', 'Nel': '{"report_to":"heroku-nel","response_headers":["Via"],"max_age":3600,"success_fraction":0.01,"failure_fraction":0.1}', 'Report-To': '{"group":"heroku-nel","endpoints":[{"url":"https://nel.heroku.com/reports?s=FJTx%2FMqTrz%2Btf5u9EB%2FZUep56p0Y3mzKf6KKbqyooZQ%3D\\u0026sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add\\u0026ts=1751123502"}],"max_age":3600}', 'Reporting-Endpoints': 'heroku-nel="https://nel.heroku.com/reports?s=FJTx%2FMqTrz%2Btf5u9EB%2FZUep56p0Y3mzKf6KKbqyooZQ%3D&amp;sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&amp;ts=1751123502"', 'Server': 'Heroku', 'Via': '1.1 heroku-router', 'X-Powered-By': 'Express'} 
- body={"token":"4dd09ce4eeb5954"} 
- </msg>
-<msg time="2025-06-28T12:11:20.626362" level="INFO">${response} = &lt;Response [200]&gt;</msg>
-<var>${response}</var>
-<arg>url=${url}/auth</arg>
-<arg>json=${body}</arg>
-<doc>Sends a POST request.</doc>
-<status status="PASS" start="2025-06-28T12:11:20.014267" elapsed="0.612355"/>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-07-05T11:02:45.605794" elapsed="0.090128"/>
 </kw>
-<kw name="Status Should Be" owner="RequestsLibrary">
-<arg>200</arg>
-<doc>Fails if response status code is different than the expected.</doc>
-<status status="PASS" start="2025-06-28T12:11:20.627109" elapsed="0.000526"/>
+<kw name="Set Browser Implicit Wait" owner="SeleniumLibrary">
+<arg>10000ms</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" start="2025-07-05T11:02:45.696785" elapsed="0.029537"/>
 </kw>
-<kw name="Set Variable" owner="BuiltIn">
-<msg time="2025-06-28T12:11:20.629057" level="INFO">${Token} = 4dd09ce4eeb5954</msg>
-<var>${Token}</var>
-<arg>${response.json()}[token]</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2025-06-28T12:11:20.628041" elapsed="0.001759"/>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>css=.login_logo</arg>
+<arg>${timeout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-07-05T11:02:45.726692" elapsed="0.230208"/>
 </kw>
-<kw name="Set Suite Variable" owner="BuiltIn">
-<msg time="2025-06-28T12:11:20.630503" level="INFO">${Token} = 4dd09ce4eeb5954</msg>
-<arg>${Token}</arg>
-<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
-<status status="PASS" start="2025-06-28T12:11:20.630103" elapsed="0.000594"/>
+<status status="PASS" start="2025-07-05T11:02:41.491361" elapsed="4.465877"/>
 </kw>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>${Token}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-06-28T12:11:20.630929" elapsed="0.000560"/>
+<kw name="Quando preencho o campo usuario">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-07-05T11:02:45.980570" level="INFO">Typing text 'standar_user' into text field 'css=[data-test="username"]'.</msg>
+<arg>css=[data-test="username"]</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-05T11:02:45.979743" elapsed="0.355013"/>
 </kw>
-<arg>${url}</arg>
-<status status="PASS" start="2025-06-28T12:11:20.009506" elapsed="0.622213"/>
+<arg>standar_user</arg>
+<status status="PASS" start="2025-07-05T11:02:45.978069" elapsed="0.357030"/>
 </kw>
-<test id="s1-t1" name="Delete Booking" line="90">
-<kw name="Get Booking Id" owner="common">
-<kw name="GET" owner="RequestsLibrary">
-<msg time="2025-06-28T12:11:21.226595" level="INFO">GET Request : url=https://restful-booker.herokuapp.com/booking?firstname=Pool&amp;lastname=Brown 
- path_url=/booking?firstname=Pool&amp;lastname=Brown 
- headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
- body=None 
- </msg>
-<msg time="2025-06-28T12:11:21.226933" level="INFO">GET Response : url=https://restful-booker.herokuapp.com/booking?firstname=Pool&amp;lastname=Brown 
- status=200, reason=OK 
- headers={'Content-Length': '19', 'Content-Type': 'application/json; charset=utf-8', 'Date': 'Sat, 28 Jun 2025 15:11:42 GMT', 'Etag': 'W/"13-E8HcgFNyNCbmAMZ/1nr6JqKCvg4"', 'Nel': '{"report_to":"heroku-nel","response_headers":["Via"],"max_age":3600,"success_fraction":0.01,"failure_fraction":0.1}', 'Report-To': '{"group":"heroku-nel","endpoints":[{"url":"https://nel.heroku.com/reports?s=FJTx%2FMqTrz%2Btf5u9EB%2FZUep56p0Y3mzKf6KKbqyooZQ%3D\\u0026sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add\\u0026ts=1751123502"}],"max_age":3600}', 'Reporting-Endpoints': 'heroku-nel="https://nel.heroku.com/reports?s=FJTx%2FMqTrz%2Btf5u9EB%2FZUep56p0Y3mzKf6KKbqyooZQ%3D&amp;sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&amp;ts=1751123502"', 'Server': 'Heroku', 'Via': '1.1 heroku-router', 'X-Powered-By': 'Express'} 
- body=[{"bookingid":461}] 
- </msg>
-<msg time="2025-06-28T12:11:21.227160" level="INFO">${response} = &lt;Response [200]&gt;</msg>
-<var>${response}</var>
-<arg>url=${url}/booking?firstname=${firstname}&amp;lastname=${lastname}</arg>
-<doc>Sends a GET request.</doc>
-<status status="PASS" start="2025-06-28T12:11:20.633550" elapsed="0.593686"/>
+<kw name="E preencho o campo senha">
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2025-07-05T11:02:46.348055" level="INFO">Typing password into text field 'css=[data-test="password"]'.</msg>
+<msg time="2025-07-05T11:02:46.414111" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>css=[data-test="password"]</arg>
+<arg>${password}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-05T11:02:46.346835" elapsed="0.151239"/>
 </kw>
-<kw name="Set Variable" owner="BuiltIn">
-<msg time="2025-06-28T12:11:21.227932" level="INFO">${response_body} = [{'bookingid': 461}]</msg>
-<var>${response_body}</var>
-<arg>${response.json()}</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2025-06-28T12:11:21.227418" elapsed="0.000596"/>
+<arg>laranja</arg>
+<status status="PASS" start="2025-07-05T11:02:46.345332" elapsed="0.153010"/>
 </kw>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>${response_body}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-06-28T12:11:21.228139" elapsed="0.000352"/>
+<kw name="E pressiono a tecla Enter">
+<kw name="Press Key" owner="SeleniumLibrary">
+<arg>css=[data-test="password"]</arg>
+<arg>Enter</arg>
+<doc>Simulates user pressing key on element identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-05T11:02:46.499920" elapsed="0.095615"/>
 </kw>
-<kw name="Status Should Be" owner="RequestsLibrary">
-<arg>200</arg>
-<doc>Fails if response status code is different than the expected.</doc>
-<status status="PASS" start="2025-06-28T12:11:21.228774" elapsed="0.000253"/>
+<status status="PASS" start="2025-07-05T11:02:46.499311" elapsed="0.096760"/>
 </kw>
-<kw name="Set Variable" owner="BuiltIn">
-<msg time="2025-06-28T12:11:21.229611" level="INFO">${booking_id} = 461</msg>
-<var>${booking_id}</var>
-<arg>${response_body}[0][bookingid]</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2025-06-28T12:11:21.229240" elapsed="0.000501"/>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-07-05T11:02:46.622801" elapsed="5.537775"/>
 </kw>
-<kw name="Set Suite Variable" owner="BuiltIn">
-<msg time="2025-06-28T12:11:21.230126" level="INFO">${booking_id} = 461</msg>
-<arg>${booking_id}</arg>
-<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
-<status status="PASS" start="2025-06-28T12:11:21.229903" elapsed="0.000325"/>
-</kw>
-<arg>${url}</arg>
-<arg>${firstname}</arg>
-<arg>${lastname}</arg>
-<status status="PASS" start="2025-06-28T12:11:20.632856" elapsed="0.597474"/>
-</kw>
-<kw name="Create Dictionary" owner="BuiltIn">
-<msg time="2025-06-28T12:11:21.231497" level="INFO">${headers} = {'Cookie': 'token=4dd09ce4eeb5954', 'Content-Type': 'application/json'}</msg>
-<var>${headers}</var>
-<arg>Cookie=token=${Token}</arg>
-<arg>Content-Type=${content_type}</arg>
-<doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<status status="PASS" start="2025-06-28T12:11:21.230901" elapsed="0.001571"/>
-</kw>
-<kw name="DELETE" owner="RequestsLibrary">
-<msg time="2025-06-28T12:11:21.834613" level="INFO">DELETE Request : url=https://restful-booker.herokuapp.com/booking/461 
- path_url=/booking/461 
- headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Cookie': 'token=4dd09ce4eeb5954', 'Content-Type': 'application/json', 'Content-Length': '0'} 
- body=None 
- </msg>
-<msg time="2025-06-28T12:11:21.835138" level="INFO">DELETE Response : url=https://restful-booker.herokuapp.com/booking/461 
- status=201, reason=Created 
- headers={'Content-Length': '7', 'Content-Type': 'text/plain; charset=utf-8', 'Date': 'Sat, 28 Jun 2025 15:11:43 GMT', 'Etag': 'W/"7-rM9AyJuqT6iOan/xHh+AW+7K/T8"', 'Nel': '{"report_to":"heroku-nel","response_headers":["Via"],"max_age":3600,"success_fraction":0.01,"failure_fraction":0.1}', 'Report-To': '{"group":"heroku-nel","endpoints":[{"url":"https://nel.heroku.com/reports?s=xt51am%2FVCJWrBWs2S0IPNS6IWdotumO1BA1hfaPfaIs%3D\\u0026sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add\\u0026ts=1751123503"}],"max_age":3600}', 'Reporting-Endpoints': 'heroku-nel="https://nel.heroku.com/reports?s=xt51am%2FVCJWrBWs2S0IPNS6IWdotumO1BA1hfaPfaIs%3D&amp;sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&amp;ts=1751123503"', 'Server': 'Heroku', 'Via': '1.1 heroku-router', 'X-Powered-By': 'Express'} 
- body=Created 
- </msg>
-<msg time="2025-06-28T12:11:21.836067" level="INFO">${response} = &lt;Response [201]&gt;</msg>
-<var>${response}</var>
-<arg>url=${url}/booking/${booking_id}</arg>
-<arg>headers=${headers}</arg>
-<doc>Sends a DELETE request.</doc>
-<status status="PASS" start="2025-06-28T12:11:21.233305" elapsed="0.603121"/>
-</kw>
-<kw name="Status Should Be" owner="RequestsLibrary">
-<arg>201</arg>
-<doc>Fails if response status code is different than the expected.</doc>
-<status status="PASS" start="2025-06-28T12:11:21.843487" elapsed="0.001115"/>
-</kw>
-<status status="PASS" start="2025-06-28T12:11:20.631904" elapsed="1.215579"/>
+<status status="PASS" start="2025-07-05T11:02:41.458713" elapsed="10.702952"/>
 </test>
-<status status="PASS" start="2025-06-28T12:11:19.517491" elapsed="2.335361"/>
+<status status="PASS" start="2025-07-05T11:02:40.787320" elapsed="11.377965"/>
 </suite>
 <statistics>
 <total>
@@ -150,7 +74,7 @@
 <tag>
 </tag>
 <suite>
-<stat name="Test Booker" id="s1" pass="1" fail="0" skip="0">Test Booker</stat>
+<stat name="Selecionar Produto" id="s1" pass="1" fail="0" skip="0">Selecionar Produto</stat>
 </suite>
 </statistics>
 <errors>

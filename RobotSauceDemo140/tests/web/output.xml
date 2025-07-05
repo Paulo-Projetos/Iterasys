@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2.2 (Python 3.13.1 on win32)" generated="2025-07-04T11:22:45.477089" rpa="false" schemaversion="5">
+<suite id="s1" name="Selecionar Produto" source="C:\Iterasys\RobotSauceDemo140\tests\web\selecionar_produto.robot">
+<test id="s1-t1" name="Selecionar Sauce Labs Backpack" line="10">
+<kw name="Dado que acesso o site SauceDemo">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-07-04T11:22:45.909886" level="INFO">Opening browser 'Chrome' to base url 'https://www.saucedemo.com/'.</msg>
+<arg>url=${ur}</arg>
+<arg>browser=${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-07-04T11:22:45.909572" elapsed="4.545603"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-07-04T11:22:50.456811" elapsed="0.423648"/>
+</kw>
+<kw name="Set Browser Implicit Wait" owner="SeleniumLibrary">
+<arg>10000ms</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" start="2025-07-04T11:22:50.880706" elapsed="0.002912"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<msg time="2025-07-04T11:23:01.260972" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1.png"&gt;&lt;img src="selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-07-04T11:23:01.261257" level="FAIL">Element 'css=.login_log' not visible after 5 seconds.</msg>
+<arg>css=.login_log</arg>
+<arg>5000ms</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="FAIL" start="2025-07-04T11:22:50.883854" elapsed="10.382373">Element 'css=.login_log' not visible after 5 seconds.</status>
+</kw>
+<status status="FAIL" start="2025-07-04T11:22:45.908645" elapsed="15.357867">Element 'css=.login_log' not visible after 5 seconds.</status>
+</kw>
+<kw name="Quando preencho o campo usuario">
+<arg>standar_user</arg>
+<status status="NOT RUN" start="2025-07-04T11:23:01.267044" elapsed="0.000088"/>
+</kw>
+<kw name="E preencho o campo senha">
+<arg>secret_sauce</arg>
+<status status="NOT RUN" start="2025-07-04T11:23:01.267475" elapsed="0.000055"/>
+</kw>
+<kw name="E clico no botao Login">
+<status status="NOT RUN" start="2025-07-04T11:23:01.267785" elapsed="0.000102"/>
+</kw>
+<kw name="Entao sou direcionado para a pagina de produtos">
+<status status="NOT RUN" start="2025-07-04T11:23:01.269293" elapsed="0.000064"/>
+</kw>
+<kw name="Quando clico no produto">
+<arg>Sauce Labs Backpack</arg>
+<arg>$29.99</arg>
+<status status="NOT RUN" start="2025-07-04T11:23:01.269607" elapsed="0.000046"/>
+</kw>
+<kw name="Então sou direcionado para a pagina do produto">
+<status status="NOT RUN" start="2025-07-04T11:23:01.269888" elapsed="0.000042"/>
+</kw>
+<kw name="Quando clico em adicionar no carrinho">
+<status status="NOT RUN" start="2025-07-04T11:23:01.270121" elapsed="0.000042"/>
+</kw>
+<kw name="Entao visualizo o numero de itens no carrinho">
+<arg>1</arg>
+<status status="NOT RUN" start="2025-07-04T11:23:01.270364" elapsed="0.000039"/>
+</kw>
+<kw name="Quando clico no icone do carrinho">
+<status status="NOT RUN" start="2025-07-04T11:23:01.271060" elapsed="0.000054"/>
+</kw>
+<kw name="Entao sou direcionado para a pagina do carrinho">
+<status status="NOT RUN" start="2025-07-04T11:23:01.271339" elapsed="0.000049"/>
+</kw>
+<kw name="Quando clico no menu burguer">
+<status status="NOT RUN" start="2025-07-04T11:23:01.271574" elapsed="0.000039"/>
+</kw>
+<kw name="E clico em logout">
+<status status="NOT RUN" start="2025-07-04T11:23:01.272253" elapsed="0.000058"/>
+</kw>
+<kw name="Entao sou direcionado para a pagina de login">
+<status status="NOT RUN" start="2025-07-04T11:23:01.272566" elapsed="0.000044"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-07-04T11:23:01.272976" elapsed="3.693389"/>
+</kw>
+<status status="FAIL" start="2025-07-04T11:22:45.907771" elapsed="19.059222">Element 'css=.login_log' not visible after 5 seconds.</status>
+</test>
+<test id="s1-t2" name="Selecionar Sauce Labs Backpack Login com Enter" line="26">
+<kw name="Dado que acesso o site SauceDemo">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-07-04T11:23:04.970937" level="INFO">Opening browser 'Chrome' to base url 'https://www.saucedemo.com/'.</msg>
+<arg>url=${ur}</arg>
+<arg>browser=${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-07-04T11:23:04.970293" elapsed="2.249822"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-07-04T11:23:07.221954" elapsed="0.404805"/>
+</kw>
+<kw name="Set Browser Implicit Wait" owner="SeleniumLibrary">
+<arg>10000ms</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" start="2025-07-04T11:23:07.627009" elapsed="0.003492"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<msg time="2025-07-04T11:23:17.949820" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-2.png"&gt;&lt;img src="selenium-screenshot-2.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-07-04T11:23:17.950040" level="FAIL">Element 'css=.login_log' not visible after 5 seconds.</msg>
+<arg>css=.login_log</arg>
+<arg>5000ms</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="FAIL" start="2025-07-04T11:23:07.630769" elapsed="10.320719">Element 'css=.login_log' not visible after 5 seconds.</status>
+</kw>
+<status status="FAIL" start="2025-07-04T11:23:04.969579" elapsed="12.982187">Element 'css=.login_log' not visible after 5 seconds.</status>
+</kw>
+<kw name="Quando preencho o campo usuario">
+<arg>standar_user</arg>
+<status status="NOT RUN" start="2025-07-04T11:23:17.952396" elapsed="0.000083"/>
+</kw>
+<kw name="E preencho o campo senha">
+<arg>laranja</arg>
+<status status="NOT RUN" start="2025-07-04T11:23:17.952797" elapsed="0.000050"/>
+</kw>
+<kw name="E pressiono a tecla Enter">
+<status status="NOT RUN" start="2025-07-04T11:23:17.953295" elapsed="0.000047"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-07-04T11:23:17.953682" elapsed="2.397988"/>
+</kw>
+<status status="FAIL" start="2025-07-04T11:23:04.968534" elapsed="15.383426">Element 'css=.login_log' not visible after 5 seconds.</status>
+</test>
+<status status="FAIL" start="2025-07-04T11:22:45.478489" elapsed="34.875349"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="2" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Selecionar Produto" id="s1" pass="0" fail="2" skip="0">Selecionar Produto</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
