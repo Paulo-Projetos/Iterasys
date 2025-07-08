@@ -1,71 +1,71 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.2.2 (Python 3.13.1 on win32)" generated="2025-07-05T11:02:40.779088" rpa="false" schemaversion="5">
+<robot generator="Robot 7.2.2 (Python 3.13.1 on win32)" generated="2025-07-05T11:15:32.832062" rpa="false" schemaversion="5">
 <suite id="s1" name="Selecionar Produto" source="c:\Iterasys\RobotSauceDemo140\tests\web\selecionar_produto.robot">
 <test id="s1-t1" name="Selecionar Sauce Labs Backpack Login com Enter" line="27">
 <kw name="Dado que acesso o site SauceDemo">
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2025-07-05T11:02:41.493851" level="INFO">Opening browser 'Chrome' to base url 'https://www.saucedemo.com/'.</msg>
+<msg time="2025-07-05T11:15:33.159371" level="INFO">Opening browser 'Chrome' to base url 'https://www.saucedemo.com/'.</msg>
 <arg>url=${ur}</arg>
 <arg>browser=${browser}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2025-07-05T11:02:41.493082" elapsed="4.108333"/>
+<status status="PASS" start="2025-07-05T11:15:33.158670" elapsed="2.969979"/>
 </kw>
 <kw name="Maximize Browser Window" owner="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2025-07-05T11:02:45.605794" elapsed="0.090128"/>
+<status status="PASS" start="2025-07-05T11:15:36.130023" elapsed="0.457903"/>
 </kw>
 <kw name="Set Browser Implicit Wait" owner="SeleniumLibrary">
 <arg>10000ms</arg>
 <doc>Sets the implicit wait value used by Selenium.</doc>
-<status status="PASS" start="2025-07-05T11:02:45.696785" elapsed="0.029537"/>
+<status status="PASS" start="2025-07-05T11:15:36.588365" elapsed="0.003231"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>css=.login_logo</arg>
 <arg>${timeout}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-07-05T11:02:45.726692" elapsed="0.230208"/>
+<status status="PASS" start="2025-07-05T11:15:36.592046" elapsed="0.044593"/>
 </kw>
-<status status="PASS" start="2025-07-05T11:02:41.491361" elapsed="4.465877"/>
+<status status="PASS" start="2025-07-05T11:15:33.156305" elapsed="3.480556"/>
 </kw>
 <kw name="Quando preencho o campo usuario">
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-07-05T11:02:45.980570" level="INFO">Typing text 'standar_user' into text field 'css=[data-test="username"]'.</msg>
+<msg time="2025-07-05T11:15:36.638545" level="INFO">Typing text 'standar_user' into text field 'css=[data-test="username"]'.</msg>
 <arg>css=[data-test="username"]</arg>
 <arg>${username}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-07-05T11:02:45.979743" elapsed="0.355013"/>
+<status status="PASS" start="2025-07-05T11:15:36.638053" elapsed="0.200625"/>
 </kw>
 <arg>standar_user</arg>
-<status status="PASS" start="2025-07-05T11:02:45.978069" elapsed="0.357030"/>
+<status status="PASS" start="2025-07-05T11:15:36.637408" elapsed="0.201586"/>
 </kw>
 <kw name="E preencho o campo senha">
 <kw name="Input Password" owner="SeleniumLibrary">
-<msg time="2025-07-05T11:02:46.348055" level="INFO">Typing password into text field 'css=[data-test="password"]'.</msg>
-<msg time="2025-07-05T11:02:46.414111" level="INFO">Temporally setting log level to: NONE</msg>
+<msg time="2025-07-05T11:15:36.840954" level="INFO">Typing password into text field 'css=[data-test="password"]'.</msg>
+<msg time="2025-07-05T11:15:36.898699" level="INFO">Temporally setting log level to: NONE</msg>
 <arg>css=[data-test="password"]</arg>
 <arg>${password}</arg>
 <doc>Types the given password into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-07-05T11:02:46.346835" elapsed="0.151239"/>
+<status status="PASS" start="2025-07-05T11:15:36.840358" elapsed="0.135032"/>
 </kw>
 <arg>laranja</arg>
-<status status="PASS" start="2025-07-05T11:02:46.345332" elapsed="0.153010"/>
+<status status="PASS" start="2025-07-05T11:15:36.839637" elapsed="0.136073"/>
 </kw>
 <kw name="E pressiono a tecla Enter">
 <kw name="Press Key" owner="SeleniumLibrary">
 <arg>css=[data-test="password"]</arg>
 <arg>Enter</arg>
 <doc>Simulates user pressing key on element identified by ``locator``.</doc>
-<status status="PASS" start="2025-07-05T11:02:46.499920" elapsed="0.095615"/>
+<status status="PASS" start="2025-07-05T11:15:36.979498" elapsed="0.075960"/>
 </kw>
-<status status="PASS" start="2025-07-05T11:02:46.499311" elapsed="0.096760"/>
+<status status="PASS" start="2025-07-05T11:15:36.978882" elapsed="0.076895"/>
 </kw>
 <kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
 <doc>Closes the current browser.</doc>
-<status status="PASS" start="2025-07-05T11:02:46.622801" elapsed="5.537775"/>
+<status status="PASS" start="2025-07-05T11:15:37.056878" elapsed="2.414638"/>
 </kw>
-<status status="PASS" start="2025-07-05T11:02:41.458713" elapsed="10.702952"/>
+<status status="PASS" start="2025-07-05T11:15:33.154469" elapsed="6.318744"/>
 </test>
-<status status="PASS" start="2025-07-05T11:02:40.787320" elapsed="11.377965"/>
+<status status="PASS" start="2025-07-05T11:15:32.836641" elapsed="6.638994"/>
 </suite>
 <statistics>
 <total>

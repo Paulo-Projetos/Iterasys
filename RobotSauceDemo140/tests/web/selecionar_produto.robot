@@ -47,8 +47,8 @@ E clico no botao Login
 E pressiono a tecla Enter                                          # 2 forma de dar enter após preenchimento do usuario e senha.
     Press Key    css=[data-test="password"]    Enter
 Entao sou direcionado para a pagina de produtos
-    Wait Until Element Is Visible    css=.title    ${timeout}
-    Element Text Should Be    css=.title    Products      # Verifica se esta na pagina "Products". Tbm seria possivel usar o localizador "css=.title"
+    Wait Until Element Is Visible    css=.title    ${timeout}        # Tempo para transição entre paginas.
+    Element Text Should Be    css=.title    Products                  # Verifica se esta na pagina "Products". Tbm seria possivel usar o localizador "css=.title"
 Quando clico no produto                                                 # Palavra-chave
     [Arguments]    ${product_name}    ${product_price}                  # Define que a palavra-chave espera pelos argumentos "preço" e "produto"
     Set Test Variable    ${test_product_name}    ${product_name}        # Cria variavel de teste global (publica), que recebe o valor da variavel local, dessa forma permite que os dados possam ser utilisados em outros momentos dos testes.
@@ -78,6 +78,6 @@ Quando clico no menu burguer
 E clico em logout
     Click Element    link=Logout                                    # Onde tem a palavra 'logout' no script, entende-se que a sua localização ocorre atraves do seu 'link'
 Entao sou direcionado para a pagina de login
-    Wait Until Element Is Visible    css=input.submit-button.btn_action    5000ms
+    Wait Until Element Is Visible    css=input.submit-button.btn_action    5000ms        # Verifica pelo endereço de Login.
 
 
