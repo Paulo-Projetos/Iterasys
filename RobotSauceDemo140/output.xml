@@ -1,0 +1,1945 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2.2 (Python 3.13.1 on win32)" generated="2025-08-05T10:59:43.320096" rpa="false" schemaversion="5">
+<suite id="s1" name="Po" source="C:\Iterasys\RobotSauceDemo140\tests\web\po">
+<kw name="Obter Data e hora" owner="base_page" type="SETUP">
+<kw name="Get Current Date" owner="DateTime">
+<msg time="2025-08-05T10:59:43.638547" level="INFO">${date} = 2025-08-05 10:59:43.638</msg>
+<var>${date}</var>
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<status status="PASS" start="2025-08-05T10:59:43.638327" elapsed="0.000259"/>
+</kw>
+<kw name="Convert Date" owner="DateTime">
+<msg time="2025-08-05T10:59:43.643616" level="INFO">${date} = 2025.08.05_10.59.43</msg>
+<var>${date}</var>
+<arg>${date}</arg>
+<arg>result_format=%Y.%m.%d_%H.%M.%S</arg>
+<doc>Converts between supported `date formats`.</doc>
+<status status="PASS" start="2025-08-05T10:59:43.638721" elapsed="0.004942"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2025-08-05T10:59:43.644045" level="INFO">${date} = 2025.08.05_10.59.43</msg>
+<msg time="2025-08-05T10:59:43.644106" level="INFO">${date} = None</msg>
+<var>${date}</var>
+<arg>${date}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2025-08-05T10:59:43.643844" elapsed="0.000284"/>
+</kw>
+<status status="PASS" start="2025-08-05T10:59:43.637423" elapsed="0.006780"/>
+</kw>
+<suite id="s1-s1" name="Selecionar Produto Po" source="C:\Iterasys\RobotSauceDemo140\tests\web\po\selecionar_produto_po.robot">
+<test id="s1-s1-t1" name="Selecionar Mochila" line="7">
+<kw name="Abrir navegador" owner="base_page" type="SETUP">
+<kw name="Register Keyword To Run On Failure" owner="SeleniumLibrary">
+<msg time="2025-08-05T10:59:43.650800" level="INFO">Tirar Screenshot will be run on failure.</msg>
+<arg>Tirar Screenshot</arg>
+<doc>Sets the keyword to execute, when a SeleniumLibrary keyword fails.</doc>
+<status status="PASS" start="2025-08-05T10:59:43.650579" elapsed="0.000291"/>
+</kw>
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-08-05T10:59:43.651385" level="INFO">Opening browser 'Edge' to base url 'https://www.saucedemo.com/'.</msg>
+<msg time="2025-08-05T10:59:44.235501" level="WARN">Exception managing MicrosoftEdge: error sending request for url (https://msedgedriver.azureedge.net/LATEST_RELEASE_138_WINDOWS)</msg>
+<arg>url=${url}</arg>
+<arg>browser=${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-08-05T10:59:43.651076" elapsed="3.767053"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-08-05T10:59:47.418628" elapsed="0.070905"/>
+</kw>
+<kw name="Set Browser Implicit Wait" owner="SeleniumLibrary">
+<arg>10000ms</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" start="2025-08-05T10:59:47.489874" elapsed="0.012963"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>css=.login_logo</arg>
+<arg>${timeout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-08-05T10:59:47.503129" elapsed="0.116716"/>
+</kw>
+<status status="PASS" start="2025-08-05T10:59:43.650210" elapsed="3.969776"/>
+</kw>
+<kw name="Tirar Screenshot" owner="base_page">
+<kw name="Create Directory" owner="OperatingSystem">
+<msg time="2025-08-05T10:59:47.621092" level="INFO" html="true">Directory '&lt;a href="file://C:\Iterasys\RobotSauceDemo140\screenshots"&gt;C:\Iterasys\RobotSauceDemo140\screenshots&lt;/a&gt;' already exists.</msg>
+<arg>C:/Iterasys/RobotSauceDemo140/screenshots</arg>
+<doc>Creates the specified directory.</doc>
+<status status="PASS" start="2025-08-05T10:59:47.620893" elapsed="0.000265"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-08-05T10:59:47.738418" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="screenshots/2025.08.05_10.59.43/Selecionar%20Mochila/1-%20Home.jpg"&gt;&lt;img src="screenshots/2025.08.05_10.59.43/Selecionar%20Mochila/1-%20Home.jpg" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-08-05T10:59:47.738547" level="INFO">C:\Users\pcfmu\AppData\Local\Programs\Python\Python313\Lib\site-packages\selenium\webdriver\remote\webdriver.py:984: UserWarning: name used for saved screenshot does not match file type. It should end with a `.png` extension
+  return self.get_screenshot_as_file(filename)</msg>
+<arg>C:/Iterasys/RobotSauceDemo140/screenshots/${date}/${TEST_NAME}/${screenshot_name}.jpg</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-08-05T10:59:47.621292" elapsed="0.117467"/>
+</kw>
+<arg>1- Home</arg>
+<status status="PASS" start="2025-08-05T10:59:47.620437" elapsed="0.118456"/>
+</kw>
+<kw name="Preencher usuario" owner="login_page">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-08-05T10:59:47.739655" level="INFO">Typing text 'standard_user' into text field 'css=[data-test="username"]'.</msg>
+<arg>${txt_usuario}</arg>
+<arg>${usuario}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-05T10:59:47.739459" elapsed="0.206767"/>
+</kw>
+<arg>standard_user</arg>
+<status status="PASS" start="2025-08-05T10:59:47.739177" elapsed="0.207298"/>
+</kw>
+<kw name="Preencher senha" owner="login_page">
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2025-08-05T10:59:47.948505" level="INFO">Typing password into text field 'css=[data-test="password"]'.</msg>
+<msg time="2025-08-05T10:59:48.017620" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>${txt_senha}</arg>
+<arg>${senha}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-05T10:59:47.948130" elapsed="0.151495"/>
+</kw>
+<arg>secret_sauce</arg>
+<status status="PASS" start="2025-08-05T10:59:47.947427" elapsed="0.152331"/>
+</kw>
+<kw name="Tirar Screenshot" owner="base_page">
+<kw name="Create Directory" owner="OperatingSystem">
+<msg time="2025-08-05T10:59:48.100772" level="INFO" html="true">Directory '&lt;a href="file://C:\Iterasys\RobotSauceDemo140\screenshots"&gt;C:\Iterasys\RobotSauceDemo140\screenshots&lt;/a&gt;' already exists.</msg>
+<arg>C:/Iterasys/RobotSauceDemo140/screenshots</arg>
+<doc>Creates the specified directory.</doc>
+<status status="PASS" start="2025-08-05T10:59:48.100532" elapsed="0.000330"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-08-05T10:59:48.202898" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="screenshots/2025.08.05_10.59.43/Selecionar%20Mochila/2-%20Login%20Preenchido.jpg"&gt;&lt;img src="screenshots/2025.08.05_10.59.43/Selecionar%20Mochila/2-%20Login%20Preenchido.jpg" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>C:/Iterasys/RobotSauceDemo140/screenshots/${date}/${TEST_NAME}/${screenshot_name}.jpg</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-08-05T10:59:48.101080" elapsed="0.101956"/>
+</kw>
+<arg>2- Login Preenchido</arg>
+<status status="PASS" start="2025-08-05T10:59:48.100144" elapsed="0.103015"/>
+</kw>
+<kw name="Clicar botao Login" owner="login_page">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-08-05T10:59:48.204260" level="INFO">Clicking button 'id=login-button'.</msg>
+<arg>${btn_login}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-05T10:59:48.204059" elapsed="0.203750"/>
+</kw>
+<status status="PASS" start="2025-08-05T10:59:48.203702" elapsed="0.204289"/>
+</kw>
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<msg time="2025-08-05T10:59:48.409314" level="INFO">Verifying element 'css=.title' contains exact text 'Products'.</msg>
+<arg>${titulo_secao}</arg>
+<arg>Products</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="PASS" start="2025-08-05T10:59:48.408846" elapsed="0.057240"/>
+</kw>
+<kw name="Tirar Screenshot" owner="base_page">
+<kw name="Create Directory" owner="OperatingSystem">
+<msg time="2025-08-05T10:59:48.467819" level="INFO" html="true">Directory '&lt;a href="file://C:\Iterasys\RobotSauceDemo140\screenshots"&gt;C:\Iterasys\RobotSauceDemo140\screenshots&lt;/a&gt;' already exists.</msg>
+<arg>C:/Iterasys/RobotSauceDemo140/screenshots</arg>
+<doc>Creates the specified directory.</doc>
+<status status="PASS" start="2025-08-05T10:59:48.467554" elapsed="0.000361"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-08-05T10:59:48.589380" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="screenshots/2025.08.05_10.59.43/Selecionar%20Mochila/3-%20Lista%20de%20Produtos.jpg"&gt;&lt;img src="screenshots/2025.08.05_10.59.43/Selecionar%20Mochila/3-%20Lista%20de%20Produtos.jpg" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>C:/Iterasys/RobotSauceDemo140/screenshots/${date}/${TEST_NAME}/${screenshot_name}.jpg</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-08-05T10:59:48.468114" elapsed="0.121374"/>
+</kw>
+<arg>3- Lista de Produtos</arg>
+<status status="PASS" start="2025-08-05T10:59:48.467033" elapsed="0.122549"/>
+</kw>
+<kw name="Clicar no Produto" owner="inventory_page">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-08-05T10:59:48.590410" level="INFO">Clicking element 'css=img[alt="Sauce Labs Backpack"]'.</msg>
+<arg>css=img[alt="${product_name}"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-05T10:59:48.590197" elapsed="0.110411"/>
+</kw>
+<arg>Sauce Labs Backpack</arg>
+<status status="PASS" start="2025-08-05T10:59:48.589867" elapsed="0.110907"/>
+</kw>
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<msg time="2025-08-05T10:59:48.702802" level="INFO">Verifying element 'css=div.inventory_details_name.large_size' contains exact text 'Sauce Labs Backpack'.</msg>
+<arg>${inventory_item_product_name}</arg>
+<arg>Sauce Labs Backpack</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="PASS" start="2025-08-05T10:59:48.702469" elapsed="0.067058"/>
+</kw>
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<msg time="2025-08-05T10:59:48.770315" level="INFO">Verifying element 'css=div.inventory_details_price' contains exact text '$29.99'.</msg>
+<arg>${inventory_item_product_price}</arg>
+<arg>$29.99</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="PASS" start="2025-08-05T10:59:48.769962" elapsed="0.039452"/>
+</kw>
+<kw name="Tirar Screenshot" owner="base_page">
+<kw name="Create Directory" owner="OperatingSystem">
+<msg time="2025-08-05T10:59:48.811689" level="INFO" html="true">Directory '&lt;a href="file://C:\Iterasys\RobotSauceDemo140\screenshots"&gt;C:\Iterasys\RobotSauceDemo140\screenshots&lt;/a&gt;' already exists.</msg>
+<arg>C:/Iterasys/RobotSauceDemo140/screenshots</arg>
+<doc>Creates the specified directory.</doc>
+<status status="PASS" start="2025-08-05T10:59:48.811274" elapsed="0.000603"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-08-05T10:59:48.914950" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="screenshots/2025.08.05_10.59.43/Selecionar%20Mochila/4-%20Detalhes%20do%20produto.jpg"&gt;&lt;img src="screenshots/2025.08.05_10.59.43/Selecionar%20Mochila/4-%20Detalhes%20do%20produto.jpg" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>C:/Iterasys/RobotSauceDemo140/screenshots/${date}/${TEST_NAME}/${screenshot_name}.jpg</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-08-05T10:59:48.812120" elapsed="0.102979"/>
+</kw>
+<arg>4- Detalhes do produto</arg>
+<status status="PASS" start="2025-08-05T10:59:48.810436" elapsed="0.104790"/>
+</kw>
+<kw name="Clicar no botao &quot;Add to cart&quot;" owner="inventory_item_page">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-08-05T10:59:48.916135" level="INFO">Clicking button 'css=button.btn.btn_primary.btn_small.btn_inventory'.</msg>
+<arg>${btn_add_to_cart}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-05T10:59:48.915940" elapsed="0.090062"/>
+</kw>
+<status status="PASS" start="2025-08-05T10:59:48.915594" elapsed="0.090832"/>
+</kw>
+<kw name="Clicar no carrinho" owner="base_page">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-08-05T10:59:49.008250" level="INFO">Clicking element 'css=[data-test="shopping-cart-link"]'.</msg>
+<arg>css=[data-test="shopping-cart-link"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-05T10:59:49.008049" elapsed="0.091014"/>
+</kw>
+<kw name="Wait Until Element Contains" owner="SeleniumLibrary">
+<arg>css=[data-test="title"]</arg>
+<arg>Your Cart</arg>
+<arg>${timeout}</arg>
+<doc>Waits until the element ``locator`` contains ``text``.</doc>
+<status status="PASS" start="2025-08-05T10:59:49.099325" elapsed="0.045685"/>
+</kw>
+<status status="PASS" start="2025-08-05T10:59:49.007116" elapsed="0.138048"/>
+</kw>
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<msg time="2025-08-05T10:59:49.145863" level="INFO">Verifying element 'css=.title' contains exact text 'Your Cart'.</msg>
+<arg>${titulo_secao}</arg>
+<arg>Your Cart</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="PASS" start="2025-08-05T10:59:49.145519" elapsed="0.039929"/>
+</kw>
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<msg time="2025-08-05T10:59:49.186286" level="INFO">Verifying element 'css=div.inventory_item_name' contains exact text 'Sauce Labs Backpack'.</msg>
+<arg>${cart_product_name}</arg>
+<arg>Sauce Labs Backpack</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="PASS" start="2025-08-05T10:59:49.185874" elapsed="0.024900"/>
+</kw>
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<msg time="2025-08-05T10:59:49.212099" level="INFO">Verifying element 'css=div.inventory_item_price' contains exact text '$29.99'.</msg>
+<arg>${cart_product_price}</arg>
+<arg>$29.99</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="PASS" start="2025-08-05T10:59:49.211413" elapsed="0.034511"/>
+</kw>
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<msg time="2025-08-05T10:59:49.246678" level="INFO">Verifying element 'css=div.cart_quantity' contains exact text '1'.</msg>
+<arg>${cart_product_quantity}</arg>
+<arg>1</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="PASS" start="2025-08-05T10:59:49.246364" elapsed="0.016332"/>
+</kw>
+<kw name="Tirar Screenshot" owner="base_page">
+<kw name="Create Directory" owner="OperatingSystem">
+<msg time="2025-08-05T10:59:49.263756" level="INFO" html="true">Directory '&lt;a href="file://C:\Iterasys\RobotSauceDemo140\screenshots"&gt;C:\Iterasys\RobotSauceDemo140\screenshots&lt;/a&gt;' already exists.</msg>
+<arg>C:/Iterasys/RobotSauceDemo140/screenshots</arg>
+<doc>Creates the specified directory.</doc>
+<status status="PASS" start="2025-08-05T10:59:49.263526" elapsed="0.000317"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-08-05T10:59:49.355943" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="screenshots/2025.08.05_10.59.43/Selecionar%20Mochila/5-%20Carrinho.jpg"&gt;&lt;img src="screenshots/2025.08.05_10.59.43/Selecionar%20Mochila/5-%20Carrinho.jpg" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>C:/Iterasys/RobotSauceDemo140/screenshots/${date}/${TEST_NAME}/${screenshot_name}.jpg</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-08-05T10:59:49.264027" elapsed="0.092059"/>
+</kw>
+<arg>5- Carrinho</arg>
+<status status="PASS" start="2025-08-05T10:59:49.263123" elapsed="0.093229"/>
+</kw>
+<kw name="Realizar Logout" owner="base_page">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-08-05T10:59:49.357829" level="INFO">Clicking element 'id=react-burger-menu-btn'.</msg>
+<arg>id=react-burger-menu-btn</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-05T10:59:49.357529" elapsed="0.060061"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-08-05T10:59:49.417948" level="INFO">Clicking element 'id=logout_sidebar_link'.</msg>
+<arg>id=logout_sidebar_link</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-05T10:59:49.417771" elapsed="0.186828"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>css=.login_logo</arg>
+<arg>${timeout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-08-05T10:59:49.605329" elapsed="0.033723"/>
+</kw>
+<status status="PASS" start="2025-08-05T10:59:49.357081" elapsed="0.282124"/>
+</kw>
+<kw name="Fechar navegador" owner="base_page" type="TEARDOWN">
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-08-05T10:59:50.140943" level="INFO">Slept 500 milliseconds.</msg>
+<arg>500ms</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-08-05T10:59:49.640164" elapsed="0.501056"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-08-05T10:59:50.141660" elapsed="2.338402"/>
+</kw>
+<status status="PASS" start="2025-08-05T10:59:49.639782" elapsed="2.840569"/>
+</kw>
+<status status="PASS" start="2025-08-05T10:59:43.649258" elapsed="8.831665"/>
+</test>
+<status status="PASS" start="2025-08-05T10:59:43.644263" elapsed="8.838665"/>
+</suite>
+<suite id="s1-s2" name="Selecionar Produto Po Ddt" source="C:\Iterasys\RobotSauceDemo140\tests\web\po\selecionar_produto_po_ddt.robot">
+<test id="s1-s2-t1" name="TC001" line="9">
+<kw name="Abrir navegador" owner="base_page" type="SETUP">
+<kw name="Register Keyword To Run On Failure" owner="SeleniumLibrary">
+<msg time="2025-08-05T10:59:52.509872" level="INFO">Tirar Screenshot will be run on failure.</msg>
+<arg>Tirar Screenshot</arg>
+<doc>Sets the keyword to execute, when a SeleniumLibrary keyword fails.</doc>
+<status status="PASS" start="2025-08-05T10:59:52.507948" elapsed="0.002037"/>
+</kw>
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-08-05T10:59:52.510892" level="INFO">Opening browser 'Edge' to base url 'https://www.saucedemo.com/'.</msg>
+<msg time="2025-08-05T10:59:52.962675" level="WARN">Exception managing MicrosoftEdge: error sending request for url (https://msedgedriver.azureedge.net/LATEST_RELEASE_138_WINDOWS)</msg>
+<arg>url=${url}</arg>
+<arg>browser=${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-08-05T10:59:52.510281" elapsed="2.674982"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-08-05T10:59:55.185484" elapsed="0.085250"/>
+</kw>
+<kw name="Set Browser Implicit Wait" owner="SeleniumLibrary">
+<arg>10000ms</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" start="2025-08-05T10:59:55.271044" elapsed="0.003213"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>css=.login_logo</arg>
+<arg>${timeout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-08-05T10:59:55.274520" elapsed="0.067572"/>
+</kw>
+<status status="PASS" start="2025-08-05T10:59:52.504326" elapsed="2.837976"/>
+</kw>
+<kw name="Selecionar Produto">
+<kw name="Tirar Screenshot" owner="base_page">
+<kw name="Create Directory" owner="OperatingSystem">
+<msg time="2025-08-05T10:59:55.345500" level="INFO" html="true">Directory '&lt;a href="file://C:\Iterasys\RobotSauceDemo140\screenshots"&gt;C:\Iterasys\RobotSauceDemo140\screenshots&lt;/a&gt;' already exists.</msg>
+<arg>C:/Iterasys/RobotSauceDemo140/screenshots</arg>
+<doc>Creates the specified directory.</doc>
+<status status="PASS" start="2025-08-05T10:59:55.345242" elapsed="0.000375"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-08-05T10:59:55.456860" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="screenshots/2025.08.05_10.59.43/TC001/1-%20Home.jpg"&gt;&lt;img src="screenshots/2025.08.05_10.59.43/TC001/1-%20Home.jpg" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>C:/Iterasys/RobotSauceDemo140/screenshots/${date}/${TEST_NAME}/${screenshot_name}.jpg</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-08-05T10:59:55.345823" elapsed="0.111219"/>
+</kw>
+<arg>1- Home</arg>
+<status status="PASS" start="2025-08-05T10:59:55.344777" elapsed="0.112459"/>
+</kw>
+<kw name="Preencher usuario" owner="login_page">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-08-05T10:59:55.461590" level="INFO">Typing text 'standard_user' into text field 'css=[data-test="username"]'.</msg>
+<arg>${txt_usuario}</arg>
+<arg>${usuario}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-05T10:59:55.458049" elapsed="0.226043"/>
+</kw>
+<arg>standard_user</arg>
+<status status="PASS" start="2025-08-05T10:59:55.457529" elapsed="0.226691"/>
+</kw>
+<kw name="Preencher senha" owner="login_page">
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2025-08-05T10:59:55.685142" level="INFO">Typing password into text field 'css=[data-test="password"]'.</msg>
+<msg time="2025-08-05T10:59:55.730930" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>${txt_senha}</arg>
+<arg>${senha}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-05T10:59:55.684899" elapsed="0.131724"/>
+</kw>
+<arg>secret_sauce</arg>
+<status status="PASS" start="2025-08-05T10:59:55.684397" elapsed="0.132392"/>
+</kw>
+<kw name="Tirar Screenshot" owner="base_page">
+<kw name="Create Directory" owner="OperatingSystem">
+<msg time="2025-08-05T10:59:55.817495" level="INFO" html="true">Directory '&lt;a href="file://C:\Iterasys\RobotSauceDemo140\screenshots"&gt;C:\Iterasys\RobotSauceDemo140\screenshots&lt;/a&gt;' already exists.</msg>
+<arg>C:/Iterasys/RobotSauceDemo140/screenshots</arg>
+<doc>Creates the specified directory.</doc>
+<status status="PASS" start="2025-08-05T10:59:55.817312" elapsed="0.000250"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-08-05T10:59:55.916755" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="screenshots/2025.08.05_10.59.43/TC001/2-%20Login%20Preenchido.jpg"&gt;&lt;img src="screenshots/2025.08.05_10.59.43/TC001/2-%20Login%20Preenchido.jpg" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>C:/Iterasys/RobotSauceDemo140/screenshots/${date}/${TEST_NAME}/${screenshot_name}.jpg</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-08-05T10:59:55.817695" elapsed="0.099209"/>
+</kw>
+<arg>2- Login Preenchido</arg>
+<status status="PASS" start="2025-08-05T10:59:55.817009" elapsed="0.100038"/>
+</kw>
+<kw name="Clicar botao Login" owner="login_page">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-08-05T10:59:55.917954" level="INFO">Clicking button 'id=login-button'.</msg>
+<arg>${btn_login}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-05T10:59:55.917721" elapsed="0.122534"/>
+</kw>
+<status status="PASS" start="2025-08-05T10:59:55.917316" elapsed="0.123111"/>
+</kw>
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<msg time="2025-08-05T10:59:56.041235" level="INFO">Verifying element 'css=.title' contains exact text 'Products'.</msg>
+<arg>${titulo_secao}</arg>
+<arg>Products</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="PASS" start="2025-08-05T10:59:56.040639" elapsed="0.041588"/>
+</kw>
+<kw name="Tirar Screenshot" owner="base_page">
+<kw name="Create Directory" owner="OperatingSystem">
+<msg time="2025-08-05T10:59:56.082862" level="INFO" html="true">Directory '&lt;a href="file://C:\Iterasys\RobotSauceDemo140\screenshots"&gt;C:\Iterasys\RobotSauceDemo140\screenshots&lt;/a&gt;' already exists.</msg>
+<arg>C:/Iterasys/RobotSauceDemo140/screenshots</arg>
+<doc>Creates the specified directory.</doc>
+<status status="PASS" start="2025-08-05T10:59:56.082700" elapsed="0.000218"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-08-05T10:59:56.234230" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="screenshots/2025.08.05_10.59.43/TC001/3-%20Lista%20de%20Produtos.jpg"&gt;&lt;img src="screenshots/2025.08.05_10.59.43/TC001/3-%20Lista%20de%20Produtos.jpg" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>C:/Iterasys/RobotSauceDemo140/screenshots/${date}/${TEST_NAME}/${screenshot_name}.jpg</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-08-05T10:59:56.083029" elapsed="0.151313"/>
+</kw>
+<arg>3- Lista de Produtos</arg>
+<status status="PASS" start="2025-08-05T10:59:56.082438" elapsed="0.152024"/>
+</kw>
+<kw name="Clicar no Produto" owner="inventory_page">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-08-05T10:59:56.235304" level="INFO">Clicking element 'css=img[alt="Sauce Labs Backpack"]'.</msg>
+<arg>css=img[alt="${product_name}"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-05T10:59:56.235055" elapsed="0.105277"/>
+</kw>
+<arg>${product_name}</arg>
+<status status="PASS" start="2025-08-05T10:59:56.234714" elapsed="0.105838"/>
+</kw>
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<msg time="2025-08-05T10:59:56.341125" level="INFO">Verifying element 'css=div.inventory_details_name.large_size' contains exact text 'Sauce Labs Backpack'.</msg>
+<arg>${inventory_item_product_name}</arg>
+<arg>${product_name}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="PASS" start="2025-08-05T10:59:56.340776" elapsed="0.041301"/>
+</kw>
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<msg time="2025-08-05T10:59:56.382715" level="INFO">Verifying element 'css=div.inventory_details_price' contains exact text '$29.99'.</msg>
+<arg>${inventory_item_product_price}</arg>
+<arg>${product_price}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="PASS" start="2025-08-05T10:59:56.382355" elapsed="0.047133"/>
+</kw>
+<kw name="Tirar Screenshot" owner="base_page">
+<kw name="Create Directory" owner="OperatingSystem">
+<msg time="2025-08-05T10:59:56.430390" level="INFO" html="true">Directory '&lt;a href="file://C:\Iterasys\RobotSauceDemo140\screenshots"&gt;C:\Iterasys\RobotSauceDemo140\screenshots&lt;/a&gt;' already exists.</msg>
+<arg>C:/Iterasys/RobotSauceDemo140/screenshots</arg>
+<doc>Creates the specified directory.</doc>
+<status status="PASS" start="2025-08-05T10:59:56.430142" elapsed="0.000339"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-08-05T10:59:56.550515" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="screenshots/2025.08.05_10.59.43/TC001/4-%20Detalhes%20do%20produto.jpg"&gt;&lt;img src="screenshots/2025.08.05_10.59.43/TC001/4-%20Detalhes%20do%20produto.jpg" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>C:/Iterasys/RobotSauceDemo140/screenshots/${date}/${TEST_NAME}/${screenshot_name}.jpg</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-08-05T10:59:56.430670" elapsed="0.119954"/>
+</kw>
+<arg>4- Detalhes do produto</arg>
+<status status="PASS" start="2025-08-05T10:59:56.429784" elapsed="0.120941"/>
+</kw>
+<kw name="Clicar no botao &quot;Add to cart&quot;" owner="inventory_item_page">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-08-05T10:59:56.551351" level="INFO">Clicking button 'css=button.btn.btn_primary.btn_small.btn_inventory'.</msg>
+<arg>${btn_add_to_cart}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-05T10:59:56.551176" elapsed="0.070460"/>
+</kw>
+<status status="PASS" start="2025-08-05T10:59:56.550931" elapsed="0.070833"/>
+</kw>
+<kw name="Clicar no carrinho" owner="base_page">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-08-05T10:59:56.622730" level="INFO">Clicking element 'css=[data-test="shopping-cart-link"]'.</msg>
+<arg>css=[data-test="shopping-cart-link"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-05T10:59:56.622509" elapsed="0.064590"/>
+</kw>
+<kw name="Wait Until Element Contains" owner="SeleniumLibrary">
+<arg>css=[data-test="title"]</arg>
+<arg>Your Cart</arg>
+<arg>${timeout}</arg>
+<doc>Waits until the element ``locator`` contains ``text``.</doc>
+<status status="PASS" start="2025-08-05T10:59:56.687368" elapsed="0.039912"/>
+</kw>
+<status status="PASS" start="2025-08-05T10:59:56.622000" elapsed="0.105435"/>
+</kw>
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<msg time="2025-08-05T10:59:56.727912" level="INFO">Verifying element 'css=.title' contains exact text 'Your Cart'.</msg>
+<arg>${titulo_secao}</arg>
+<arg>Your Cart</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="PASS" start="2025-08-05T10:59:56.727617" elapsed="0.011582"/>
+</kw>
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<msg time="2025-08-05T10:59:56.739623" level="INFO">Verifying element 'css=div.inventory_item_name' contains exact text 'Sauce Labs Backpack'.</msg>
+<arg>${cart_product_name}</arg>
+<arg>${product_name}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="PASS" start="2025-08-05T10:59:56.739380" elapsed="0.015083"/>
+</kw>
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<msg time="2025-08-05T10:59:56.754871" level="INFO">Verifying element 'css=div.inventory_item_price' contains exact text '$29.99'.</msg>
+<arg>${cart_product_price}</arg>
+<arg>${product_price}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="PASS" start="2025-08-05T10:59:56.754640" elapsed="0.015071"/>
+</kw>
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<msg time="2025-08-05T10:59:56.770129" level="INFO">Verifying element 'css=div.cart_quantity' contains exact text '1'.</msg>
+<arg>${cart_product_quantity}</arg>
+<arg>1</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="PASS" start="2025-08-05T10:59:56.769892" elapsed="0.015109"/>
+</kw>
+<kw name="Tirar Screenshot" owner="base_page">
+<kw name="Create Directory" owner="OperatingSystem">
+<msg time="2025-08-05T10:59:56.785660" level="INFO" html="true">Directory '&lt;a href="file://C:\Iterasys\RobotSauceDemo140\screenshots"&gt;C:\Iterasys\RobotSauceDemo140\screenshots&lt;/a&gt;' already exists.</msg>
+<arg>C:/Iterasys/RobotSauceDemo140/screenshots</arg>
+<doc>Creates the specified directory.</doc>
+<status status="PASS" start="2025-08-05T10:59:56.785493" elapsed="0.000221"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-08-05T10:59:56.853714" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="screenshots/2025.08.05_10.59.43/TC001/5-%20Carrinho.jpg"&gt;&lt;img src="screenshots/2025.08.05_10.59.43/TC001/5-%20Carrinho.jpg" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>C:/Iterasys/RobotSauceDemo140/screenshots/${date}/${TEST_NAME}/${screenshot_name}.jpg</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-08-05T10:59:56.785825" elapsed="0.067990"/>
+</kw>
+<arg>5- Carrinho</arg>
+<status status="PASS" start="2025-08-05T10:59:56.785207" elapsed="0.068789"/>
+</kw>
+<kw name="Realizar Logout" owner="base_page">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-08-05T10:59:56.854557" level="INFO">Clicking element 'id=react-burger-menu-btn'.</msg>
+<arg>id=react-burger-menu-btn</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-05T10:59:56.854408" elapsed="0.069868"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-08-05T10:59:56.924660" level="INFO">Clicking element 'id=logout_sidebar_link'.</msg>
+<arg>id=logout_sidebar_link</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-05T10:59:56.924453" elapsed="0.142600"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>css=.login_logo</arg>
+<arg>${timeout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-08-05T10:59:57.067468" elapsed="0.036301"/>
+</kw>
+<status status="PASS" start="2025-08-05T10:59:56.854171" elapsed="0.249750"/>
+</kw>
+<arg>Sauce Labs Backpack</arg>
+<arg>$29.99</arg>
+<status status="PASS" start="2025-08-05T10:59:55.343035" elapsed="1.760980"/>
+</kw>
+<kw name="Fechar navegador" owner="base_page" type="TEARDOWN">
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-08-05T10:59:57.605477" level="INFO">Slept 500 milliseconds.</msg>
+<arg>500ms</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-08-05T10:59:57.104958" elapsed="0.500876"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-08-05T10:59:57.606466" elapsed="2.319052"/>
+</kw>
+<status status="PASS" start="2025-08-05T10:59:57.104557" elapsed="2.821272"/>
+</kw>
+<status status="PASS" start="2025-08-05T10:59:52.503775" elapsed="7.422880"/>
+</test>
+<test id="s1-s2-t2" name="TC002" line="10">
+<kw name="Abrir navegador" owner="base_page" type="SETUP">
+<kw name="Register Keyword To Run On Failure" owner="SeleniumLibrary">
+<msg time="2025-08-05T10:59:59.930288" level="INFO">Tirar Screenshot will be run on failure.</msg>
+<arg>Tirar Screenshot</arg>
+<doc>Sets the keyword to execute, when a SeleniumLibrary keyword fails.</doc>
+<status status="PASS" start="2025-08-05T10:59:59.929975" elapsed="0.000440"/>
+</kw>
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-08-05T10:59:59.931282" level="INFO">Opening browser 'Edge' to base url 'https://www.saucedemo.com/'.</msg>
+<msg time="2025-08-05T11:00:00.398897" level="WARN">Exception managing MicrosoftEdge: error sending request for url (https://msedgedriver.azureedge.net/LATEST_RELEASE_138_WINDOWS)</msg>
+<arg>url=${url}</arg>
+<arg>browser=${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-08-05T10:59:59.930782" elapsed="2.638970"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-08-05T11:00:02.570063" elapsed="0.066737"/>
+</kw>
+<kw name="Set Browser Implicit Wait" owner="SeleniumLibrary">
+<arg>10000ms</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" start="2025-08-05T11:00:02.637075" elapsed="0.003450"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>css=.login_logo</arg>
+<arg>${timeout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-08-05T11:00:02.640792" elapsed="0.046178"/>
+</kw>
+<status status="PASS" start="2025-08-05T10:59:59.929376" elapsed="2.757759"/>
+</kw>
+<kw name="Selecionar Produto">
+<kw name="Tirar Screenshot" owner="base_page">
+<kw name="Create Directory" owner="OperatingSystem">
+<msg time="2025-08-05T11:00:02.700203" level="INFO" html="true">Directory '&lt;a href="file://C:\Iterasys\RobotSauceDemo140\screenshots"&gt;C:\Iterasys\RobotSauceDemo140\screenshots&lt;/a&gt;' already exists.</msg>
+<arg>C:/Iterasys/RobotSauceDemo140/screenshots</arg>
+<doc>Creates the specified directory.</doc>
+<status status="PASS" start="2025-08-05T11:00:02.699922" elapsed="0.000393"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-08-05T11:00:02.831109" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="screenshots/2025.08.05_10.59.43/TC002/1-%20Home.jpg"&gt;&lt;img src="screenshots/2025.08.05_10.59.43/TC002/1-%20Home.jpg" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>C:/Iterasys/RobotSauceDemo140/screenshots/${date}/${TEST_NAME}/${screenshot_name}.jpg</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-08-05T11:00:02.700547" elapsed="0.130719"/>
+</kw>
+<arg>1- Home</arg>
+<status status="PASS" start="2025-08-05T11:00:02.699435" elapsed="0.131992"/>
+</kw>
+<kw name="Preencher usuario" owner="login_page">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-08-05T11:00:02.832755" level="INFO">Typing text 'standard_user' into text field 'css=[data-test="username"]'.</msg>
+<arg>${txt_usuario}</arg>
+<arg>${usuario}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-05T11:00:02.832265" elapsed="0.221128"/>
+</kw>
+<arg>standard_user</arg>
+<status status="PASS" start="2025-08-05T11:00:02.831728" elapsed="0.221792"/>
+</kw>
+<kw name="Preencher senha" owner="login_page">
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2025-08-05T11:00:03.054257" level="INFO">Typing password into text field 'css=[data-test="password"]'.</msg>
+<msg time="2025-08-05T11:00:03.119553" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>${txt_senha}</arg>
+<arg>${senha}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-05T11:00:03.054014" elapsed="0.147112"/>
+</kw>
+<arg>secret_sauce</arg>
+<status status="PASS" start="2025-08-05T11:00:03.053708" elapsed="0.147539"/>
+</kw>
+<kw name="Tirar Screenshot" owner="base_page">
+<kw name="Create Directory" owner="OperatingSystem">
+<msg time="2025-08-05T11:00:03.201897" level="INFO" html="true">Directory '&lt;a href="file://C:\Iterasys\RobotSauceDemo140\screenshots"&gt;C:\Iterasys\RobotSauceDemo140\screenshots&lt;/a&gt;' already exists.</msg>
+<arg>C:/Iterasys/RobotSauceDemo140/screenshots</arg>
+<doc>Creates the specified directory.</doc>
+<status status="PASS" start="2025-08-05T11:00:03.201707" elapsed="0.000250"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-08-05T11:00:03.311539" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="screenshots/2025.08.05_10.59.43/TC002/2-%20Login%20Preenchido.jpg"&gt;&lt;img src="screenshots/2025.08.05_10.59.43/TC002/2-%20Login%20Preenchido.jpg" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>C:/Iterasys/RobotSauceDemo140/screenshots/${date}/${TEST_NAME}/${screenshot_name}.jpg</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-08-05T11:00:03.202089" elapsed="0.109548"/>
+</kw>
+<arg>2- Login Preenchido</arg>
+<status status="PASS" start="2025-08-05T11:00:03.201426" elapsed="0.110308"/>
+</kw>
+<kw name="Clicar botao Login" owner="login_page">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-08-05T11:00:03.312321" level="INFO">Clicking button 'id=login-button'.</msg>
+<arg>${btn_login}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-05T11:00:03.312139" elapsed="0.122929"/>
+</kw>
+<status status="PASS" start="2025-08-05T11:00:03.311894" elapsed="0.123448"/>
+</kw>
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<msg time="2025-08-05T11:00:03.436112" level="INFO">Verifying element 'css=.title' contains exact text 'Products'.</msg>
+<arg>${titulo_secao}</arg>
+<arg>Products</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="PASS" start="2025-08-05T11:00:03.435620" elapsed="0.062906"/>
+</kw>
+<kw name="Tirar Screenshot" owner="base_page">
+<kw name="Create Directory" owner="OperatingSystem">
+<msg time="2025-08-05T11:00:03.499248" level="INFO" html="true">Directory '&lt;a href="file://C:\Iterasys\RobotSauceDemo140\screenshots"&gt;C:\Iterasys\RobotSauceDemo140\screenshots&lt;/a&gt;' already exists.</msg>
+<arg>C:/Iterasys/RobotSauceDemo140/screenshots</arg>
+<doc>Creates the specified directory.</doc>
+<status status="PASS" start="2025-08-05T11:00:03.499035" elapsed="0.000308"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-08-05T11:00:03.608551" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="screenshots/2025.08.05_10.59.43/TC002/3-%20Lista%20de%20Produtos.jpg"&gt;&lt;img src="screenshots/2025.08.05_10.59.43/TC002/3-%20Lista%20de%20Produtos.jpg" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>C:/Iterasys/RobotSauceDemo140/screenshots/${date}/${TEST_NAME}/${screenshot_name}.jpg</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-08-05T11:00:03.499546" elapsed="0.109143"/>
+</kw>
+<arg>3- Lista de Produtos</arg>
+<status status="PASS" start="2025-08-05T11:00:03.498742" elapsed="0.110068"/>
+</kw>
+<kw name="Clicar no Produto" owner="inventory_page">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-08-05T11:00:03.609424" level="INFO">Clicking element 'css=img[alt="Sauce Labs Bike Light"]'.</msg>
+<arg>css=img[alt="${product_name}"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-05T11:00:03.609241" elapsed="0.101681"/>
+</kw>
+<arg>${product_name}</arg>
+<status status="PASS" start="2025-08-05T11:00:03.608969" elapsed="0.102133"/>
+</kw>
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<msg time="2025-08-05T11:00:03.711885" level="INFO">Verifying element 'css=div.inventory_details_name.large_size' contains exact text 'Sauce Labs Bike Light'.</msg>
+<arg>${inventory_item_product_name}</arg>
+<arg>${product_name}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="PASS" start="2025-08-05T11:00:03.711394" elapsed="0.067819"/>
+</kw>
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<msg time="2025-08-05T11:00:03.779790" level="INFO">Verifying element 'css=div.inventory_details_price' contains exact text '$9.99'.</msg>
+<arg>${inventory_item_product_price}</arg>
+<arg>${product_price}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="PASS" start="2025-08-05T11:00:03.779466" elapsed="0.030664"/>
+</kw>
+<kw name="Tirar Screenshot" owner="base_page">
+<kw name="Create Directory" owner="OperatingSystem">
+<msg time="2025-08-05T11:00:03.810920" level="INFO" html="true">Directory '&lt;a href="file://C:\Iterasys\RobotSauceDemo140\screenshots"&gt;C:\Iterasys\RobotSauceDemo140\screenshots&lt;/a&gt;' already exists.</msg>
+<arg>C:/Iterasys/RobotSauceDemo140/screenshots</arg>
+<doc>Creates the specified directory.</doc>
+<status status="PASS" start="2025-08-05T11:00:03.810744" elapsed="0.000243"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-08-05T11:00:03.906840" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="screenshots/2025.08.05_10.59.43/TC002/4-%20Detalhes%20do%20produto.jpg"&gt;&lt;img src="screenshots/2025.08.05_10.59.43/TC002/4-%20Detalhes%20do%20produto.jpg" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>C:/Iterasys/RobotSauceDemo140/screenshots/${date}/${TEST_NAME}/${screenshot_name}.jpg</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-08-05T11:00:03.811101" elapsed="0.095894"/>
+</kw>
+<arg>4- Detalhes do produto</arg>
+<status status="PASS" start="2025-08-05T11:00:03.810364" elapsed="0.096767"/>
+</kw>
+<kw name="Clicar no botao &quot;Add to cart&quot;" owner="inventory_item_page">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-08-05T11:00:03.908157" level="INFO">Clicking button 'css=button.btn.btn_primary.btn_small.btn_inventory'.</msg>
+<arg>${btn_add_to_cart}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-05T11:00:03.907598" elapsed="0.088331"/>
+</kw>
+<status status="PASS" start="2025-08-05T11:00:03.907349" elapsed="0.088705"/>
+</kw>
+<kw name="Clicar no carrinho" owner="base_page">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-08-05T11:00:03.997166" level="INFO">Clicking element 'css=[data-test="shopping-cart-link"]'.</msg>
+<arg>css=[data-test="shopping-cart-link"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-05T11:00:03.996941" elapsed="0.063245"/>
+</kw>
+<kw name="Wait Until Element Contains" owner="SeleniumLibrary">
+<arg>css=[data-test="title"]</arg>
+<arg>Your Cart</arg>
+<arg>${timeout}</arg>
+<doc>Waits until the element ``locator`` contains ``text``.</doc>
+<status status="PASS" start="2025-08-05T11:00:04.060446" elapsed="0.020659"/>
+</kw>
+<status status="PASS" start="2025-08-05T11:00:03.996240" elapsed="0.084976"/>
+</kw>
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<msg time="2025-08-05T11:00:04.081546" level="INFO">Verifying element 'css=.title' contains exact text 'Your Cart'.</msg>
+<arg>${titulo_secao}</arg>
+<arg>Your Cart</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="PASS" start="2025-08-05T11:00:04.081343" elapsed="0.012026"/>
+</kw>
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<msg time="2025-08-05T11:00:04.093780" level="INFO">Verifying element 'css=div.inventory_item_name' contains exact text 'Sauce Labs Bike Light'.</msg>
+<arg>${cart_product_name}</arg>
+<arg>${product_name}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="PASS" start="2025-08-05T11:00:04.093545" elapsed="0.015014"/>
+</kw>
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<msg time="2025-08-05T11:00:04.108967" level="INFO">Verifying element 'css=div.inventory_item_price' contains exact text '$9.99'.</msg>
+<arg>${cart_product_price}</arg>
+<arg>${product_price}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="PASS" start="2025-08-05T11:00:04.108738" elapsed="0.014524"/>
+</kw>
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<msg time="2025-08-05T11:00:04.123663" level="INFO">Verifying element 'css=div.cart_quantity' contains exact text '1'.</msg>
+<arg>${cart_product_quantity}</arg>
+<arg>1</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="PASS" start="2025-08-05T11:00:04.123442" elapsed="0.015174"/>
+</kw>
+<kw name="Tirar Screenshot" owner="base_page">
+<kw name="Create Directory" owner="OperatingSystem">
+<msg time="2025-08-05T11:00:04.139255" level="INFO" html="true">Directory '&lt;a href="file://C:\Iterasys\RobotSauceDemo140\screenshots"&gt;C:\Iterasys\RobotSauceDemo140\screenshots&lt;/a&gt;' already exists.</msg>
+<arg>C:/Iterasys/RobotSauceDemo140/screenshots</arg>
+<doc>Creates the specified directory.</doc>
+<status status="PASS" start="2025-08-05T11:00:04.139094" elapsed="0.000219"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-08-05T11:00:04.232870" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="screenshots/2025.08.05_10.59.43/TC002/5-%20Carrinho.jpg"&gt;&lt;img src="screenshots/2025.08.05_10.59.43/TC002/5-%20Carrinho.jpg" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>C:/Iterasys/RobotSauceDemo140/screenshots/${date}/${TEST_NAME}/${screenshot_name}.jpg</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-08-05T11:00:04.139426" elapsed="0.093551"/>
+</kw>
+<arg>5- Carrinho</arg>
+<status status="PASS" start="2025-08-05T11:00:04.138822" elapsed="0.094336"/>
+</kw>
+<kw name="Realizar Logout" owner="base_page">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-08-05T11:00:04.234095" level="INFO">Clicking element 'id=react-burger-menu-btn'.</msg>
+<arg>id=react-burger-menu-btn</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-05T11:00:04.233561" elapsed="0.066653"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-08-05T11:00:04.300583" level="INFO">Clicking element 'id=logout_sidebar_link'.</msg>
+<arg>id=logout_sidebar_link</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-05T11:00:04.300394" elapsed="0.146516"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>css=.login_logo</arg>
+<arg>${timeout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-08-05T11:00:04.447154" elapsed="0.035621"/>
+</kw>
+<status status="PASS" start="2025-08-05T11:00:04.233335" elapsed="0.249548"/>
+</kw>
+<arg>Sauce Labs Bike Light</arg>
+<arg>$9.99</arg>
+<status status="PASS" start="2025-08-05T11:00:02.698265" elapsed="1.784672"/>
+</kw>
+<kw name="Fechar navegador" owner="base_page" type="TEARDOWN">
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-08-05T11:00:04.983960" level="INFO">Slept 500 milliseconds.</msg>
+<arg>500ms</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-08-05T11:00:04.483669" elapsed="0.500415"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-08-05T11:00:04.984258" elapsed="2.307987"/>
+</kw>
+<status status="PASS" start="2025-08-05T11:00:04.483378" elapsed="2.809152"/>
+</kw>
+<status status="PASS" start="2025-08-05T10:59:59.928339" elapsed="7.364720"/>
+</test>
+<test id="s1-s2-t3" name="TC003" line="11">
+<kw name="Abrir navegador" owner="base_page" type="SETUP">
+<kw name="Register Keyword To Run On Failure" owner="SeleniumLibrary">
+<msg time="2025-08-05T11:00:07.296893" level="INFO">Tirar Screenshot will be run on failure.</msg>
+<arg>Tirar Screenshot</arg>
+<doc>Sets the keyword to execute, when a SeleniumLibrary keyword fails.</doc>
+<status status="PASS" start="2025-08-05T11:00:07.296428" elapsed="0.000684"/>
+</kw>
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-08-05T11:00:07.298080" level="INFO">Opening browser 'Edge' to base url 'https://www.saucedemo.com/'.</msg>
+<msg time="2025-08-05T11:00:07.733386" level="WARN">Exception managing MicrosoftEdge: error sending request for url (https://msedgedriver.azureedge.net/LATEST_RELEASE_138_WINDOWS)</msg>
+<arg>url=${url}</arg>
+<arg>browser=${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-08-05T11:00:07.297506" elapsed="2.555236"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-08-05T11:00:09.853014" elapsed="0.083115"/>
+</kw>
+<kw name="Set Browser Implicit Wait" owner="SeleniumLibrary">
+<arg>10000ms</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" start="2025-08-05T11:00:09.936385" elapsed="0.018161"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>css=.login_logo</arg>
+<arg>${timeout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-08-05T11:00:09.954832" elapsed="0.062017"/>
+</kw>
+<status status="PASS" start="2025-08-05T11:00:07.295748" elapsed="2.721329"/>
+</kw>
+<kw name="Selecionar Produto">
+<kw name="Tirar Screenshot" owner="base_page">
+<kw name="Create Directory" owner="OperatingSystem">
+<msg time="2025-08-05T11:00:10.018917" level="INFO" html="true">Directory '&lt;a href="file://C:\Iterasys\RobotSauceDemo140\screenshots"&gt;C:\Iterasys\RobotSauceDemo140\screenshots&lt;/a&gt;' already exists.</msg>
+<arg>C:/Iterasys/RobotSauceDemo140/screenshots</arg>
+<doc>Creates the specified directory.</doc>
+<status status="PASS" start="2025-08-05T11:00:10.018636" elapsed="0.000389"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-08-05T11:00:10.122353" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="screenshots/2025.08.05_10.59.43/TC003/1-%20Home.jpg"&gt;&lt;img src="screenshots/2025.08.05_10.59.43/TC003/1-%20Home.jpg" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>C:/Iterasys/RobotSauceDemo140/screenshots/${date}/${TEST_NAME}/${screenshot_name}.jpg</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-08-05T11:00:10.019262" elapsed="0.103242"/>
+</kw>
+<arg>1- Home</arg>
+<status status="PASS" start="2025-08-05T11:00:10.018175" elapsed="0.104487"/>
+</kw>
+<kw name="Preencher usuario" owner="login_page">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-08-05T11:00:10.123701" level="INFO">Typing text 'standard_user' into text field 'css=[data-test="username"]'.</msg>
+<arg>${txt_usuario}</arg>
+<arg>${usuario}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-05T11:00:10.123372" elapsed="0.224715"/>
+</kw>
+<arg>standard_user</arg>
+<status status="PASS" start="2025-08-05T11:00:10.122934" elapsed="0.225265"/>
+</kw>
+<kw name="Preencher senha" owner="login_page">
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2025-08-05T11:00:10.348820" level="INFO">Typing password into text field 'css=[data-test="password"]'.</msg>
+<msg time="2025-08-05T11:00:10.398807" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>${txt_senha}</arg>
+<arg>${senha}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-05T11:00:10.348626" elapsed="0.165241"/>
+</kw>
+<arg>secret_sauce</arg>
+<status status="PASS" start="2025-08-05T11:00:10.348359" elapsed="0.165650"/>
+</kw>
+<kw name="Tirar Screenshot" owner="base_page">
+<kw name="Create Directory" owner="OperatingSystem">
+<msg time="2025-08-05T11:00:10.514764" level="INFO" html="true">Directory '&lt;a href="file://C:\Iterasys\RobotSauceDemo140\screenshots"&gt;C:\Iterasys\RobotSauceDemo140\screenshots&lt;/a&gt;' already exists.</msg>
+<arg>C:/Iterasys/RobotSauceDemo140/screenshots</arg>
+<doc>Creates the specified directory.</doc>
+<status status="PASS" start="2025-08-05T11:00:10.514559" elapsed="0.000277"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-08-05T11:00:10.608091" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="screenshots/2025.08.05_10.59.43/TC003/2-%20Login%20Preenchido.jpg"&gt;&lt;img src="screenshots/2025.08.05_10.59.43/TC003/2-%20Login%20Preenchido.jpg" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>C:/Iterasys/RobotSauceDemo140/screenshots/${date}/${TEST_NAME}/${screenshot_name}.jpg</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-08-05T11:00:10.514981" elapsed="0.093282"/>
+</kw>
+<arg>2- Login Preenchido</arg>
+<status status="PASS" start="2025-08-05T11:00:10.514226" elapsed="0.094180"/>
+</kw>
+<kw name="Clicar botao Login" owner="login_page">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-08-05T11:00:10.609282" level="INFO">Clicking button 'id=login-button'.</msg>
+<arg>${btn_login}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-05T11:00:10.609069" elapsed="0.153646"/>
+</kw>
+<status status="PASS" start="2025-08-05T11:00:10.608667" elapsed="0.154169"/>
+</kw>
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<msg time="2025-08-05T11:00:10.763422" level="INFO">Verifying element 'css=.title' contains exact text 'Products'.</msg>
+<arg>${titulo_secao}</arg>
+<arg>Products</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="PASS" start="2025-08-05T11:00:10.763020" elapsed="0.055350"/>
+</kw>
+<kw name="Tirar Screenshot" owner="base_page">
+<kw name="Create Directory" owner="OperatingSystem">
+<msg time="2025-08-05T11:00:10.819102" level="INFO" html="true">Directory '&lt;a href="file://C:\Iterasys\RobotSauceDemo140\screenshots"&gt;C:\Iterasys\RobotSauceDemo140\screenshots&lt;/a&gt;' already exists.</msg>
+<arg>C:/Iterasys/RobotSauceDemo140/screenshots</arg>
+<doc>Creates the specified directory.</doc>
+<status status="PASS" start="2025-08-05T11:00:10.818922" elapsed="0.000247"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-08-05T11:00:10.961439" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="screenshots/2025.08.05_10.59.43/TC003/3-%20Lista%20de%20Produtos.jpg"&gt;&lt;img src="screenshots/2025.08.05_10.59.43/TC003/3-%20Lista%20de%20Produtos.jpg" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>C:/Iterasys/RobotSauceDemo140/screenshots/${date}/${TEST_NAME}/${screenshot_name}.jpg</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-08-05T11:00:10.819324" elapsed="0.142254"/>
+</kw>
+<arg>3- Lista de Produtos</arg>
+<status status="PASS" start="2025-08-05T11:00:10.818635" elapsed="0.143069"/>
+</kw>
+<kw name="Clicar no Produto" owner="inventory_page">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-08-05T11:00:10.962553" level="INFO">Clicking element 'css=img[alt="Sauce Labs Bolt T-Shirt"]'.</msg>
+<arg>css=img[alt="${product_name}"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-05T11:00:10.962281" elapsed="0.085499"/>
+</kw>
+<arg>${product_name}</arg>
+<status status="PASS" start="2025-08-05T11:00:10.961909" elapsed="0.086016"/>
+</kw>
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<msg time="2025-08-05T11:00:11.048445" level="INFO">Verifying element 'css=div.inventory_details_name.large_size' contains exact text 'Sauce Labs Bolt T-Shirt'.</msg>
+<arg>${inventory_item_product_name}</arg>
+<arg>${product_name}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="PASS" start="2025-08-05T11:00:11.048119" elapsed="0.049336"/>
+</kw>
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<msg time="2025-08-05T11:00:11.098073" level="INFO">Verifying element 'css=div.inventory_details_price' contains exact text '$15.99'.</msg>
+<arg>${inventory_item_product_price}</arg>
+<arg>${product_price}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="PASS" start="2025-08-05T11:00:11.097736" elapsed="0.049387"/>
+</kw>
+<kw name="Tirar Screenshot" owner="base_page">
+<kw name="Create Directory" owner="OperatingSystem">
+<msg time="2025-08-05T11:00:11.148490" level="INFO" html="true">Directory '&lt;a href="file://C:\Iterasys\RobotSauceDemo140\screenshots"&gt;C:\Iterasys\RobotSauceDemo140\screenshots&lt;/a&gt;' already exists.</msg>
+<arg>C:/Iterasys/RobotSauceDemo140/screenshots</arg>
+<doc>Creates the specified directory.</doc>
+<status status="PASS" start="2025-08-05T11:00:11.148136" elapsed="0.000465"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-08-05T11:00:11.252223" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="screenshots/2025.08.05_10.59.43/TC003/4-%20Detalhes%20do%20produto.jpg"&gt;&lt;img src="screenshots/2025.08.05_10.59.43/TC003/4-%20Detalhes%20do%20produto.jpg" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>C:/Iterasys/RobotSauceDemo140/screenshots/${date}/${TEST_NAME}/${screenshot_name}.jpg</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-08-05T11:00:11.148905" elapsed="0.103422"/>
+</kw>
+<arg>4- Detalhes do produto</arg>
+<status status="PASS" start="2025-08-05T11:00:11.147594" elapsed="0.104824"/>
+</kw>
+<kw name="Clicar no botao &quot;Add to cart&quot;" owner="inventory_item_page">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-08-05T11:00:11.252978" level="INFO">Clicking button 'css=button.btn.btn_primary.btn_small.btn_inventory'.</msg>
+<arg>${btn_add_to_cart}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-05T11:00:11.252816" elapsed="0.068517"/>
+</kw>
+<status status="PASS" start="2025-08-05T11:00:11.252582" elapsed="0.068911"/>
+</kw>
+<kw name="Clicar no carrinho" owner="base_page">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-08-05T11:00:11.323128" level="INFO">Clicking element 'css=[data-test="shopping-cart-link"]'.</msg>
+<arg>css=[data-test="shopping-cart-link"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-05T11:00:11.322515" elapsed="0.090233"/>
+</kw>
+<kw name="Wait Until Element Contains" owner="SeleniumLibrary">
+<arg>css=[data-test="title"]</arg>
+<arg>Your Cart</arg>
+<arg>${timeout}</arg>
+<doc>Waits until the element ``locator`` contains ``text``.</doc>
+<status status="PASS" start="2025-08-05T11:00:11.412978" elapsed="0.020083"/>
+</kw>
+<status status="PASS" start="2025-08-05T11:00:11.321850" elapsed="0.111320"/>
+</kw>
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<msg time="2025-08-05T11:00:11.433522" level="INFO">Verifying element 'css=.title' contains exact text 'Your Cart'.</msg>
+<arg>${titulo_secao}</arg>
+<arg>Your Cart</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="PASS" start="2025-08-05T11:00:11.433305" elapsed="0.012722"/>
+</kw>
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<msg time="2025-08-05T11:00:11.446479" level="INFO">Verifying element 'css=div.inventory_item_name' contains exact text 'Sauce Labs Bolt T-Shirt'.</msg>
+<arg>${cart_product_name}</arg>
+<arg>${product_name}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="PASS" start="2025-08-05T11:00:11.446232" elapsed="0.015590"/>
+</kw>
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<msg time="2025-08-05T11:00:11.462240" level="INFO">Verifying element 'css=div.inventory_item_price' contains exact text '$15.99'.</msg>
+<arg>${cart_product_price}</arg>
+<arg>${product_price}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="PASS" start="2025-08-05T11:00:11.462004" elapsed="0.015033"/>
+</kw>
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<msg time="2025-08-05T11:00:11.477439" level="INFO">Verifying element 'css=div.cart_quantity' contains exact text '1'.</msg>
+<arg>${cart_product_quantity}</arg>
+<arg>1</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="PASS" start="2025-08-05T11:00:11.477218" elapsed="0.014672"/>
+</kw>
+<kw name="Tirar Screenshot" owner="base_page">
+<kw name="Create Directory" owner="OperatingSystem">
+<msg time="2025-08-05T11:00:11.492609" level="INFO" html="true">Directory '&lt;a href="file://C:\Iterasys\RobotSauceDemo140\screenshots"&gt;C:\Iterasys\RobotSauceDemo140\screenshots&lt;/a&gt;' already exists.</msg>
+<arg>C:/Iterasys/RobotSauceDemo140/screenshots</arg>
+<doc>Creates the specified directory.</doc>
+<status status="PASS" start="2025-08-05T11:00:11.492419" elapsed="0.000255"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-08-05T11:00:11.584843" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="screenshots/2025.08.05_10.59.43/TC003/5-%20Carrinho.jpg"&gt;&lt;img src="screenshots/2025.08.05_10.59.43/TC003/5-%20Carrinho.jpg" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>C:/Iterasys/RobotSauceDemo140/screenshots/${date}/${TEST_NAME}/${screenshot_name}.jpg</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-08-05T11:00:11.492820" elapsed="0.092128"/>
+</kw>
+<arg>5- Carrinho</arg>
+<status status="PASS" start="2025-08-05T11:00:11.492123" elapsed="0.092961"/>
+</kw>
+<kw name="Realizar Logout" owner="base_page">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-08-05T11:00:11.585638" level="INFO">Clicking element 'id=react-burger-menu-btn'.</msg>
+<arg>id=react-burger-menu-btn</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-05T11:00:11.585488" elapsed="0.058794"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-08-05T11:00:11.644648" level="INFO">Clicking element 'id=logout_sidebar_link'.</msg>
+<arg>id=logout_sidebar_link</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-05T11:00:11.644463" elapsed="0.139343"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>css=.login_logo</arg>
+<arg>${timeout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-08-05T11:00:11.784375" elapsed="0.035977"/>
+</kw>
+<status status="PASS" start="2025-08-05T11:00:11.585252" elapsed="0.235207"/>
+</kw>
+<arg>Sauce Labs Bolt T-Shirt</arg>
+<arg>$15.99</arg>
+<status status="PASS" start="2025-08-05T11:00:10.017638" elapsed="1.802875"/>
+</kw>
+<kw name="Fechar navegador" owner="base_page" type="TEARDOWN">
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-08-05T11:00:12.322133" level="INFO">Slept 500 milliseconds.</msg>
+<arg>500ms</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-08-05T11:00:11.821237" elapsed="0.501406"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-08-05T11:00:12.323434" elapsed="2.316011"/>
+</kw>
+<status status="PASS" start="2025-08-05T11:00:11.820953" elapsed="2.818845"/>
+</kw>
+<status status="PASS" start="2025-08-05T11:00:07.294594" elapsed="7.345694"/>
+</test>
+<test id="s1-s2-t4" name="TC004" line="12">
+<kw name="Abrir navegador" owner="base_page" type="SETUP">
+<kw name="Register Keyword To Run On Failure" owner="SeleniumLibrary">
+<msg time="2025-08-05T11:00:14.644642" level="INFO">Tirar Screenshot will be run on failure.</msg>
+<arg>Tirar Screenshot</arg>
+<doc>Sets the keyword to execute, when a SeleniumLibrary keyword fails.</doc>
+<status status="PASS" start="2025-08-05T11:00:14.644330" elapsed="0.000437"/>
+</kw>
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-08-05T11:00:14.645609" level="INFO">Opening browser 'Edge' to base url 'https://www.saucedemo.com/'.</msg>
+<msg time="2025-08-05T11:00:15.092187" level="WARN">Exception managing MicrosoftEdge: error sending request for url (https://msedgedriver.azureedge.net/LATEST_RELEASE_138_WINDOWS)</msg>
+<arg>url=${url}</arg>
+<arg>browser=${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-08-05T11:00:14.645122" elapsed="2.925563"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-08-05T11:00:17.570879" elapsed="0.063416"/>
+</kw>
+<kw name="Set Browser Implicit Wait" owner="SeleniumLibrary">
+<arg>10000ms</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" start="2025-08-05T11:00:17.634843" elapsed="0.003980"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>css=.login_logo</arg>
+<arg>${timeout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-08-05T11:00:17.639108" elapsed="0.065441"/>
+</kw>
+<status status="PASS" start="2025-08-05T11:00:14.643720" elapsed="3.061110"/>
+</kw>
+<kw name="Selecionar Produto">
+<kw name="Tirar Screenshot" owner="base_page">
+<kw name="Create Directory" owner="OperatingSystem">
+<msg time="2025-08-05T11:00:17.708166" level="INFO" html="true">Directory '&lt;a href="file://C:\Iterasys\RobotSauceDemo140\screenshots"&gt;C:\Iterasys\RobotSauceDemo140\screenshots&lt;/a&gt;' already exists.</msg>
+<arg>C:/Iterasys/RobotSauceDemo140/screenshots</arg>
+<doc>Creates the specified directory.</doc>
+<status status="PASS" start="2025-08-05T11:00:17.707672" elapsed="0.000761"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-08-05T11:00:17.831107" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="screenshots/2025.08.05_10.59.43/TC004/1-%20Home.jpg"&gt;&lt;img src="screenshots/2025.08.05_10.59.43/TC004/1-%20Home.jpg" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>C:/Iterasys/RobotSauceDemo140/screenshots/${date}/${TEST_NAME}/${screenshot_name}.jpg</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-08-05T11:00:17.710622" elapsed="0.120651"/>
+</kw>
+<arg>1- Home</arg>
+<status status="PASS" start="2025-08-05T11:00:17.706477" elapsed="0.124945"/>
+</kw>
+<kw name="Preencher usuario" owner="login_page">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-08-05T11:00:17.832480" level="INFO">Typing text 'standard_user' into text field 'css=[data-test="username"]'.</msg>
+<arg>${txt_usuario}</arg>
+<arg>${usuario}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-05T11:00:17.832120" elapsed="0.249874"/>
+</kw>
+<arg>standard_user</arg>
+<status status="PASS" start="2025-08-05T11:00:17.831687" elapsed="0.250492"/>
+</kw>
+<kw name="Preencher senha" owner="login_page">
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2025-08-05T11:00:18.083205" level="INFO">Typing password into text field 'css=[data-test="password"]'.</msg>
+<msg time="2025-08-05T11:00:18.119298" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>${txt_senha}</arg>
+<arg>${senha}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-05T11:00:18.082834" elapsed="0.119310"/>
+</kw>
+<arg>secret_sauce</arg>
+<status status="PASS" start="2025-08-05T11:00:18.082428" elapsed="0.119898"/>
+</kw>
+<kw name="Tirar Screenshot" owner="base_page">
+<kw name="Create Directory" owner="OperatingSystem">
+<msg time="2025-08-05T11:00:18.203325" level="INFO" html="true">Directory '&lt;a href="file://C:\Iterasys\RobotSauceDemo140\screenshots"&gt;C:\Iterasys\RobotSauceDemo140\screenshots&lt;/a&gt;' already exists.</msg>
+<arg>C:/Iterasys/RobotSauceDemo140/screenshots</arg>
+<doc>Creates the specified directory.</doc>
+<status status="PASS" start="2025-08-05T11:00:18.203052" elapsed="0.000358"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-08-05T11:00:18.312762" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="screenshots/2025.08.05_10.59.43/TC004/2-%20Login%20Preenchido.jpg"&gt;&lt;img src="screenshots/2025.08.05_10.59.43/TC004/2-%20Login%20Preenchido.jpg" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>C:/Iterasys/RobotSauceDemo140/screenshots/${date}/${TEST_NAME}/${screenshot_name}.jpg</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-08-05T11:00:18.203590" elapsed="0.109283"/>
+</kw>
+<arg>2- Login Preenchido</arg>
+<status status="PASS" start="2025-08-05T11:00:18.202592" elapsed="0.110372"/>
+</kw>
+<kw name="Clicar botao Login" owner="login_page">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-08-05T11:00:18.313534" level="INFO">Clicking button 'id=login-button'.</msg>
+<arg>${btn_login}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-05T11:00:18.313366" elapsed="0.162449"/>
+</kw>
+<status status="PASS" start="2025-08-05T11:00:18.313125" elapsed="0.162900"/>
+</kw>
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<msg time="2025-08-05T11:00:18.476926" level="INFO">Verifying element 'css=.title' contains exact text 'Products'.</msg>
+<arg>${titulo_secao}</arg>
+<arg>Products</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="PASS" start="2025-08-05T11:00:18.476243" elapsed="0.039873"/>
+</kw>
+<kw name="Tirar Screenshot" owner="base_page">
+<kw name="Create Directory" owner="OperatingSystem">
+<msg time="2025-08-05T11:00:18.516933" level="INFO" html="true">Directory '&lt;a href="file://C:\Iterasys\RobotSauceDemo140\screenshots"&gt;C:\Iterasys\RobotSauceDemo140\screenshots&lt;/a&gt;' already exists.</msg>
+<arg>C:/Iterasys/RobotSauceDemo140/screenshots</arg>
+<doc>Creates the specified directory.</doc>
+<status status="PASS" start="2025-08-05T11:00:18.516764" elapsed="0.000227"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-08-05T11:00:18.678886" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="screenshots/2025.08.05_10.59.43/TC004/3-%20Lista%20de%20Produtos.jpg"&gt;&lt;img src="screenshots/2025.08.05_10.59.43/TC004/3-%20Lista%20de%20Produtos.jpg" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>C:/Iterasys/RobotSauceDemo140/screenshots/${date}/${TEST_NAME}/${screenshot_name}.jpg</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-08-05T11:00:18.517108" elapsed="0.161898"/>
+</kw>
+<arg>3- Lista de Produtos</arg>
+<status status="PASS" start="2025-08-05T11:00:18.516449" elapsed="0.162747"/>
+</kw>
+<kw name="Clicar no Produto" owner="inventory_page">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-08-05T11:00:18.679916" level="INFO">Clicking element 'css=img[alt="Sauce Labs Fleece Jacket"]'.</msg>
+<arg>css=img[alt="${product_name}"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-05T11:00:18.679695" elapsed="0.087817"/>
+</kw>
+<arg>${product_name}</arg>
+<status status="PASS" start="2025-08-05T11:00:18.679388" elapsed="0.088285"/>
+</kw>
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<msg time="2025-08-05T11:00:18.768213" level="INFO">Verifying element 'css=div.inventory_details_name.large_size' contains exact text 'Sauce Labs Fleece Jacket'.</msg>
+<arg>${inventory_item_product_name}</arg>
+<arg>${product_name}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="PASS" start="2025-08-05T11:00:18.767826" elapsed="0.078327"/>
+</kw>
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<msg time="2025-08-05T11:00:18.847060" level="INFO">Verifying element 'css=div.inventory_details_price' contains exact text '$49.99'.</msg>
+<arg>${inventory_item_product_price}</arg>
+<arg>${product_price}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="PASS" start="2025-08-05T11:00:18.846561" elapsed="0.047800"/>
+</kw>
+<kw name="Tirar Screenshot" owner="base_page">
+<kw name="Create Directory" owner="OperatingSystem">
+<msg time="2025-08-05T11:00:18.895324" level="INFO" html="true">Directory '&lt;a href="file://C:\Iterasys\RobotSauceDemo140\screenshots"&gt;C:\Iterasys\RobotSauceDemo140\screenshots&lt;/a&gt;' already exists.</msg>
+<arg>C:/Iterasys/RobotSauceDemo140/screenshots</arg>
+<doc>Creates the specified directory.</doc>
+<status status="PASS" start="2025-08-05T11:00:18.895097" elapsed="0.000313"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-08-05T11:00:19.009895" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="screenshots/2025.08.05_10.59.43/TC004/4-%20Detalhes%20do%20produto.jpg"&gt;&lt;img src="screenshots/2025.08.05_10.59.43/TC004/4-%20Detalhes%20do%20produto.jpg" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>C:/Iterasys/RobotSauceDemo140/screenshots/${date}/${TEST_NAME}/${screenshot_name}.jpg</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-08-05T11:00:18.895617" elapsed="0.114483"/>
+</kw>
+<arg>4- Detalhes do produto</arg>
+<status status="PASS" start="2025-08-05T11:00:18.894681" elapsed="0.115657"/>
+</kw>
+<kw name="Clicar no botao &quot;Add to cart&quot;" owner="inventory_item_page">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-08-05T11:00:19.011807" level="INFO">Clicking button 'css=button.btn.btn_primary.btn_small.btn_inventory'.</msg>
+<arg>${btn_add_to_cart}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-05T11:00:19.011318" elapsed="0.068962"/>
+</kw>
+<status status="PASS" start="2025-08-05T11:00:19.010706" elapsed="0.069695"/>
+</kw>
+<kw name="Clicar no carrinho" owner="base_page">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-08-05T11:00:19.081290" level="INFO">Clicking element 'css=[data-test="shopping-cart-link"]'.</msg>
+<arg>css=[data-test="shopping-cart-link"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-05T11:00:19.081050" elapsed="0.071538"/>
+</kw>
+<kw name="Wait Until Element Contains" owner="SeleniumLibrary">
+<arg>css=[data-test="title"]</arg>
+<arg>Your Cart</arg>
+<arg>${timeout}</arg>
+<doc>Waits until the element ``locator`` contains ``text``.</doc>
+<status status="PASS" start="2025-08-05T11:00:19.152876" elapsed="0.026016"/>
+</kw>
+<status status="PASS" start="2025-08-05T11:00:19.080587" elapsed="0.098417"/>
+</kw>
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<msg time="2025-08-05T11:00:19.179351" level="INFO">Verifying element 'css=.title' contains exact text 'Your Cart'.</msg>
+<arg>${titulo_secao}</arg>
+<arg>Your Cart</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="PASS" start="2025-08-05T11:00:19.179135" elapsed="0.011905"/>
+</kw>
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<msg time="2025-08-05T11:00:19.191622" level="INFO">Verifying element 'css=div.inventory_item_name' contains exact text 'Sauce Labs Fleece Jacket'.</msg>
+<arg>${cart_product_name}</arg>
+<arg>${product_name}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="PASS" start="2025-08-05T11:00:19.191265" elapsed="0.014820"/>
+</kw>
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<msg time="2025-08-05T11:00:19.206499" level="INFO">Verifying element 'css=div.inventory_item_price' contains exact text '$49.99'.</msg>
+<arg>${cart_product_price}</arg>
+<arg>${product_price}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="PASS" start="2025-08-05T11:00:19.206263" elapsed="0.015749"/>
+</kw>
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<msg time="2025-08-05T11:00:19.222421" level="INFO">Verifying element 'css=div.cart_quantity' contains exact text '1'.</msg>
+<arg>${cart_product_quantity}</arg>
+<arg>1</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="PASS" start="2025-08-05T11:00:19.222193" elapsed="0.014570"/>
+</kw>
+<kw name="Tirar Screenshot" owner="base_page">
+<kw name="Create Directory" owner="OperatingSystem">
+<msg time="2025-08-05T11:00:19.237421" level="INFO" html="true">Directory '&lt;a href="file://C:\Iterasys\RobotSauceDemo140\screenshots"&gt;C:\Iterasys\RobotSauceDemo140\screenshots&lt;/a&gt;' already exists.</msg>
+<arg>C:/Iterasys/RobotSauceDemo140/screenshots</arg>
+<doc>Creates the specified directory.</doc>
+<status status="PASS" start="2025-08-05T11:00:19.237262" elapsed="0.000214"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-08-05T11:00:19.328940" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="screenshots/2025.08.05_10.59.43/TC004/5-%20Carrinho.jpg"&gt;&lt;img src="screenshots/2025.08.05_10.59.43/TC004/5-%20Carrinho.jpg" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>C:/Iterasys/RobotSauceDemo140/screenshots/${date}/${TEST_NAME}/${screenshot_name}.jpg</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-08-05T11:00:19.237584" elapsed="0.091494"/>
+</kw>
+<arg>5- Carrinho</arg>
+<status status="PASS" start="2025-08-05T11:00:19.236999" elapsed="0.092234"/>
+</kw>
+<kw name="Realizar Logout" owner="base_page">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-08-05T11:00:19.329789" level="INFO">Clicking element 'id=react-burger-menu-btn'.</msg>
+<arg>id=react-burger-menu-btn</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-05T11:00:19.329638" elapsed="0.063250"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-08-05T11:00:19.393291" level="INFO">Clicking element 'id=logout_sidebar_link'.</msg>
+<arg>id=logout_sidebar_link</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-05T11:00:19.393087" elapsed="0.156792"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>css=.login_logo</arg>
+<arg>${timeout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-08-05T11:00:19.550530" elapsed="0.038012"/>
+</kw>
+<status status="PASS" start="2025-08-05T11:00:19.329407" elapsed="0.259249"/>
+</kw>
+<arg>Sauce Labs Fleece Jacket</arg>
+<arg>$49.99</arg>
+<status status="PASS" start="2025-08-05T11:00:17.705775" elapsed="1.882935"/>
+</kw>
+<kw name="Fechar navegador" owner="base_page" type="TEARDOWN">
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-08-05T11:00:20.089924" level="INFO">Slept 500 milliseconds.</msg>
+<arg>500ms</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-08-05T11:00:19.589452" elapsed="0.500751"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-08-05T11:00:20.091223" elapsed="3.333232"/>
+</kw>
+<status status="PASS" start="2025-08-05T11:00:19.589153" elapsed="3.835711"/>
+</kw>
+<status status="PASS" start="2025-08-05T11:00:14.642598" elapsed="8.782807"/>
+</test>
+<test id="s1-s2-t5" name="TC005" line="13">
+<kw name="Abrir navegador" owner="base_page" type="SETUP">
+<kw name="Register Keyword To Run On Failure" owner="SeleniumLibrary">
+<msg time="2025-08-05T11:00:23.429106" level="INFO">Tirar Screenshot will be run on failure.</msg>
+<arg>Tirar Screenshot</arg>
+<doc>Sets the keyword to execute, when a SeleniumLibrary keyword fails.</doc>
+<status status="PASS" start="2025-08-05T11:00:23.428760" elapsed="0.000500"/>
+</kw>
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-08-05T11:00:23.430162" level="INFO">Opening browser 'Edge' to base url 'https://www.saucedemo.com/'.</msg>
+<msg time="2025-08-05T11:00:23.872208" level="WARN">Exception managing MicrosoftEdge: error sending request for url (https://msedgedriver.azureedge.net/LATEST_RELEASE_138_WINDOWS)</msg>
+<arg>url=${url}</arg>
+<arg>browser=${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-08-05T11:00:23.429614" elapsed="2.658801"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-08-05T11:00:26.088723" elapsed="0.079195"/>
+</kw>
+<kw name="Set Browser Implicit Wait" owner="SeleniumLibrary">
+<arg>10000ms</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" start="2025-08-05T11:00:26.168189" elapsed="0.003736"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>css=.login_logo</arg>
+<arg>${timeout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-08-05T11:00:26.172256" elapsed="0.056267"/>
+</kw>
+<status status="PASS" start="2025-08-05T11:00:23.428074" elapsed="2.800594"/>
+</kw>
+<kw name="Selecionar Produto">
+<kw name="Tirar Screenshot" owner="base_page">
+<kw name="Create Directory" owner="OperatingSystem">
+<msg time="2025-08-05T11:00:26.231171" level="INFO" html="true">Directory '&lt;a href="file://C:\Iterasys\RobotSauceDemo140\screenshots"&gt;C:\Iterasys\RobotSauceDemo140\screenshots&lt;/a&gt;' already exists.</msg>
+<arg>C:/Iterasys/RobotSauceDemo140/screenshots</arg>
+<doc>Creates the specified directory.</doc>
+<status status="PASS" start="2025-08-05T11:00:26.230463" elapsed="0.001032"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-08-05T11:00:26.338552" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="screenshots/2025.08.05_10.59.43/TC005/1-%20Home.jpg"&gt;&lt;img src="screenshots/2025.08.05_10.59.43/TC005/1-%20Home.jpg" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>C:/Iterasys/RobotSauceDemo140/screenshots/${date}/${TEST_NAME}/${screenshot_name}.jpg</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-08-05T11:00:26.232320" elapsed="0.106383"/>
+</kw>
+<arg>1- Home</arg>
+<status status="PASS" start="2025-08-05T11:00:26.230024" elapsed="0.108811"/>
+</kw>
+<kw name="Preencher usuario" owner="login_page">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-08-05T11:00:26.340351" level="INFO">Typing text 'standard_user' into text field 'css=[data-test="username"]'.</msg>
+<arg>${txt_usuario}</arg>
+<arg>${usuario}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-05T11:00:26.339579" elapsed="0.212514"/>
+</kw>
+<arg>standard_user</arg>
+<status status="PASS" start="2025-08-05T11:00:26.339137" elapsed="0.213147"/>
+</kw>
+<kw name="Preencher senha" owner="login_page">
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2025-08-05T11:00:26.553299" level="INFO">Typing password into text field 'css=[data-test="password"]'.</msg>
+<msg time="2025-08-05T11:00:26.597797" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>${txt_senha}</arg>
+<arg>${senha}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-05T11:00:26.552959" elapsed="0.120253"/>
+</kw>
+<arg>secret_sauce</arg>
+<status status="PASS" start="2025-08-05T11:00:26.552534" elapsed="0.121339"/>
+</kw>
+<kw name="Tirar Screenshot" owner="base_page">
+<kw name="Create Directory" owner="OperatingSystem">
+<msg time="2025-08-05T11:00:26.675543" level="INFO" html="true">Directory '&lt;a href="file://C:\Iterasys\RobotSauceDemo140\screenshots"&gt;C:\Iterasys\RobotSauceDemo140\screenshots&lt;/a&gt;' already exists.</msg>
+<arg>C:/Iterasys/RobotSauceDemo140/screenshots</arg>
+<doc>Creates the specified directory.</doc>
+<status status="PASS" start="2025-08-05T11:00:26.674847" elapsed="0.000892"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-08-05T11:00:26.780976" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="screenshots/2025.08.05_10.59.43/TC005/2-%20Login%20Preenchido.jpg"&gt;&lt;img src="screenshots/2025.08.05_10.59.43/TC005/2-%20Login%20Preenchido.jpg" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>C:/Iterasys/RobotSauceDemo140/screenshots/${date}/${TEST_NAME}/${screenshot_name}.jpg</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-08-05T11:00:26.675887" elapsed="0.105203"/>
+</kw>
+<arg>2- Login Preenchido</arg>
+<status status="PASS" start="2025-08-05T11:00:26.674274" elapsed="0.106925"/>
+</kw>
+<kw name="Clicar botao Login" owner="login_page">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-08-05T11:00:26.781949" level="INFO">Clicking button 'id=login-button'.</msg>
+<arg>${btn_login}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-05T11:00:26.781747" elapsed="0.137593"/>
+</kw>
+<status status="PASS" start="2025-08-05T11:00:26.781385" elapsed="0.138153"/>
+</kw>
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<msg time="2025-08-05T11:00:26.920463" level="INFO">Verifying element 'css=.title' contains exact text 'Products'.</msg>
+<arg>${titulo_secao}</arg>
+<arg>Products</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="PASS" start="2025-08-05T11:00:26.919951" elapsed="0.076954"/>
+</kw>
+<kw name="Tirar Screenshot" owner="base_page">
+<kw name="Create Directory" owner="OperatingSystem">
+<msg time="2025-08-05T11:00:26.997529" level="INFO" html="true">Directory '&lt;a href="file://C:\Iterasys\RobotSauceDemo140\screenshots"&gt;C:\Iterasys\RobotSauceDemo140\screenshots&lt;/a&gt;' already exists.</msg>
+<arg>C:/Iterasys/RobotSauceDemo140/screenshots</arg>
+<doc>Creates the specified directory.</doc>
+<status status="PASS" start="2025-08-05T11:00:26.997370" elapsed="0.000214"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-08-05T11:00:27.131553" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="screenshots/2025.08.05_10.59.43/TC005/3-%20Lista%20de%20Produtos.jpg"&gt;&lt;img src="screenshots/2025.08.05_10.59.43/TC005/3-%20Lista%20de%20Produtos.jpg" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>C:/Iterasys/RobotSauceDemo140/screenshots/${date}/${TEST_NAME}/${screenshot_name}.jpg</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-08-05T11:00:26.997693" elapsed="0.133968"/>
+</kw>
+<arg>3- Lista de Produtos</arg>
+<status status="PASS" start="2025-08-05T11:00:26.997114" elapsed="0.134638"/>
+</kw>
+<kw name="Clicar no Produto" owner="inventory_page">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-08-05T11:00:27.132366" level="INFO">Clicking element 'css=img[alt="Sauce Labs Onesie"]'.</msg>
+<arg>css=img[alt="${product_name}"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-05T11:00:27.132183" elapsed="0.086475"/>
+</kw>
+<arg>${product_name}</arg>
+<status status="PASS" start="2025-08-05T11:00:27.131910" elapsed="0.087052"/>
+</kw>
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<msg time="2025-08-05T11:00:27.219711" level="INFO">Verifying element 'css=div.inventory_details_name.large_size' contains exact text 'Sauce Labs Onesie'.</msg>
+<arg>${inventory_item_product_name}</arg>
+<arg>${product_name}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="PASS" start="2025-08-05T11:00:27.219215" elapsed="0.077011"/>
+</kw>
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<msg time="2025-08-05T11:00:27.297233" level="INFO">Verifying element 'css=div.inventory_details_price' contains exact text '$7.99'.</msg>
+<arg>${inventory_item_product_price}</arg>
+<arg>${product_price}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="PASS" start="2025-08-05T11:00:27.296707" elapsed="0.038134"/>
+</kw>
+<kw name="Tirar Screenshot" owner="base_page">
+<kw name="Create Directory" owner="OperatingSystem">
+<msg time="2025-08-05T11:00:27.335478" level="INFO" html="true">Directory '&lt;a href="file://C:\Iterasys\RobotSauceDemo140\screenshots"&gt;C:\Iterasys\RobotSauceDemo140\screenshots&lt;/a&gt;' already exists.</msg>
+<arg>C:/Iterasys/RobotSauceDemo140/screenshots</arg>
+<doc>Creates the specified directory.</doc>
+<status status="PASS" start="2025-08-05T11:00:27.335316" elapsed="0.000218"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-08-05T11:00:27.450432" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="screenshots/2025.08.05_10.59.43/TC005/4-%20Detalhes%20do%20produto.jpg"&gt;&lt;img src="screenshots/2025.08.05_10.59.43/TC005/4-%20Detalhes%20do%20produto.jpg" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>C:/Iterasys/RobotSauceDemo140/screenshots/${date}/${TEST_NAME}/${screenshot_name}.jpg</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-08-05T11:00:27.335642" elapsed="0.114897"/>
+</kw>
+<arg>4- Detalhes do produto</arg>
+<status status="PASS" start="2025-08-05T11:00:27.335055" elapsed="0.115579"/>
+</kw>
+<kw name="Clicar no botao &quot;Add to cart&quot;" owner="inventory_item_page">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-08-05T11:00:27.451197" level="INFO">Clicking button 'css=button.btn.btn_primary.btn_small.btn_inventory'.</msg>
+<arg>${btn_add_to_cart}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-05T11:00:27.451028" elapsed="0.071928"/>
+</kw>
+<status status="PASS" start="2025-08-05T11:00:27.450792" elapsed="0.072314"/>
+</kw>
+<kw name="Clicar no carrinho" owner="base_page">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-08-05T11:00:27.524857" level="INFO">Clicking element 'css=[data-test="shopping-cart-link"]'.</msg>
+<arg>css=[data-test="shopping-cart-link"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-05T11:00:27.524284" elapsed="0.060551"/>
+</kw>
+<kw name="Wait Until Element Contains" owner="SeleniumLibrary">
+<arg>css=[data-test="title"]</arg>
+<arg>Your Cart</arg>
+<arg>${timeout}</arg>
+<doc>Waits until the element ``locator`` contains ``text``.</doc>
+<status status="PASS" start="2025-08-05T11:00:27.585092" elapsed="0.027497"/>
+</kw>
+<status status="PASS" start="2025-08-05T11:00:27.523777" elapsed="0.088924"/>
+</kw>
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<msg time="2025-08-05T11:00:27.613049" level="INFO">Verifying element 'css=.title' contains exact text 'Your Cart'.</msg>
+<arg>${titulo_secao}</arg>
+<arg>Your Cart</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="PASS" start="2025-08-05T11:00:27.612837" elapsed="0.012513"/>
+</kw>
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<msg time="2025-08-05T11:00:27.625872" level="INFO">Verifying element 'css=div.inventory_item_name' contains exact text 'Sauce Labs Onesie'.</msg>
+<arg>${cart_product_name}</arg>
+<arg>${product_name}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="PASS" start="2025-08-05T11:00:27.625571" elapsed="0.015486"/>
+</kw>
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<msg time="2025-08-05T11:00:27.641649" level="INFO">Verifying element 'css=div.inventory_item_price' contains exact text '$7.99'.</msg>
+<arg>${cart_product_price}</arg>
+<arg>${product_price}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="PASS" start="2025-08-05T11:00:27.641310" elapsed="0.019318"/>
+</kw>
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<msg time="2025-08-05T11:00:27.661226" level="INFO">Verifying element 'css=div.cart_quantity' contains exact text '1'.</msg>
+<arg>${cart_product_quantity}</arg>
+<arg>1</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="PASS" start="2025-08-05T11:00:27.660891" elapsed="0.020318"/>
+</kw>
+<kw name="Tirar Screenshot" owner="base_page">
+<kw name="Create Directory" owner="OperatingSystem">
+<msg time="2025-08-05T11:00:27.681974" level="INFO" html="true">Directory '&lt;a href="file://C:\Iterasys\RobotSauceDemo140\screenshots"&gt;C:\Iterasys\RobotSauceDemo140\screenshots&lt;/a&gt;' already exists.</msg>
+<arg>C:/Iterasys/RobotSauceDemo140/screenshots</arg>
+<doc>Creates the specified directory.</doc>
+<status status="PASS" start="2025-08-05T11:00:27.681776" elapsed="0.000268"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-08-05T11:00:27.766123" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="screenshots/2025.08.05_10.59.43/TC005/5-%20Carrinho.jpg"&gt;&lt;img src="screenshots/2025.08.05_10.59.43/TC005/5-%20Carrinho.jpg" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>C:/Iterasys/RobotSauceDemo140/screenshots/${date}/${TEST_NAME}/${screenshot_name}.jpg</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-08-05T11:00:27.682186" elapsed="0.084124"/>
+</kw>
+<arg>5- Carrinho</arg>
+<status status="PASS" start="2025-08-05T11:00:27.681451" elapsed="0.084956"/>
+</kw>
+<kw name="Realizar Logout" owner="base_page">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-08-05T11:00:27.767109" level="INFO">Clicking element 'id=react-burger-menu-btn'.</msg>
+<arg>id=react-burger-menu-btn</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-05T11:00:27.766921" elapsed="0.057539"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-08-05T11:00:27.825938" level="INFO">Clicking element 'id=logout_sidebar_link'.</msg>
+<arg>id=logout_sidebar_link</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-05T11:00:27.825737" elapsed="0.159682"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>css=.login_logo</arg>
+<arg>${timeout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-08-05T11:00:27.986073" elapsed="0.019838"/>
+</kw>
+<status status="PASS" start="2025-08-05T11:00:27.766592" elapsed="0.239493"/>
+</kw>
+<arg>Sauce Labs Onesie</arg>
+<arg>$7.99</arg>
+<status status="PASS" start="2025-08-05T11:00:26.229510" elapsed="1.776713"/>
+</kw>
+<kw name="Fechar navegador" owner="base_page" type="TEARDOWN">
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-08-05T11:00:28.509062" level="INFO">Slept 500 milliseconds.</msg>
+<arg>500ms</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-08-05T11:00:28.008093" elapsed="0.501197"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-08-05T11:00:28.509680" elapsed="2.331334"/>
+</kw>
+<status status="PASS" start="2025-08-05T11:00:28.007448" elapsed="2.833835"/>
+</kw>
+<status status="PASS" start="2025-08-05T11:00:23.426921" elapsed="7.414868"/>
+</test>
+<test id="s1-s2-t6" name="TC006" line="14">
+<kw name="Abrir navegador" owner="base_page" type="SETUP">
+<kw name="Register Keyword To Run On Failure" owner="SeleniumLibrary">
+<msg time="2025-08-05T11:00:30.845369" level="INFO">Tirar Screenshot will be run on failure.</msg>
+<arg>Tirar Screenshot</arg>
+<doc>Sets the keyword to execute, when a SeleniumLibrary keyword fails.</doc>
+<status status="PASS" start="2025-08-05T11:00:30.845035" elapsed="0.000468"/>
+</kw>
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-08-05T11:00:30.846470" level="INFO">Opening browser 'Edge' to base url 'https://www.saucedemo.com/'.</msg>
+<msg time="2025-08-05T11:00:31.285561" level="WARN">Exception managing MicrosoftEdge: error sending request for url (https://msedgedriver.azureedge.net/LATEST_RELEASE_138_WINDOWS)</msg>
+<arg>url=${url}</arg>
+<arg>browser=${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-08-05T11:00:30.845883" elapsed="2.922294"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-08-05T11:00:33.768475" elapsed="0.081875"/>
+</kw>
+<kw name="Set Browser Implicit Wait" owner="SeleniumLibrary">
+<arg>10000ms</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" start="2025-08-05T11:00:33.850665" elapsed="0.004245"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>css=.login_logo</arg>
+<arg>${timeout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-08-05T11:00:33.855186" elapsed="0.096694"/>
+</kw>
+<status status="PASS" start="2025-08-05T11:00:30.844358" elapsed="3.107694"/>
+</kw>
+<kw name="Selecionar Produto">
+<kw name="Tirar Screenshot" owner="base_page">
+<kw name="Create Directory" owner="OperatingSystem">
+<msg time="2025-08-05T11:00:33.957216" level="INFO" html="true">Directory '&lt;a href="file://C:\Iterasys\RobotSauceDemo140\screenshots"&gt;C:\Iterasys\RobotSauceDemo140\screenshots&lt;/a&gt;' already exists.</msg>
+<arg>C:/Iterasys/RobotSauceDemo140/screenshots</arg>
+<doc>Creates the specified directory.</doc>
+<status status="PASS" start="2025-08-05T11:00:33.956723" elapsed="0.000630"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-08-05T11:00:34.076378" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="screenshots/2025.08.05_10.59.43/TC006/1-%20Home.jpg"&gt;&lt;img src="screenshots/2025.08.05_10.59.43/TC006/1-%20Home.jpg" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>C:/Iterasys/RobotSauceDemo140/screenshots/${date}/${TEST_NAME}/${screenshot_name}.jpg</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-08-05T11:00:33.957589" elapsed="0.118955"/>
+</kw>
+<arg>1- Home</arg>
+<status status="PASS" start="2025-08-05T11:00:33.954723" elapsed="0.121978"/>
+</kw>
+<kw name="Preencher usuario" owner="login_page">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-08-05T11:00:34.077752" level="INFO">Typing text 'standard_user' into text field 'css=[data-test="username"]'.</msg>
+<arg>${txt_usuario}</arg>
+<arg>${usuario}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-05T11:00:34.077438" elapsed="0.208415"/>
+</kw>
+<arg>standard_user</arg>
+<status status="PASS" start="2025-08-05T11:00:34.076986" elapsed="0.208990"/>
+</kw>
+<kw name="Preencher senha" owner="login_page">
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2025-08-05T11:00:34.286874" level="INFO">Typing password into text field 'css=[data-test="password"]'.</msg>
+<msg time="2025-08-05T11:00:34.320997" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>${txt_senha}</arg>
+<arg>${senha}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-05T11:00:34.286620" elapsed="0.111377"/>
+</kw>
+<arg>secret_sauce</arg>
+<status status="PASS" start="2025-08-05T11:00:34.286147" elapsed="0.111961"/>
+</kw>
+<kw name="Tirar Screenshot" owner="base_page">
+<kw name="Create Directory" owner="OperatingSystem">
+<msg time="2025-08-05T11:00:34.398676" level="INFO" html="true">Directory '&lt;a href="file://C:\Iterasys\RobotSauceDemo140\screenshots"&gt;C:\Iterasys\RobotSauceDemo140\screenshots&lt;/a&gt;' already exists.</msg>
+<arg>C:/Iterasys/RobotSauceDemo140/screenshots</arg>
+<doc>Creates the specified directory.</doc>
+<status status="PASS" start="2025-08-05T11:00:34.398519" elapsed="0.000210"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-08-05T11:00:34.531713" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="screenshots/2025.08.05_10.59.43/TC006/2-%20Login%20Preenchido.jpg"&gt;&lt;img src="screenshots/2025.08.05_10.59.43/TC006/2-%20Login%20Preenchido.jpg" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>C:/Iterasys/RobotSauceDemo140/screenshots/${date}/${TEST_NAME}/${screenshot_name}.jpg</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-08-05T11:00:34.398840" elapsed="0.133005"/>
+</kw>
+<arg>2- Login Preenchido</arg>
+<status status="PASS" start="2025-08-05T11:00:34.398264" elapsed="0.133718"/>
+</kw>
+<kw name="Clicar botao Login" owner="login_page">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-08-05T11:00:34.532634" level="INFO">Clicking button 'id=login-button'.</msg>
+<arg>${btn_login}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-05T11:00:34.532463" elapsed="0.139871"/>
+</kw>
+<status status="PASS" start="2025-08-05T11:00:34.532196" elapsed="0.140327"/>
+</kw>
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<msg time="2025-08-05T11:00:34.674068" level="INFO">Verifying element 'css=.title' contains exact text 'Products'.</msg>
+<arg>${titulo_secao}</arg>
+<arg>Products</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="PASS" start="2025-08-05T11:00:34.672845" elapsed="0.057371"/>
+</kw>
+<kw name="Tirar Screenshot" owner="base_page">
+<kw name="Create Directory" owner="OperatingSystem">
+<msg time="2025-08-05T11:00:34.731061" level="INFO" html="true">Directory '&lt;a href="file://C:\Iterasys\RobotSauceDemo140\screenshots"&gt;C:\Iterasys\RobotSauceDemo140\screenshots&lt;/a&gt;' already exists.</msg>
+<arg>C:/Iterasys/RobotSauceDemo140/screenshots</arg>
+<doc>Creates the specified directory.</doc>
+<status status="PASS" start="2025-08-05T11:00:34.730858" elapsed="0.000280"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-08-05T11:00:34.866618" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="screenshots/2025.08.05_10.59.43/TC006/3-%20Lista%20de%20Produtos.jpg"&gt;&lt;img src="screenshots/2025.08.05_10.59.43/TC006/3-%20Lista%20de%20Produtos.jpg" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>C:/Iterasys/RobotSauceDemo140/screenshots/${date}/${TEST_NAME}/${screenshot_name}.jpg</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-08-05T11:00:34.731303" elapsed="0.135439"/>
+</kw>
+<arg>3- Lista de Produtos</arg>
+<status status="PASS" start="2025-08-05T11:00:34.730494" elapsed="0.136373"/>
+</kw>
+<kw name="Clicar no Produto" owner="inventory_page">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-08-05T11:00:34.867509" level="INFO">Clicking element 'css=img[alt="Test.allTheThings() T-Shirt (Red)"]'.</msg>
+<arg>css=img[alt="${product_name}"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-05T11:00:34.867311" elapsed="0.110816"/>
+</kw>
+<arg>${product_name}</arg>
+<status status="PASS" start="2025-08-05T11:00:34.867026" elapsed="0.111332"/>
+</kw>
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<msg time="2025-08-05T11:00:34.979035" level="INFO">Verifying element 'css=div.inventory_details_name.large_size' contains exact text 'Test.allTheThings() T-Shirt (Red)'.</msg>
+<arg>${inventory_item_product_name}</arg>
+<arg>${product_name}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="PASS" start="2025-08-05T11:00:34.978644" elapsed="0.048932"/>
+</kw>
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<msg time="2025-08-05T11:00:35.028284" level="INFO">Verifying element 'css=div.inventory_details_price' contains exact text '$15.99'.</msg>
+<arg>${inventory_item_product_price}</arg>
+<arg>${product_price}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="PASS" start="2025-08-05T11:00:35.027796" elapsed="0.047146"/>
+</kw>
+<kw name="Tirar Screenshot" owner="base_page">
+<kw name="Create Directory" owner="OperatingSystem">
+<msg time="2025-08-05T11:00:35.075954" level="INFO" html="true">Directory '&lt;a href="file://C:\Iterasys\RobotSauceDemo140\screenshots"&gt;C:\Iterasys\RobotSauceDemo140\screenshots&lt;/a&gt;' already exists.</msg>
+<arg>C:/Iterasys/RobotSauceDemo140/screenshots</arg>
+<doc>Creates the specified directory.</doc>
+<status status="PASS" start="2025-08-05T11:00:35.075687" elapsed="0.000383"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-08-05T11:00:35.177418" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="screenshots/2025.08.05_10.59.43/TC006/4-%20Detalhes%20do%20produto.jpg"&gt;&lt;img src="screenshots/2025.08.05_10.59.43/TC006/4-%20Detalhes%20do%20produto.jpg" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>C:/Iterasys/RobotSauceDemo140/screenshots/${date}/${TEST_NAME}/${screenshot_name}.jpg</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-08-05T11:00:35.076251" elapsed="0.101274"/>
+</kw>
+<arg>4- Detalhes do produto</arg>
+<status status="PASS" start="2025-08-05T11:00:35.075254" elapsed="0.102370"/>
+</kw>
+<kw name="Clicar no botao &quot;Add to cart&quot;" owner="inventory_item_page">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-08-05T11:00:35.178273" level="INFO">Clicking button 'css=button.btn.btn_primary.btn_small.btn_inventory'.</msg>
+<arg>${btn_add_to_cart}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-05T11:00:35.178098" elapsed="0.066788"/>
+</kw>
+<status status="PASS" start="2025-08-05T11:00:35.177845" elapsed="0.067151"/>
+</kw>
+<kw name="Clicar no carrinho" owner="base_page">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-08-05T11:00:35.245533" level="INFO">Clicking element 'css=[data-test="shopping-cart-link"]'.</msg>
+<arg>css=[data-test="shopping-cart-link"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-05T11:00:35.245386" elapsed="0.058884"/>
+</kw>
+<kw name="Wait Until Element Contains" owner="SeleniumLibrary">
+<arg>css=[data-test="title"]</arg>
+<arg>Your Cart</arg>
+<arg>${timeout}</arg>
+<doc>Waits until the element ``locator`` contains ``text``.</doc>
+<status status="PASS" start="2025-08-05T11:00:35.304520" elapsed="0.033557"/>
+</kw>
+<status status="PASS" start="2025-08-05T11:00:35.245153" elapsed="0.093037"/>
+</kw>
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<msg time="2025-08-05T11:00:35.338545" level="INFO">Verifying element 'css=.title' contains exact text 'Your Cart'.</msg>
+<arg>${titulo_secao}</arg>
+<arg>Your Cart</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="PASS" start="2025-08-05T11:00:35.338321" elapsed="0.011893"/>
+</kw>
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<msg time="2025-08-05T11:00:35.350624" level="INFO">Verifying element 'css=div.inventory_item_name' contains exact text 'Test.allTheThings() T-Shirt (Red)'.</msg>
+<arg>${cart_product_name}</arg>
+<arg>${product_name}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="PASS" start="2025-08-05T11:00:35.350392" elapsed="0.015715"/>
+</kw>
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<msg time="2025-08-05T11:00:35.366513" level="INFO">Verifying element 'css=div.inventory_item_price' contains exact text '$15.99'.</msg>
+<arg>${cart_product_price}</arg>
+<arg>${product_price}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="PASS" start="2025-08-05T11:00:35.366284" elapsed="0.015667"/>
+</kw>
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<msg time="2025-08-05T11:00:35.382352" level="INFO">Verifying element 'css=div.cart_quantity' contains exact text '1'.</msg>
+<arg>${cart_product_quantity}</arg>
+<arg>1</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="PASS" start="2025-08-05T11:00:35.382130" elapsed="0.016384"/>
+</kw>
+<kw name="Tirar Screenshot" owner="base_page">
+<kw name="Create Directory" owner="OperatingSystem">
+<msg time="2025-08-05T11:00:35.399148" level="INFO" html="true">Directory '&lt;a href="file://C:\Iterasys\RobotSauceDemo140\screenshots"&gt;C:\Iterasys\RobotSauceDemo140\screenshots&lt;/a&gt;' already exists.</msg>
+<arg>C:/Iterasys/RobotSauceDemo140/screenshots</arg>
+<doc>Creates the specified directory.</doc>
+<status status="PASS" start="2025-08-05T11:00:35.398987" elapsed="0.000217"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-08-05T11:00:35.471665" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="screenshots/2025.08.05_10.59.43/TC006/5-%20Carrinho.jpg"&gt;&lt;img src="screenshots/2025.08.05_10.59.43/TC006/5-%20Carrinho.jpg" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>C:/Iterasys/RobotSauceDemo140/screenshots/${date}/${TEST_NAME}/${screenshot_name}.jpg</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-08-05T11:00:35.399317" elapsed="0.072539"/>
+</kw>
+<arg>5- Carrinho</arg>
+<status status="PASS" start="2025-08-05T11:00:35.398722" elapsed="0.073228"/>
+</kw>
+<kw name="Realizar Logout" owner="base_page">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-08-05T11:00:35.472489" level="INFO">Clicking element 'id=react-burger-menu-btn'.</msg>
+<arg>id=react-burger-menu-btn</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-05T11:00:35.472344" elapsed="0.055791"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-08-05T11:00:35.528504" level="INFO">Clicking element 'id=logout_sidebar_link'.</msg>
+<arg>id=logout_sidebar_link</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-05T11:00:35.528320" elapsed="0.142482"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>css=.login_logo</arg>
+<arg>${timeout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-08-05T11:00:35.671200" elapsed="0.031176"/>
+</kw>
+<status status="PASS" start="2025-08-05T11:00:35.472108" elapsed="0.230413"/>
+</kw>
+<arg>Test.allTheThings() T-Shirt (Red)</arg>
+<arg>$15.99</arg>
+<status status="PASS" start="2025-08-05T11:00:33.953982" elapsed="1.748659"/>
+</kw>
+<kw name="Fechar navegador" owner="base_page" type="TEARDOWN">
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-08-05T11:00:36.204126" level="INFO">Slept 500 milliseconds.</msg>
+<arg>500ms</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-08-05T11:00:35.703718" elapsed="0.500596"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-08-05T11:00:36.204593" elapsed="2.403382"/>
+</kw>
+<status status="PASS" start="2025-08-05T11:00:35.703246" elapsed="2.905180"/>
+</kw>
+<status status="PASS" start="2025-08-05T11:00:30.843186" elapsed="7.766280"/>
+</test>
+<status status="PASS" start="2025-08-05T10:59:52.485311" elapsed="46.126134"/>
+</suite>
+<status status="PASS" start="2025-08-05T10:59:43.321432" elapsed="55.292348"/>
+</suite>
+<statistics>
+<total>
+<stat pass="7" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Po" id="s1" pass="7" fail="0" skip="0">Po</stat>
+<stat name="Selecionar Produto Po" id="s1-s1" pass="1" fail="0" skip="0">Po.Selecionar Produto Po</stat>
+<stat name="Selecionar Produto Po Ddt" id="s1-s2" pass="6" fail="0" skip="0">Po.Selecionar Produto Po Ddt</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2025-08-05T10:59:44.235501" level="WARN">Exception managing MicrosoftEdge: error sending request for url (https://msedgedriver.azureedge.net/LATEST_RELEASE_138_WINDOWS)</msg>
+<msg time="2025-08-05T10:59:52.962675" level="WARN">Exception managing MicrosoftEdge: error sending request for url (https://msedgedriver.azureedge.net/LATEST_RELEASE_138_WINDOWS)</msg>
+<msg time="2025-08-05T11:00:00.398897" level="WARN">Exception managing MicrosoftEdge: error sending request for url (https://msedgedriver.azureedge.net/LATEST_RELEASE_138_WINDOWS)</msg>
+<msg time="2025-08-05T11:00:07.733386" level="WARN">Exception managing MicrosoftEdge: error sending request for url (https://msedgedriver.azureedge.net/LATEST_RELEASE_138_WINDOWS)</msg>
+<msg time="2025-08-05T11:00:15.092187" level="WARN">Exception managing MicrosoftEdge: error sending request for url (https://msedgedriver.azureedge.net/LATEST_RELEASE_138_WINDOWS)</msg>
+<msg time="2025-08-05T11:00:23.872208" level="WARN">Exception managing MicrosoftEdge: error sending request for url (https://msedgedriver.azureedge.net/LATEST_RELEASE_138_WINDOWS)</msg>
+<msg time="2025-08-05T11:00:31.285561" level="WARN">Exception managing MicrosoftEdge: error sending request for url (https://msedgedriver.azureedge.net/LATEST_RELEASE_138_WINDOWS)</msg>
+</errors>
+</robot>
